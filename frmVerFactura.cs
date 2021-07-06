@@ -64,63 +64,38 @@ namespace SistemaCompras
                 
                 textBox1.Text += o + "\n";
 
-                //switch (cont)
-                //{
-                //    case 1: listViewFactura.Items.Add(o);
-                //        textBox1.Text += "--------()------- \n";
-                //        break;
-
-                //    case 2:
-                //        item.SubItems.Add(o);
-                //        cantidad = int.Parse(o);
-                //        break;
-
-                //    case 3:
-                //        item.SubItems.Add(o);
-                //        precio = int.Parse(o);
-                //        break;
-
-                //    case 4:
-                //        iva = 0;
-
-                //        iva = iva / 100;
-                //        sub = (precio + iva) * cantidad;
-                //        item.SubItems.Add(sub.ToString());
-
-                //        sub = 0; iva = 0; precio = 0; cantidad = 0; cont = 0;
-                //        break;
-  
-                //    default:
-                //        item.SubItems.Add("Alguio salio mal con la cade de caracteres");
-                //        break;
-                //}
-
-                if (cont == 1)
+                switch (cont)
                 {
-                    item = listViewFactura.Items.Add(o);
-                }
-                if (cont == 2)
-                {
-                    item.SubItems.Add(o);
-                    cantidad = int.Parse(o);
-                }
-                if (cont == 3)
-                {
-                    item.SubItems.Add(o);
-                    precio = int.Parse(o);
-                }
-                if (cont == 4)
-                {
-                    item.SubItems.Add(o);
-                    iva = 0;
+                    case 1:
+                        item = listViewFactura.Items.Add(o);
+                        textBox1.Text += "--------()------- \n";
+                        break;
 
-                    iva = iva / 100;
-                    sub = (precio + iva) * cantidad;
-                    item.SubItems.Add(sub.ToString());
-                    total += sub;
-                    labelTotal.Text = total.ToString();
-                    sub = 0; iva = 0; precio = 0; cantidad = 0; cont = 0;
+                    case 2:
+                        item.SubItems.Add(o);
+                        cantidad = int.Parse(o);
+                        break;
+
+                    case 3:
+                        item.SubItems.Add(o);
+                        precio = int.Parse(o);
+                        break;
+
+                    case 4:
+                        iva = 0;
+
+                        iva = iva / 100;
+                        sub = (precio + iva) * cantidad;
+                        item.SubItems.Add(sub.ToString());
+
+                        sub = 0; iva = 0; precio = 0; cantidad = 0; cont = 0;
+                        break;
+
+                    default:
+                        item.SubItems.Add("Alguio salio mal con la cade de caracteres");
+                        break;
                 }
+
             }
         }
 

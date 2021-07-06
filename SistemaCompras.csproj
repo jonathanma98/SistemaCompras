@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,6 +57,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmCalculadora.cs">
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistreAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistreAdmin.Designer.cs">
+      <DependentUpon>frmRegistreAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVerFactura.cs">
       <SubType>Form</SubType>
@@ -87,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistreAdmin.resx">
+      <DependentUpon>frmRegistreAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerFactura.resx">
       <DependentUpon>frmVerFactura.cs</DependentUpon>
@@ -161,6 +176,7 @@
     <Content Include="Iconos\noun_Scissors_1289724.png" />
     <Content Include="Iconos\noun_spa document sheet_2701947.png" />
     <Content Include="Iconos\noun_Straightener_3478489.png" />
+    <None Include="Resources\iconmonstr-friend-2-240.png" />
     <None Include="Resources\PicsArt_06-15-12.14.42[1].png" />
     <None Include="Resources\PicsArt_06-15-12.14.42[3].png" />
   </ItemGroup>

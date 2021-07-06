@@ -63,6 +63,16 @@ namespace SistemaCompras.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconmonstr_friend_2_240 {
+            get {
+                object obj = ResourceManager.GetObject("iconmonstr-friend-2-240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconmonstr_user_20_240 {
             get {
                 object obj = ResourceManager.GetObject("iconmonstr-user-20-240", resourceCulture);

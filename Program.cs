@@ -16,7 +16,7 @@ namespace SistemaCompras
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmVerFactura());
+            Application.Run(new frmInicio());
         }
     }
 }

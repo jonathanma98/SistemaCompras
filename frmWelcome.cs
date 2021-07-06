@@ -25,7 +25,7 @@ namespace SistemaCompras
             imgLogo.Visible = false;
             //imgLogo.Width = 0;
             imgLogo.Height = 0;
-            progressBar1.Visible = false;
+            circularProgressBar1.Visible = false;
             timer1.Start();
         }
 
@@ -57,27 +57,26 @@ namespace SistemaCompras
             }
         }
 
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (this.Opacity < 1) this.Opacity -= 0.6;
 
             i += 1;
-            if (progressBar1.Visible == false)
+            if (circularProgressBar1.Visible == false)
             {
-                progressBar1.Visible = true;
-                progressBar1.Refresh();
+                circularProgressBar1.Value = 0;
+                circularProgressBar1.Visible = true;
+                circularProgressBar1.Minimum =0;
+                circularProgressBar1.Maximum = 100;
             }
-            else if(progressBar1.Value <= 98)
+            else if(circularProgressBar1.Value < 99)
             {
-                progressBar1.Value += 2;
+                circularProgressBar1.Value += 1;
+                circularProgressBar1.Text = i.ToString();
             }
-            if(i == 100)
+            if(i == 105)
             {
+                this.Hide();
                 frmVerFactura frm = new frmVerFactura();
                 timer2.Stop();
                 frm.Show();

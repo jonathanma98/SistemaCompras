@@ -35,10 +35,10 @@ namespace SistemaCompras
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelBienvenida = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,7 +53,7 @@ namespace SistemaCompras
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(593, 56);
+            this.panel1.Size = new System.Drawing.Size(593, 48);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -82,15 +82,6 @@ namespace SistemaCompras
             this.timer2.Interval = 30;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.Color.White;
-            this.progressBar1.Location = new System.Drawing.Point(151, 3);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(305, 22);
-            this.progressBar1.TabIndex = 3;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 25;
@@ -98,23 +89,57 @@ namespace SistemaCompras
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.progressBar1);
+            this.panel2.Controls.Add(this.circularProgressBar1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 334);
+            this.panel2.Location = new System.Drawing.Point(0, 265);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(593, 41);
+            this.panel2.Size = new System.Drawing.Size(593, 110);
             this.panel2.TabIndex = 4;
             // 
             // imgLogo
             // 
             this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
-            this.imgLogo.Location = new System.Drawing.Point(151, 75);
+            this.imgLogo.Location = new System.Drawing.Point(149, 50);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(305, 218);
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 2;
             this.imgLogo.TabStop = false;
             this.imgLogo.Click += new System.EventHandler(this.imgLogo_Click);
+            // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 500;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(242, 0);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.White;
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 26;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.Magenta;
+            this.circularProgressBar1.ProgressWidth = 25;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularProgressBar1.Size = new System.Drawing.Size(112, 106);
+            this.circularProgressBar1.StartAngle = 270;
+            this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.DarkViolet;
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = "";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.DarkViolet;
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(5, 19, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "%";
+            this.circularProgressBar1.TabIndex = 4;
+            this.circularProgressBar1.Text = "0";
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(3, 5, 0, 0);
+            this.circularProgressBar1.Value = 50;
             // 
             // frmWelcome
             // 
@@ -147,9 +172,9 @@ namespace SistemaCompras
         private System.Windows.Forms.Label labelBienvenida;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
     }
 }
