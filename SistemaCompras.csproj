@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{467B172D-6088-4924-87FC-29575BF709D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaCompras</RootNamespace>
+    <AssemblyName>SistemaCompras</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCalculadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculadora.Designer.cs">
+      <DependentUpon>frmCalculadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerFactura.Designer.cs">
+      <DependentUpon>frmVerFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWelcome.Designer.cs">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCalculadora.resx">
+      <DependentUpon>frmCalculadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerFactura.resx">
+      <DependentUpon>frmVerFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWelcome.resx">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Iconos\iconmonstr-archive-9-240.png" />
+    <Content Include="Iconos\iconmonstr-calculator-9-240.png" />
+    <Content Include="Iconos\iconmonstr-calculator-9.svg" />
+    <Content Include="Iconos\iconmonstr-certificate-6-240.png" />
+    <Content Include="Iconos\iconmonstr-chart-10-240.png" />
+    <Content Include="Iconos\iconmonstr-chart-2-240.png" />
+    <Content Include="Iconos\iconmonstr-chart-5-240.png" />
+    <Content Include="Iconos\iconmonstr-checkbox-22-240.png" />
+    <Content Include="Iconos\iconmonstr-checkbox-24-240.png" />
+    <Content Include="Iconos\iconmonstr-customer-4-240.png" />
+    <Content Include="Iconos\iconmonstr-delivery-1-240.png" />
+    <Content Include="Iconos\iconmonstr-delivery-11-240.png" />
+    <Content Include="Iconos\iconmonstr-door-4-240.png" />
+    <Content Include="Iconos\iconmonstr-download-14-240.png" />
+    <Content Include="Iconos\iconmonstr-fax-3-240.png" />
+    <Content Include="Iconos\iconmonstr-file-38-240.png" />
+    <Content Include="Iconos\iconmonstr-friend-2-240.png" />
+    <Content Include="Iconos\iconmonstr-fullscreen-thin-240.png" />
+    <Content Include="Iconos\iconmonstr-gear-10-240.png" />
+    <Content Include="Iconos\iconmonstr-home-9-240.png" />
+    <Content Include="Iconos\iconmonstr-layer-22-240.png" />
+    <Content Include="Iconos\iconmonstr-magnifier-4-240.png" />
+    <Content Include="Iconos\iconmonstr-marketing-5-240.png" />
+    <Content Include="Iconos\iconmonstr-maximize-thin-240 %281%29.png" />
+    <Content Include="Iconos\iconmonstr-maximize-thin-240.png" />
+    <Content Include="Iconos\iconmonstr-minimize-thin-240.png" />
+    <Content Include="Iconos\iconmonstr-product-4-240.png" />
+    <Content Include="Iconos\iconmonstr-share-thin-240.png" />
+    <Content Include="Iconos\iconmonstr-user-20-240.png" />
+    <Content Include="Iconos\iconmonstr-user-25-240.png" />
+    <Content Include="Iconos\iconmonstr-user-4-240.png" />
+    <Content Include="Iconos\iconmonstr-user-4.svg" />
+    <Content Include="Iconos\noun_hair blower_3721808.png" />
+    <Content Include="Iconos\noun_hair salon_1771930.png" />
+    <Content Include="Iconos\noun_Hairstylist_3925549.png" />
+    <Content Include="Iconos\noun_Microneedling_2245791.png" />
+    <Content Include="Iconos\noun_mirror_1067841.png" />
+    <Content Include="Iconos\noun_Salon At Home_2081101.png" />
+    <Content Include="Iconos\noun_salon_3973880.png" />
+    <Content Include="Iconos\noun_Scissors_1289724.png" />
+    <Content Include="Iconos\noun_spa document sheet_2701947.png" />
+    <Content Include="Iconos\noun_Straightener_3478489.png" />
+    <None Include="Resources\PicsArt_06-15-12.14.42[1].png" />
+    <None Include="Resources\PicsArt_06-15-12.14.42[3].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="CapaEntidades\CapaEntidades.csproj">
+      <Project>{917cf180-b06c-4faa-a022-9592fcde6fac}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="CapaNegocios\CapaNegocios.csproj">
+      <Project>{2c2f3340-5846-4921-a312-96d1139d1a1f}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="CapaUtilidades\CapaUtilidades.csproj">
+      <Project>{48ee3df2-b047-4a08-a2bc-1e565475fff8}</Project>
+      <Name>CapaUtilidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
