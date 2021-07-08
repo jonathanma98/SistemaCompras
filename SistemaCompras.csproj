@@ -62,12 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCalculadora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCalculadora.Designer.cs">
-      <DependentUpon>frmCalculadora.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,34 +74,13 @@
     <Compile Include="frmRegistreAdmin.Designer.cs">
       <DependentUpon>frmRegistreAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVerFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmVerFactura.Designer.cs">
-      <DependentUpon>frmVerFactura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmWelcome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWelcome.Designer.cs">
-      <DependentUpon>frmWelcome.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCalculadora.resx">
-      <DependentUpon>frmCalculadora.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistreAdmin.resx">
       <DependentUpon>frmRegistreAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmVerFactura.resx">
-      <DependentUpon>frmVerFactura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmWelcome.resx">
-      <DependentUpon>frmWelcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,6 +161,10 @@
     <ProjectReference Include="CapaNegocios\CapaNegocios.csproj">
       <Project>{2c2f3340-5846-4921-a312-96d1139d1a1f}</Project>
       <Name>CapaNegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="CapaPresentacion\CapaPresentacion.csproj">
+      <Project>{d2dba5b8-40e6-4c74-90bd-e352ffea4ee2}</Project>
+      <Name>CapaPresentacion</Name>
     </ProjectReference>
     <ProjectReference Include="CapaUtilidades\CapaUtilidades.csproj">
       <Project>{48ee3df2-b047-4a08-a2bc-1e565475fff8}</Project>

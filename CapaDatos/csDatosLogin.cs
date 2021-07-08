@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 using CapaUtilidades.Interfaces;
-using CapaUtilidades;
 using CapaEntidades;
 
 namespace CapaDatos
@@ -21,18 +20,18 @@ namespace CapaDatos
             throw new NotImplementedException();
         }
 
-        public bool guarda(tbAdmin entidad)
+        public bool guarda(tbAdmin admin)
         {
             try
             {
-                using (dbSistemaCompraEntities context = new dbSistemaCompraEntities())
+                using (dbSistemaCompraEntities contex = new  dbSistemaCompraEntities())
                 {
-                    context.Entry<tbAdmin>(entidad).State = System.Data.Entity.EntityState.Added;
-                    context.SaveChanges();
+                    contex.tbAdmin.Add(admin);
+                    contex.SaveChanges();
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }

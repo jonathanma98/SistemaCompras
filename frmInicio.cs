@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion;
 using CapaNegocios;
 using CapaEntidades;
 using CapaUtilidades;
+using CapaPresentacion;
 
 namespace SistemaCompras
 {
@@ -82,9 +84,9 @@ namespace SistemaCompras
                     contra = dato.contraseña.Trim();
                 }
 
-                string passport = csEncryp.GetSHA256(contra);
+                string passport = csEncryp.GetSHA256(txtContra.Text);
                 //evaluamos los datos para poder ingresar a los formulacios
-                if (id == txtId.Text && passport == txtContra.Text)
+                if (id == txtId.Text && passport == contra)
                 {
                     frmWelcome frm = new frmWelcome();
                     frm.ShowDialog();

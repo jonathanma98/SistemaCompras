@@ -26,6 +26,7 @@ namespace CapaDatos
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<tbAdmin> tbAdmin { get; set; }
         public virtual DbSet<tbCliente> tbCliente { get; set; }
         public virtual DbSet<tbClienteFactura> tbClienteFactura { get; set; }
         public virtual DbSet<tbControlDinero> tbControlDinero { get; set; }
@@ -35,7 +36,6 @@ namespace CapaDatos
         public virtual DbSet<tbProducto> tbProducto { get; set; }
         public virtual DbSet<tbProveedor> tbProveedor { get; set; }
         public virtual DbSet<tbProveedorFactura> tbProveedorFactura { get; set; }
-        public virtual DbSet<tbAdmin> tbAdmin { get; set; }
         public virtual DbSet<tbProductoProveedor> tbProductoProveedor { get; set; }
     }
 }

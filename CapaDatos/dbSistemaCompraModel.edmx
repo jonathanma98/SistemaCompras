@@ -5,18 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="dbSistemaCompraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbAdmin' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="tbAdmin">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="Nombre" />
-            <PropertyRef Name="contraseña" />
           </Key>
-          <Property Name="id" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="id" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="50" />
-          <Property Name="contraseña" Type="nchar" MaxLength="12" Nullable="false" />
+          <Property Name="contraseña" Type="varchar(max)" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="tbCliente">
@@ -239,6 +235,7 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="dbSistemaCompraModelStoreContainer">
+          <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbClienteFactura" EntityType="Self.tbClienteFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbControlDinero" EntityType="Self.tbControlDinero" Schema="dbo" store:Type="Tables" />
@@ -248,15 +245,6 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <EntitySet Name="tbProducto" EntityType="Self.tbProducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProveedor" EntityType="Self.tbProveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProveedorFactura" EntityType="Self.tbProveedorFactura" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [tbAdmin].[id] AS [id], 
-    [tbAdmin].[Nombre] AS [Nombre], 
-    [tbAdmin].[correo] AS [correo], 
-    [tbAdmin].[contraseña] AS [contraseña], 
-    [tbAdmin].[telefono] AS [telefono]
-    FROM [dbo].[tbAdmin] AS [tbAdmin]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="tbProductoProveedor" EntityType="Self.tbProductoProveedor" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [tbProductoProveedor].[id] AS [id], 
@@ -310,6 +298,16 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbSistemaCompraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbAdmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contraseña" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="tbCliente">
           <Key>
             <PropertyRef Name="Id" />
@@ -414,18 +412,6 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <Property Name="IdFactura" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbFactura" Relationship="Self.FK_tbProveedorFactura_tbFactura" FromRole="tbProveedorFactura" ToRole="tbFactura" />
           <NavigationProperty Name="tbProveedor" Relationship="Self.FK_tbProveedorFactura_tbProveedor" FromRole="tbProveedorFactura" ToRole="tbProveedor" />
-        </EntityType>
-        <EntityType Name="tbAdmin">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="Nombre" />
-            <PropertyRef Name="contraseña" />
-          </Key>
-          <Property Name="id" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="contraseña" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tbProductoProveedor">
           <Key>
@@ -560,6 +546,7 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="dbSistemaCompraEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" />
           <EntitySet Name="tbCliente" EntityType="Self.tbCliente" />
           <EntitySet Name="tbClienteFactura" EntityType="Self.tbClienteFactura" />
           <EntitySet Name="tbControlDinero" EntityType="Self.tbControlDinero" />
@@ -569,7 +556,6 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <EntitySet Name="tbProducto" EntityType="Self.tbProducto" />
           <EntitySet Name="tbProveedor" EntityType="Self.tbProveedor" />
           <EntitySet Name="tbProveedorFactura" EntityType="Self.tbProveedorFactura" />
-          <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" />
           <EntitySet Name="tbProductoProveedor" EntityType="Self.tbProductoProveedor" />
           <AssociationSet Name="FK_tbCliente_tbPersona" Association="Self.FK_tbCliente_tbPersona">
             <End Role="tbPersona" EntitySet="tbPersona" />
@@ -618,6 +604,17 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbSistemaCompraModelStoreContainer" CdmEntityContainer="dbSistemaCompraEntities">
+          <EntitySetMapping Name="tbAdmin">
+            <EntityTypeMapping TypeName="dbSistemaCompraModel.tbAdmin">
+              <MappingFragment StoreEntitySet="tbAdmin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbCliente">
             <EntityTypeMapping TypeName="dbSistemaCompraModel.tbCliente">
               <MappingFragment StoreEntitySet="tbCliente">
@@ -711,17 +708,6 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
                 <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbAdmin">
-            <EntityTypeMapping TypeName="dbSistemaCompraModel.tbAdmin">
-              <MappingFragment StoreEntitySet="tbAdmin">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
