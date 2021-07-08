@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Windows.Forms;
 using CapaEntidades;
 using CapaUtilidades;
@@ -16,7 +17,6 @@ namespace SistemaCompras
     public partial class frmRegistreAdmin : Form
     {
         csNegocioLogin login = new csNegocioLogin();
-        tbAdmin admin = new tbAdmin();
         public frmRegistreAdmin()
         {
             InitializeComponent();
@@ -26,18 +26,19 @@ namespace SistemaCompras
         {
             if (verificarDatos())
             {
-                
+                tbAdmin admin = new tbAdmin();
+
                 admin.id = txtId.Text;
                 admin.Nombre = txtNombre.Text;
                 admin.contraseña = csEncryp.GetSHA256(txtContreseña.Text);
-                MessageBox.Show(csEncryp.GetSHA256(txtContreseña.Text));
+                //MessageBox.Show(csEncryp.GetSHA256(txtContreseña.Text));
                 admin.telefono = txtTelefono.Text;
                 admin.correo = txtCorreo.Text;
 
                 if (login.guarda(admin))
                 {
                     MessageBox.Show("Se ingrese un nuevo usuario", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    //Close();
                 }
                 else
                 {

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +24,9 @@ namespace CapaNegocios
             throw new NotImplementedException();
         }
 
-        public bool guarda(tbAdmin entidad)
+        public bool guarda(tbAdmin admin)
         {
-            return dato.guarda(entidad);
+            return dato.guarda(admin);
         }
 
         public bool modificar(tbAdmin entidad)
