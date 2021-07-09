@@ -63,6 +63,16 @@ namespace SistemaCompras.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Businessman_48px {
+            get {
+                object obj = ResourceManager.GetObject("Businessman_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconmonstr_friend_2_240 {
             get {
                 object obj = ResourceManager.GetObject("iconmonstr-friend-2-240", resourceCulture);
@@ -96,6 +106,16 @@ namespace SistemaCompras.Properties {
         internal static System.Drawing.Bitmap PicsArt_06_15_12_14_42_3_ {
             get {
                 object obj = ResourceManager.GetObject("PicsArt_06-15-12.14.42[3]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap repoo {
+            get {
+                object obj = ResourceManager.GetObject("repoo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
