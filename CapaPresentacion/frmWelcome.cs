@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CircularProgressBar;
+using CapaPresentacion.Forms;
 
 namespace CapaPresentacion
 {
@@ -77,9 +78,9 @@ namespace CapaPresentacion
             if (i == 105)
             {
                 this.Hide();
-                frmVerFactura frm = new frmVerFactura();
+                frmMenuPrincipal menu = new frmMenuPrincipal();
                 timer2.Stop();
-                frm.Show();
+                menu.Show();
 
                 Close();
             }

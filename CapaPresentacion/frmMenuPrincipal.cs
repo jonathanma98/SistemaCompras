@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaCompras
+namespace CapaPresentacion
 {
     public partial class frmMenuPrincipal : Form
     {
@@ -97,42 +97,47 @@ namespace SistemaCompras
             labeltitulo.Text = childForm.Text;
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmRegistrarclientes(), sender);
-        }
-
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmProveedores(), sender);
-        }
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmProductos(), sender);
-        }
-
-        private void btnFactura_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmFactura(), sender);
-        }
-
-        private void btnDetalledefactura_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmDetalleFactura(), sender);
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmReportes(), sender);
-        }
-
         private void panelpantallahome_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void paneltitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClientes_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmRegistrarclientes(), sender);
+        }
+
+        private void btnProveedores_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmProveedores(), sender);
+        }
+
+        private void btnProductos_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmProductos(), sender);
+        }
+
+        private void btnFactura_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmFactura(), sender);
+        }
+
+        private void btnDetalledefactura_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmVerFactura(), sender);
+        }
+
+        private void btnReportes_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmReportes(), sender);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

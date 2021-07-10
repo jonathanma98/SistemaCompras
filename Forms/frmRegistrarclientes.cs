@@ -36,7 +36,7 @@ namespace SistemaCompras.Forms
                 }
             }
             labeltitulo1.ForeColor = ThemeColor.SecondaryColor;
-            labelfechanacimiento.ForeColor = ThemeColor.PrimaryColor;
+            labelnav.ForeColor = ThemeColor.PrimaryColor;
         }
     }
 }

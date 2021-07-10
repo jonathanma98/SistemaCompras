@@ -1,5 +1,5 @@
 ﻿
-namespace SistemaCompras
+namespace CapaPresentacion
 {
     partial class frmMenuPrincipal
     {
@@ -29,50 +29,38 @@ namespace SistemaCompras
         /// </summary>
         private void InitializeComponent()
         {
-            this.paneltitulo = new System.Windows.Forms.Panel();
-            this.labeltitulo = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panellogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelpantallahome = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnDetalledefactura = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
+            this.panellogo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.paneltitulo = new System.Windows.Forms.Panel();
+            this.labeltitulo = new System.Windows.Forms.Label();
+            this.panelpantallahome = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.paneltitulo.SuspendLayout();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panellogo.SuspendLayout();
+            this.paneltitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // paneltitulo
-            // 
-            this.paneltitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.paneltitulo.Controls.Add(this.labeltitulo);
-            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneltitulo.Location = new System.Drawing.Point(220, 0);
-            this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(676, 80);
-            this.paneltitulo.TabIndex = 4;
-            this.paneltitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.paneltitulo_Paint);
-            // 
-            // labeltitulo
-            // 
-            this.labeltitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labeltitulo.AutoSize = true;
-            this.labeltitulo.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitulo.ForeColor = System.Drawing.Color.White;
-            this.labeltitulo.Location = new System.Drawing.Point(251, 25);
-            this.labeltitulo.Name = "labeltitulo";
-            this.labeltitulo.Size = new System.Drawing.Size(63, 25);
-            this.labeltitulo.TabIndex = 0;
-            this.labeltitulo.Text = "Home";
-            this.labeltitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.pictureBox4);
+            this.panelMenu.Controls.Add(this.pictureBox3);
+            this.panelMenu.Controls.Add(this.pictureBox2);
+            this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.btnDetalledefactura);
             this.panelMenu.Controls.Add(this.btnFactura);
@@ -83,8 +71,103 @@ namespace SistemaCompras
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 503);
-            this.panelMenu.TabIndex = 3;
+            this.panelMenu.Size = new System.Drawing.Size(220, 450);
+            this.panelMenu.TabIndex = 4;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 380);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(220, 60);
+            this.btnReportes.TabIndex = 6;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click_1);
+            // 
+            // btnDetalledefactura
+            // 
+            this.btnDetalledefactura.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDetalledefactura.FlatAppearance.BorderSize = 0;
+            this.btnDetalledefactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalledefactura.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalledefactura.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDetalledefactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalledefactura.Location = new System.Drawing.Point(0, 320);
+            this.btnDetalledefactura.Name = "btnDetalledefactura";
+            this.btnDetalledefactura.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnDetalledefactura.Size = new System.Drawing.Size(220, 60);
+            this.btnDetalledefactura.TabIndex = 5;
+            this.btnDetalledefactura.Text = "Detalle de Factura";
+            this.btnDetalledefactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalledefactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDetalledefactura.UseVisualStyleBackColor = true;
+            this.btnDetalledefactura.Click += new System.EventHandler(this.btnDetalledefactura_Click_1);
+            // 
+            // btnFactura
+            // 
+            this.btnFactura.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFactura.FlatAppearance.BorderSize = 0;
+            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFactura.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFactura.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFactura.Location = new System.Drawing.Point(0, 260);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnFactura.Size = new System.Drawing.Size(220, 60);
+            this.btnFactura.TabIndex = 4;
+            this.btnFactura.Text = "Factura";
+            this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click_1);
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductos.FlatAppearance.BorderSize = 0;
+            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductos.Location = new System.Drawing.Point(0, 200);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProductos.Size = new System.Drawing.Size(220, 60);
+            this.btnProductos.TabIndex = 3;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click_1);
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.Location = new System.Drawing.Point(0, 140);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(220, 60);
+            this.btnProveedores.TabIndex = 2;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click_1);
             // 
             // panellogo
             // 
@@ -107,122 +190,45 @@ namespace SistemaCompras
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema de Compras";
             // 
+            // paneltitulo
+            // 
+            this.paneltitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.paneltitulo.Controls.Add(this.labeltitulo);
+            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneltitulo.Location = new System.Drawing.Point(220, 0);
+            this.paneltitulo.Name = "paneltitulo";
+            this.paneltitulo.Size = new System.Drawing.Size(580, 80);
+            this.paneltitulo.TabIndex = 5;
+            // 
+            // labeltitulo
+            // 
+            this.labeltitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labeltitulo.AutoSize = true;
+            this.labeltitulo.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltitulo.ForeColor = System.Drawing.Color.White;
+            this.labeltitulo.Location = new System.Drawing.Point(203, 25);
+            this.labeltitulo.Name = "labeltitulo";
+            this.labeltitulo.Size = new System.Drawing.Size(63, 25);
+            this.labeltitulo.TabIndex = 0;
+            this.labeltitulo.Text = "Home";
+            this.labeltitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // panelpantallahome
             // 
             this.panelpantallahome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelpantallahome.Location = new System.Drawing.Point(220, 80);
             this.panelpantallahome.Name = "panelpantallahome";
-            this.panelpantallahome.Size = new System.Drawing.Size(676, 423);
-            this.panelpantallahome.TabIndex = 5;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReportes.Image = global::SistemaCompras.Properties.Resources.repoo;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 380);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(220, 60);
-            this.btnReportes.TabIndex = 6;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // btnDetalledefactura
-            // 
-            this.btnDetalledefactura.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDetalledefactura.FlatAppearance.BorderSize = 0;
-            this.btnDetalledefactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalledefactura.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalledefactura.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDetalledefactura.Image = global::SistemaCompras.Properties.Resources.Businessman_48px;
-            this.btnDetalledefactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalledefactura.Location = new System.Drawing.Point(0, 320);
-            this.btnDetalledefactura.Name = "btnDetalledefactura";
-            this.btnDetalledefactura.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnDetalledefactura.Size = new System.Drawing.Size(220, 60);
-            this.btnDetalledefactura.TabIndex = 5;
-            this.btnDetalledefactura.Text = "Detalle de Factura";
-            this.btnDetalledefactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalledefactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDetalledefactura.UseVisualStyleBackColor = true;
-            this.btnDetalledefactura.Click += new System.EventHandler(this.btnDetalledefactura_Click);
-            // 
-            // btnFactura
-            // 
-            this.btnFactura.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFactura.FlatAppearance.BorderSize = 0;
-            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFactura.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFactura.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnFactura.Image = global::SistemaCompras.Properties.Resources.Businessman_48px;
-            this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFactura.Location = new System.Drawing.Point(0, 260);
-            this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnFactura.Size = new System.Drawing.Size(220, 60);
-            this.btnFactura.TabIndex = 4;
-            this.btnFactura.Text = "Factura";
-            this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFactura.UseVisualStyleBackColor = true;
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProductos.Image = global::SistemaCompras.Properties.Resources.Businessman_48px;
-            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(0, 200);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnProductos.Size = new System.Drawing.Size(220, 60);
-            this.btnProductos.TabIndex = 3;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProveedores.Image = global::SistemaCompras.Properties.Resources.Businessman_48px;
-            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 140);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(220, 60);
-            this.btnProveedores.TabIndex = 2;
-            this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProveedores.UseVisualStyleBackColor = true;
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            this.panelpantallahome.Size = new System.Drawing.Size(580, 370);
+            this.panelpantallahome.TabIndex = 6;
             // 
             // btnClientes
             // 
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClientes.Image = global::SistemaCompras.Properties.Resources.Businessman_48px;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(0, 80);
             this.btnClientes.Name = "btnClientes";
@@ -231,35 +237,76 @@ namespace SistemaCompras
             this.btnClientes.TabIndex = 1;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click_1);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_11_2401;
+            this.pictureBox3.Location = new System.Drawing.Point(147, 200);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_1_240;
+            this.pictureBox2.Location = new System.Drawing.Point(147, 140);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.noun_Hairstylist_3925549;
+            this.pictureBox1.Location = new System.Drawing.Point(147, 80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_fax_3_240;
+            this.pictureBox4.Location = new System.Drawing.Point(147, 254);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 503);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelpantallahome);
             this.Controls.Add(this.paneltitulo);
             this.Controls.Add(this.panelMenu);
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Salon de Belleza Jem";
-            this.paneltitulo.ResumeLayout(false);
-            this.paneltitulo.PerformLayout();
+            this.Text = "frmMenuPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panellogo.ResumeLayout(false);
             this.panellogo.PerformLayout();
+            this.paneltitulo.ResumeLayout(false);
+            this.paneltitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelpantallahome;
-        private System.Windows.Forms.Panel paneltitulo;
-        private System.Windows.Forms.Label labeltitulo;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnDetalledefactura;
@@ -269,5 +316,12 @@ namespace SistemaCompras
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panellogo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel paneltitulo;
+        private System.Windows.Forms.Label labeltitulo;
+        private System.Windows.Forms.Panel panelpantallahome;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

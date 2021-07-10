@@ -113,6 +113,16 @@ namespace SistemaCompras.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PicsArt_06_15_12_141 {
+            get {
+                object obj = ResourceManager.GetObject("PicsArt_06-15-12.141", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap repoo {
             get {
                 object obj = ResourceManager.GetObject("repoo", resourceCulture);

@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using System.Windows.Forms;
 using CapaEntidades;
 using CapaUtilidades;
@@ -22,8 +21,9 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click_1(object sender, EventArgs e)
         {
+
             if (verificarDatos())
             {
                 tbAdmin admin = new tbAdmin();
@@ -49,7 +49,7 @@ namespace CapaPresentacion
 
         private bool verificarDatos()
         {
-           if(txtId.Text == string.Empty)
+            if (txtId.Text == string.Empty)
             {
                 MessageBox.Show("Ingrese una id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtId.Focus();
@@ -72,5 +72,6 @@ namespace CapaPresentacion
                 return true;
             }
         }
+
     }
 }

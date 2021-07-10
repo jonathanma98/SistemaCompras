@@ -11,7 +11,6 @@ using CapaPresentacion;
 using CapaNegocios;
 using CapaEntidades;
 using CapaUtilidades;
-using CapaPresentacion;
 
 namespace SistemaCompras
 {

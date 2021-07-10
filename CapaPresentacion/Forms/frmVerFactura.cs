@@ -11,7 +11,7 @@ using CapaNegocios;
 using CapaEntidades;
 using CapaUtilidades;
 
-namespace CapaPresentacion
+namespace CapaPresentacion.Forms
 {
     public partial class frmVerFactura : Form
     {

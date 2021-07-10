@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaCompras.Forms
+namespace CapaPresentacion.Forms
 {
-    public partial class frmProveedores : Form
+    public partial class frmDetalleFactura : Form
     {
-        public frmProveedores()
+        public frmDetalleFactura()
         {
             InitializeComponent();
         }
 
-        private void frmProveedores_Load(object sender, EventArgs e)
+        private void frmDetalleFactura_Load(object sender, EventArgs e)
         {
             LoadTheme();
         }
@@ -35,7 +35,7 @@ namespace SistemaCompras.Forms
                 }
             }
             labeltitulo1.ForeColor = ThemeColor.SecondaryColor;
-            labelnav.ForeColor = ThemeColor.PrimaryColor;
+            labelfechanacimiento.ForeColor = ThemeColor.PrimaryColor;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace SistemaCompras.Forms
+namespace CapaPresentacion.Forms
 {
     partial class frmRegistrarclientes
     {
@@ -29,6 +29,7 @@ namespace SistemaCompras.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelnav = new System.Windows.Forms.Label();
             this.labeltitulo1 = new System.Windows.Forms.Label();
             this.comboBoxtipocedula = new System.Windows.Forms.ComboBox();
             this.dateTimePickerfechanacimiento = new System.Windows.Forms.DateTimePicker();
@@ -52,104 +53,113 @@ namespace SistemaCompras.Forms
             this.labelapellido2 = new System.Windows.Forms.Label();
             this.labeltelefono = new System.Windows.Forms.Label();
             this.labelcedula = new System.Windows.Forms.Label();
-            this.labelnav = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // labelnav
+            // 
+            this.labelnav.AutoSize = true;
+            this.labelnav.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelnav.Location = new System.Drawing.Point(115, 40);
+            this.labelnav.Name = "labelnav";
+            this.labelnav.Size = new System.Drawing.Size(258, 24);
+            this.labelnav.TabIndex = 127;
+            this.labelnav.Text = "Mantenimiento de Clientes";
             // 
             // labeltitulo1
             // 
             this.labeltitulo1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labeltitulo1.AutoSize = true;
             this.labeltitulo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitulo1.Location = new System.Drawing.Point(389, 23);
+            this.labeltitulo1.Location = new System.Drawing.Point(437, 40);
             this.labeltitulo1.Name = "labeltitulo1";
             this.labeltitulo1.Size = new System.Drawing.Size(166, 24);
-            this.labeltitulo1.TabIndex = 102;
+            this.labeltitulo1.TabIndex = 126;
             this.labeltitulo1.Text = "Salon de belleza";
             // 
             // comboBoxtipocedula
             // 
             this.comboBoxtipocedula.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxtipocedula.FormattingEnabled = true;
-            this.comboBoxtipocedula.Location = new System.Drawing.Point(190, 103);
+            this.comboBoxtipocedula.Location = new System.Drawing.Point(238, 120);
             this.comboBoxtipocedula.Name = "comboBoxtipocedula";
             this.comboBoxtipocedula.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxtipocedula.TabIndex = 99;
+            this.comboBoxtipocedula.TabIndex = 125;
             // 
             // dateTimePickerfechanacimiento
             // 
             this.dateTimePickerfechanacimiento.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerfechanacimiento.Location = new System.Drawing.Point(190, 278);
+            this.dateTimePickerfechanacimiento.Location = new System.Drawing.Point(238, 295);
             this.dateTimePickerfechanacimiento.Name = "dateTimePickerfechanacimiento";
             this.dateTimePickerfechanacimiento.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerfechanacimiento.TabIndex = 98;
+            this.dateTimePickerfechanacimiento.TabIndex = 124;
             // 
             // maskedTextBoxtelefono
             // 
             this.maskedTextBoxtelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maskedTextBoxtelefono.Location = new System.Drawing.Point(190, 225);
+            this.maskedTextBoxtelefono.Location = new System.Drawing.Point(238, 242);
             this.maskedTextBoxtelefono.Mask = "####-####";
             this.maskedTextBoxtelefono.Name = "maskedTextBoxtelefono";
             this.maskedTextBoxtelefono.Size = new System.Drawing.Size(125, 20);
-            this.maskedTextBoxtelefono.TabIndex = 97;
+            this.maskedTextBoxtelefono.TabIndex = 123;
             // 
             // maskedTextBoxcedula
             // 
             this.maskedTextBoxcedula.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.maskedTextBoxcedula.Location = new System.Drawing.Point(190, 73);
+            this.maskedTextBoxcedula.Location = new System.Drawing.Point(238, 90);
             this.maskedTextBoxcedula.Mask = "#-####-####";
             this.maskedTextBoxcedula.Name = "maskedTextBoxcedula";
             this.maskedTextBoxcedula.Size = new System.Drawing.Size(125, 20);
-            this.maskedTextBoxcedula.TabIndex = 96;
+            this.maskedTextBoxcedula.TabIndex = 122;
             // 
             // textdireccion
             // 
             this.textdireccion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textdireccion.Location = new System.Drawing.Point(190, 251);
+            this.textdireccion.Location = new System.Drawing.Point(238, 268);
             this.textdireccion.Name = "textdireccion";
             this.textdireccion.Size = new System.Drawing.Size(200, 20);
-            this.textdireccion.TabIndex = 95;
+            this.textdireccion.TabIndex = 121;
             // 
             // textapellido2
             // 
             this.textapellido2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textapellido2.Location = new System.Drawing.Point(190, 194);
+            this.textapellido2.Location = new System.Drawing.Point(238, 211);
             this.textapellido2.Name = "textapellido2";
             this.textapellido2.Size = new System.Drawing.Size(135, 20);
-            this.textapellido2.TabIndex = 94;
+            this.textapellido2.TabIndex = 120;
             // 
             // textapellido1
             // 
             this.textapellido1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textapellido1.Location = new System.Drawing.Point(190, 161);
+            this.textapellido1.Location = new System.Drawing.Point(238, 178);
             this.textapellido1.Name = "textapellido1";
             this.textapellido1.Size = new System.Drawing.Size(135, 20);
-            this.textapellido1.TabIndex = 93;
+            this.textapellido1.TabIndex = 119;
             // 
             // textemail
             // 
             this.textemail.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textemail.Location = new System.Drawing.Point(190, 307);
+            this.textemail.Location = new System.Drawing.Point(238, 324);
             this.textemail.Name = "textemail";
             this.textemail.Size = new System.Drawing.Size(200, 20);
-            this.textemail.TabIndex = 92;
+            this.textemail.TabIndex = 118;
             // 
             // textnombre
             // 
             this.textnombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textnombre.Location = new System.Drawing.Point(190, 131);
+            this.textnombre.Location = new System.Drawing.Point(238, 148);
             this.textnombre.Name = "textnombre";
             this.textnombre.Size = new System.Drawing.Size(135, 20);
-            this.textnombre.TabIndex = 91;
+            this.textnombre.TabIndex = 117;
             // 
             // buttonconsultar
             // 
             this.buttonconsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonconsultar.Location = new System.Drawing.Point(234, 370);
+            this.buttonconsultar.Location = new System.Drawing.Point(282, 387);
             this.buttonconsultar.Name = "buttonconsultar";
             this.buttonconsultar.Size = new System.Drawing.Size(75, 23);
-            this.buttonconsultar.TabIndex = 90;
+            this.buttonconsultar.TabIndex = 116;
             this.buttonconsultar.Text = "Consultar";
             this.buttonconsultar.UseVisualStyleBackColor = true;
             // 
@@ -158,10 +168,10 @@ namespace SistemaCompras.Forms
             this.buttoneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttoneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttoneliminar.Location = new System.Drawing.Point(72, 370);
+            this.buttoneliminar.Location = new System.Drawing.Point(120, 387);
             this.buttoneliminar.Name = "buttoneliminar";
             this.buttoneliminar.Size = new System.Drawing.Size(75, 23);
-            this.buttoneliminar.TabIndex = 89;
+            this.buttoneliminar.TabIndex = 115;
             this.buttoneliminar.Text = "Eliminar";
             this.buttoneliminar.UseVisualStyleBackColor = true;
             // 
@@ -170,10 +180,10 @@ namespace SistemaCompras.Forms
             this.buttonmodificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonmodificar.Location = new System.Drawing.Point(152, 370);
+            this.buttonmodificar.Location = new System.Drawing.Point(200, 387);
             this.buttonmodificar.Name = "buttonmodificar";
             this.buttonmodificar.Size = new System.Drawing.Size(75, 23);
-            this.buttonmodificar.TabIndex = 88;
+            this.buttonmodificar.TabIndex = 114;
             this.buttonmodificar.Text = "Modificar";
             this.buttonmodificar.UseVisualStyleBackColor = true;
             // 
@@ -182,10 +192,10 @@ namespace SistemaCompras.Forms
             this.buttonguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonguardar.Location = new System.Drawing.Point(315, 370);
+            this.buttonguardar.Location = new System.Drawing.Point(363, 387);
             this.buttonguardar.Name = "buttonguardar";
             this.buttonguardar.Size = new System.Drawing.Size(75, 23);
-            this.buttonguardar.TabIndex = 87;
+            this.buttonguardar.TabIndex = 113;
             this.buttonguardar.Text = "Guardar";
             this.buttonguardar.UseVisualStyleBackColor = true;
             // 
@@ -194,10 +204,10 @@ namespace SistemaCompras.Forms
             this.labelfechanacimiento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelfechanacimiento.AutoSize = true;
             this.labelfechanacimiento.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelfechanacimiento.Location = new System.Drawing.Point(20, 278);
+            this.labelfechanacimiento.Location = new System.Drawing.Point(68, 295);
             this.labelfechanacimiento.Name = "labelfechanacimiento";
             this.labelfechanacimiento.Size = new System.Drawing.Size(162, 19);
-            this.labelfechanacimiento.TabIndex = 86;
+            this.labelfechanacimiento.TabIndex = 112;
             this.labelfechanacimiento.Text = "Fecha Nacimiento:";
             // 
             // labeldireccion
@@ -205,10 +215,10 @@ namespace SistemaCompras.Forms
             this.labeldireccion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labeldireccion.AutoSize = true;
             this.labeldireccion.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeldireccion.Location = new System.Drawing.Point(88, 250);
+            this.labeldireccion.Location = new System.Drawing.Point(136, 267);
             this.labeldireccion.Name = "labeldireccion";
             this.labeldireccion.Size = new System.Drawing.Size(95, 19);
-            this.labeldireccion.TabIndex = 85;
+            this.labeldireccion.TabIndex = 111;
             this.labeldireccion.Text = "Direccion:";
             // 
             // labelemail
@@ -216,10 +226,10 @@ namespace SistemaCompras.Forms
             this.labelemail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelemail.AutoSize = true;
             this.labelemail.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelemail.Location = new System.Drawing.Point(121, 306);
+            this.labelemail.Location = new System.Drawing.Point(169, 323);
             this.labelemail.Name = "labelemail";
             this.labelemail.Size = new System.Drawing.Size(61, 19);
-            this.labelemail.TabIndex = 84;
+            this.labelemail.TabIndex = 110;
             this.labelemail.Text = "Email:";
             // 
             // labeltipocedula
@@ -227,10 +237,10 @@ namespace SistemaCompras.Forms
             this.labeltipocedula.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labeltipocedula.AutoSize = true;
             this.labeltipocedula.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltipocedula.Location = new System.Drawing.Point(70, 103);
+            this.labeltipocedula.Location = new System.Drawing.Point(118, 120);
             this.labeltipocedula.Name = "labeltipocedula";
             this.labeltipocedula.Size = new System.Drawing.Size(112, 19);
-            this.labeltipocedula.TabIndex = 83;
+            this.labeltipocedula.TabIndex = 109;
             this.labeltipocedula.Text = "Tipo Cedula:";
             // 
             // labelnombre
@@ -238,10 +248,10 @@ namespace SistemaCompras.Forms
             this.labelnombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelnombre.AutoSize = true;
             this.labelnombre.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnombre.Location = new System.Drawing.Point(103, 133);
+            this.labelnombre.Location = new System.Drawing.Point(151, 150);
             this.labelnombre.Name = "labelnombre";
             this.labelnombre.Size = new System.Drawing.Size(79, 19);
-            this.labelnombre.TabIndex = 82;
+            this.labelnombre.TabIndex = 108;
             this.labelnombre.Text = "Nombre:";
             // 
             // labelapelliido1
@@ -249,10 +259,10 @@ namespace SistemaCompras.Forms
             this.labelapelliido1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelapelliido1.AutoSize = true;
             this.labelapelliido1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelapelliido1.Location = new System.Drawing.Point(82, 161);
+            this.labelapelliido1.Location = new System.Drawing.Point(130, 178);
             this.labelapelliido1.Name = "labelapelliido1";
             this.labelapelliido1.Size = new System.Drawing.Size(100, 19);
-            this.labelapelliido1.TabIndex = 81;
+            this.labelapelliido1.TabIndex = 107;
             this.labelapelliido1.Text = "Apellido 1:";
             // 
             // labelapellido2
@@ -260,10 +270,10 @@ namespace SistemaCompras.Forms
             this.labelapellido2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelapellido2.AutoSize = true;
             this.labelapellido2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelapellido2.Location = new System.Drawing.Point(82, 192);
+            this.labelapellido2.Location = new System.Drawing.Point(130, 209);
             this.labelapellido2.Name = "labelapellido2";
             this.labelapellido2.Size = new System.Drawing.Size(100, 19);
-            this.labelapellido2.TabIndex = 80;
+            this.labelapellido2.TabIndex = 106;
             this.labelapellido2.Text = "Apellido 2:";
             // 
             // labeltelefono
@@ -271,10 +281,10 @@ namespace SistemaCompras.Forms
             this.labeltelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labeltelefono.AutoSize = true;
             this.labeltelefono.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltelefono.Location = new System.Drawing.Point(91, 220);
+            this.labeltelefono.Location = new System.Drawing.Point(139, 237);
             this.labeltelefono.Name = "labeltelefono";
             this.labeltelefono.Size = new System.Drawing.Size(91, 19);
-            this.labeltelefono.TabIndex = 79;
+            this.labeltelefono.TabIndex = 105;
             this.labeltelefono.Text = "Telefono:";
             // 
             // labelcedula
@@ -282,28 +292,18 @@ namespace SistemaCompras.Forms
             this.labelcedula.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelcedula.AutoSize = true;
             this.labelcedula.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcedula.Location = new System.Drawing.Point(115, 75);
+            this.labelcedula.Location = new System.Drawing.Point(163, 92);
             this.labelcedula.Name = "labelcedula";
             this.labelcedula.Size = new System.Drawing.Size(67, 19);
-            this.labelcedula.TabIndex = 78;
+            this.labelcedula.TabIndex = 104;
             this.labelcedula.Text = "Cedula";
-            // 
-            // labelnav
-            // 
-            this.labelnav.AutoSize = true;
-            this.labelnav.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnav.Location = new System.Drawing.Point(67, 23);
-            this.labelnav.Name = "labelnav";
-            this.labelnav.Size = new System.Drawing.Size(258, 24);
-            this.labelnav.TabIndex = 103;
-            this.labelnav.Text = "Mantenimiento de Clientes";
             // 
             // frmRegistrarclientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(573, 441);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(670, 450);
             this.Controls.Add(this.labelnav);
             this.Controls.Add(this.labeltitulo1);
             this.Controls.Add(this.comboBoxtipocedula);
@@ -329,8 +329,7 @@ namespace SistemaCompras.Forms
             this.Controls.Add(this.labeltelefono);
             this.Controls.Add(this.labelcedula);
             this.Name = "frmRegistrarclientes";
-            this.Text = "Registrar clientes";
-            this.Load += new System.EventHandler(this.frmRegistrarclientes_Load);
+            this.Text = "frmRegistrarclientes";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,6 +337,7 @@ namespace SistemaCompras.Forms
 
         #endregion
 
+        private System.Windows.Forms.Label labelnav;
         private System.Windows.Forms.Label labeltitulo1;
         private System.Windows.Forms.ComboBox comboBoxtipocedula;
         private System.Windows.Forms.DateTimePicker dateTimePickerfechanacimiento;
@@ -361,6 +361,5 @@ namespace SistemaCompras.Forms
         private System.Windows.Forms.Label labelapellido2;
         private System.Windows.Forms.Label labeltelefono;
         private System.Windows.Forms.Label labelcedula;
-        private System.Windows.Forms.Label labelnav;
     }
 }

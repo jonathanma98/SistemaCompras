@@ -8,19 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaCompras.Forms
+namespace CapaPresentacion.Forms
 {
-    public partial class frmProveedores : Form
+    public partial class frmRegistrarclientes : Form
     {
-        public frmProveedores()
+        public frmRegistrarclientes()
         {
             InitializeComponent();
         }
 
-        private void frmProveedores_Load(object sender, EventArgs e)
+        private void frmRegistrarclientes_Load(object sender, EventArgs e)
         {
             LoadTheme();
         }
+
         //Aplicamos los colores del tema actual
         private void LoadTheme()
         {

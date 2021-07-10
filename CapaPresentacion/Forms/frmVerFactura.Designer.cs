@@ -1,5 +1,5 @@
 ﻿
-namespace CapaPresentacion
+namespace CapaPresentacion.Forms
 {
     partial class frmVerFactura
     {
@@ -35,7 +35,6 @@ namespace CapaPresentacion
             this.labelTelefono = new System.Windows.Forms.Label();
             this.labelEmpresa = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.listViewFactura = new System.Windows.Forms.ListView();
             this.Producto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,7 +65,7 @@ namespace CapaPresentacion
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 91);
-            this.panel1.TabIndex = 16;
+            this.panel1.TabIndex = 17;
             // 
             // pictureBox1
             // 
@@ -110,29 +109,20 @@ namespace CapaPresentacion
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(691, 217);
+            this.textBox1.Location = new System.Drawing.Point(685, 218);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 154);
-            this.textBox1.TabIndex = 28;
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Location = new System.Drawing.Point(655, 426);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(13, 13);
-            this.labelTotal.TabIndex = 27;
-            this.labelTotal.Text = "?";
+            this.textBox1.TabIndex = 39;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(592, 421);
+            this.label6.Location = new System.Drawing.Point(586, 422);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 20);
-            this.label6.TabIndex = 26;
+            this.label6.TabIndex = 38;
             this.label6.Text = "Total:";
             // 
             // listViewFactura
@@ -144,10 +134,10 @@ namespace CapaPresentacion
             this.Iva,
             this.columnHeader1});
             this.listViewFactura.HideSelection = false;
-            this.listViewFactura.Location = new System.Drawing.Point(55, 173);
+            this.listViewFactura.Location = new System.Drawing.Point(49, 174);
             this.listViewFactura.Name = "listViewFactura";
             this.listViewFactura.Size = new System.Drawing.Size(603, 235);
-            this.listViewFactura.TabIndex = 25;
+            this.listViewFactura.TabIndex = 37;
             this.listViewFactura.UseCompatibleStateImageBehavior = false;
             this.listViewFactura.View = System.Windows.Forms.View.Details;
             // 
@@ -179,79 +169,79 @@ namespace CapaPresentacion
             // 
             this.labelTipo.AutoSize = true;
             this.labelTipo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipo.Location = new System.Drawing.Point(642, 150);
+            this.labelTipo.Location = new System.Drawing.Point(636, 151);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(16, 20);
-            this.labelTipo.TabIndex = 24;
+            this.labelTipo.TabIndex = 36;
             this.labelTipo.Text = "?";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(592, 150);
+            this.label7.Location = new System.Drawing.Point(586, 151);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 20);
-            this.label7.TabIndex = 23;
+            this.label7.TabIndex = 35;
             this.label7.Text = "Tipo: ";
             // 
             // labelfecha
             // 
             this.labelfecha.AutoSize = true;
-            this.labelfecha.Location = new System.Drawing.Point(643, 106);
+            this.labelfecha.Location = new System.Drawing.Point(637, 107);
             this.labelfecha.Name = "labelfecha";
             this.labelfecha.Size = new System.Drawing.Size(13, 13);
-            this.labelfecha.TabIndex = 22;
+            this.labelfecha.TabIndex = 34;
             this.labelfecha.Text = "?";
             // 
             // labelID
             // 
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(117, 101);
+            this.labelID.Location = new System.Drawing.Point(111, 102);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(16, 20);
-            this.labelID.TabIndex = 21;
+            this.labelID.TabIndex = 33;
             this.labelID.Text = "?";
             // 
             // labelCliente
             // 
             this.labelCliente.AutoSize = true;
             this.labelCliente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente.Location = new System.Drawing.Point(117, 139);
+            this.labelCliente.Location = new System.Drawing.Point(111, 140);
             this.labelCliente.Name = "labelCliente";
             this.labelCliente.Size = new System.Drawing.Size(16, 20);
-            this.labelCliente.TabIndex = 20;
+            this.labelCliente.TabIndex = 32;
             this.labelCliente.Text = "?";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 139);
+            this.label3.Location = new System.Drawing.Point(45, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 20);
-            this.label3.TabIndex = 19;
+            this.label3.TabIndex = 31;
             this.label3.Text = "Cliente: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(587, 101);
+            this.label2.Location = new System.Drawing.Point(581, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 30;
             this.label2.Text = "Fecha:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 101);
+            this.label1.Location = new System.Drawing.Point(29, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 17;
+            this.label1.TabIndex = 29;
             this.label1.Text = "Factura ID: ";
             // 
             // frmVerFactura
@@ -260,7 +250,6 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listViewFactura);
             this.Controls.Add(this.labelTipo);
@@ -290,7 +279,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelTelefono;
         private System.Windows.Forms.Label labelEmpresa;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListView listViewFactura;
         private System.Windows.Forms.ColumnHeader Producto;
