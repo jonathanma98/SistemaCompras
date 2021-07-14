@@ -14,10 +14,13 @@ namespace CapaEntidades
     
     public partial class tbProducto
     {
-        public int Codigo { get; set; }
-        public byte[] Descripcion { get; set; }
+        public string Codigo { get; set; }
+        public string Descripcion { get; set; }
+        public int PrecioVenta { get; set; }
         public int FormaMedida { get; set; }
         public string Medida { get; set; }
+        public Nullable<int> Cantidad { get; set; }
+        public Nullable<System.DateTime> FVenta { get; set; }
         public Nullable<bool> Estado { get; set; }
     
         public virtual tbObjeto tbObjeto { get; set; }

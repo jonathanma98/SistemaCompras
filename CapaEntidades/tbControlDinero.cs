@@ -16,7 +16,7 @@ namespace CapaEntidades
     {
         public string Id { get; set; }
         public System.DateTime Fecha { get; set; }
-        public int Monto { get; set; }
+        public Nullable<decimal> Monto { get; set; }
         public int Tipo { get; set; }
         public string Factura { get; set; }
     

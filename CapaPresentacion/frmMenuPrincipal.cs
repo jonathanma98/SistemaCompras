@@ -14,15 +14,18 @@ namespace CapaPresentacion
     {
         //fields
         private Button CButton;
+        private Panel CPanel;
         private Random random;
         private int tempIndex;
         private Form activeForm;
+        private object o;
 
         //Constructor
         public frmMenuPrincipal()
         {
             InitializeComponent();
             random = new Random();
+            openPrincipal(o);
         }
 
         //Metodos
@@ -107,6 +110,11 @@ namespace CapaPresentacion
 
         }
 
+        private void openPrincipal(object sender)
+        {
+            OpenChildForm(new Forms.frmPantallaPrincipal(), sender);
+        }
+
         private void btnClientes_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.frmRegistrarclientes(), sender);
@@ -140,6 +148,11 @@ namespace CapaPresentacion
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPrincipal_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmPantallaPrincipal(), sender);
         }
     }
 }

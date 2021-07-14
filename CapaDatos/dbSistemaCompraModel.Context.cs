@@ -34,8 +34,8 @@ namespace CapaDatos
         public virtual DbSet<tbObjeto> tbObjeto { get; set; }
         public virtual DbSet<tbPersona> tbPersona { get; set; }
         public virtual DbSet<tbProducto> tbProducto { get; set; }
+        public virtual DbSet<tbProductoProveedor> tbProductoProveedor { get; set; }
         public virtual DbSet<tbProveedor> tbProveedor { get; set; }
         public virtual DbSet<tbProveedorFactura> tbProveedorFactura { get; set; }
-        public virtual DbSet<tbProductoProveedor> tbProductoProveedor { get; set; }
     }
 }

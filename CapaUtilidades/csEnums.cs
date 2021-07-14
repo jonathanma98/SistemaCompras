@@ -26,11 +26,9 @@ namespace CapaUtilidades
             Juridica = 3,
             Nite = 4
         }
-        public enum CalificacionProveedor
+        public enum FormaMedida
         {
-            a = 1,
-            b = 2,
-            c = 3
+            Lt = 1, Kg =2, Ml = 2
         }
 
         public static List<string> Calificacion()

@@ -20,10 +20,11 @@ namespace CapaEntidades
             this.tbProductoProveedor = new HashSet<tbProductoProveedor>();
         }
     
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
         public string Nombre { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
         public string Proveedor { get; set; }
+        public Nullable<System.DateTime> FAdquirido { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbProductoProveedor> tbProductoProveedor { get; set; }

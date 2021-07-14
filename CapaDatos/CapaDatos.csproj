@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="csDatosFactura.cs" />
     <Compile Include="csDatosLogin.cs" />
+    <Compile Include="DatosProductos.cs" />
     <Compile Include="DatosProveedor.cs" />
     <Compile Include="dbSistemaCompraModel.Context.cs">
       <AutoGen>True</AutoGen>

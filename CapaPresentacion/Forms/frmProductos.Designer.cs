@@ -38,7 +38,6 @@ namespace CapaPresentacion.Forms
             this.labeltitulo1 = new System.Windows.Forms.Label();
             this.textBoxdescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxtamaño = new System.Windows.Forms.ComboBox();
             this.dateTimePickerfechacompra = new System.Windows.Forms.DateTimePicker();
             this.mskcodigo = new System.Windows.Forms.MaskedTextBox();
             this.textvalorcompra = new System.Windows.Forms.TextBox();
@@ -53,6 +52,25 @@ namespace CapaPresentacion.Forms
             this.labelcantidad = new System.Windows.Forms.Label();
             this.labeltipocedula = new System.Windows.Forms.Label();
             this.labelcedula = new System.Windows.Forms.Label();
+            this.comboBoxProveedor = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mskTamaño = new System.Windows.Forms.MaskedTextBox();
+            this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FAdquirido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelIdProveedor = new System.Windows.Forms.Label();
+            this.btnCantidaProductos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelnombre
@@ -60,7 +78,7 @@ namespace CapaPresentacion.Forms
             this.labelnombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelnombre.AutoSize = true;
             this.labelnombre.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnombre.Location = new System.Drawing.Point(118, 97);
+            this.labelnombre.Location = new System.Drawing.Point(73, 124);
             this.labelnombre.Name = "labelnombre";
             this.labelnombre.Size = new System.Drawing.Size(79, 19);
             this.labelnombre.TabIndex = 160;
@@ -70,17 +88,18 @@ namespace CapaPresentacion.Forms
             // 
             this.comboBoxcategoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBoxcategoria.FormattingEnabled = true;
-            this.comboBoxcategoria.Location = new System.Drawing.Point(206, 176);
+            this.comboBoxcategoria.Location = new System.Drawing.Point(161, 203);
             this.comboBoxcategoria.Name = "comboBoxcategoria";
             this.comboBoxcategoria.Size = new System.Drawing.Size(125, 21);
             this.comboBoxcategoria.TabIndex = 159;
+            this.comboBoxcategoria.SelectedIndexChanged += new System.EventHandler(this.comboBoxcategoria_SelectedIndexChanged);
             // 
             // labelcategoria
             // 
             this.labelcategoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelcategoria.AutoSize = true;
             this.labelcategoria.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcategoria.Location = new System.Drawing.Point(98, 175);
+            this.labelcategoria.Location = new System.Drawing.Point(53, 202);
             this.labelcategoria.Name = "labelcategoria";
             this.labelcategoria.Size = new System.Drawing.Size(99, 19);
             this.labelcategoria.TabIndex = 158;
@@ -89,7 +108,7 @@ namespace CapaPresentacion.Forms
             // textBoxvalorventa
             // 
             this.textBoxvalorventa.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxvalorventa.Location = new System.Drawing.Point(206, 272);
+            this.textBoxvalorventa.Location = new System.Drawing.Point(161, 299);
             this.textBoxvalorventa.Name = "textBoxvalorventa";
             this.textBoxvalorventa.Size = new System.Drawing.Size(200, 20);
             this.textBoxvalorventa.TabIndex = 157;
@@ -99,7 +118,7 @@ namespace CapaPresentacion.Forms
             this.labelvalorventa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelvalorventa.AutoSize = true;
             this.labelvalorventa.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelvalorventa.Location = new System.Drawing.Point(78, 273);
+            this.labelvalorventa.Location = new System.Drawing.Point(33, 300);
             this.labelvalorventa.Name = "labelvalorventa";
             this.labelvalorventa.Size = new System.Drawing.Size(118, 19);
             this.labelvalorventa.TabIndex = 156;
@@ -117,19 +136,19 @@ namespace CapaPresentacion.Forms
             // 
             // labeltitulo1
             // 
-            this.labeltitulo1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labeltitulo1.AutoSize = true;
             this.labeltitulo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitulo1.Location = new System.Drawing.Point(398, 28);
+            this.labeltitulo1.Location = new System.Drawing.Point(424, 28);
             this.labeltitulo1.Name = "labeltitulo1";
-            this.labeltitulo1.Size = new System.Drawing.Size(166, 24);
+            this.labeltitulo1.Padding = new System.Windows.Forms.Padding(6);
+            this.labeltitulo1.Size = new System.Drawing.Size(178, 36);
             this.labeltitulo1.TabIndex = 154;
             this.labeltitulo1.Text = "Salon de belleza";
             // 
             // textBoxdescripcion
             // 
             this.textBoxdescripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxdescripcion.Location = new System.Drawing.Point(206, 127);
+            this.textBoxdescripcion.Location = new System.Drawing.Point(161, 154);
             this.textBoxdescripcion.Multiline = true;
             this.textBoxdescripcion.Name = "textBoxdescripcion";
             this.textBoxdescripcion.Size = new System.Drawing.Size(202, 34);
@@ -140,25 +159,16 @@ namespace CapaPresentacion.Forms
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 127);
+            this.label2.Location = new System.Drawing.Point(38, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 19);
             this.label2.TabIndex = 152;
             this.label2.Text = "Descripcion:";
             // 
-            // comboBoxtamaño
-            // 
-            this.comboBoxtamaño.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxtamaño.FormattingEnabled = true;
-            this.comboBoxtamaño.Location = new System.Drawing.Point(206, 209);
-            this.comboBoxtamaño.Name = "comboBoxtamaño";
-            this.comboBoxtamaño.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxtamaño.TabIndex = 151;
-            // 
             // dateTimePickerfechacompra
             // 
             this.dateTimePickerfechacompra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerfechacompra.Location = new System.Drawing.Point(206, 308);
+            this.dateTimePickerfechacompra.Location = new System.Drawing.Point(161, 335);
             this.dateTimePickerfechacompra.Name = "dateTimePickerfechacompra";
             this.dateTimePickerfechacompra.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerfechacompra.TabIndex = 150;
@@ -166,7 +176,7 @@ namespace CapaPresentacion.Forms
             // mskcodigo
             // 
             this.mskcodigo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.mskcodigo.Location = new System.Drawing.Point(206, 66);
+            this.mskcodigo.Location = new System.Drawing.Point(161, 93);
             this.mskcodigo.Mask = "#-####-####";
             this.mskcodigo.Name = "mskcodigo";
             this.mskcodigo.Size = new System.Drawing.Size(125, 20);
@@ -175,15 +185,16 @@ namespace CapaPresentacion.Forms
             // textvalorcompra
             // 
             this.textvalorcompra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textvalorcompra.Location = new System.Drawing.Point(206, 246);
+            this.textvalorcompra.Location = new System.Drawing.Point(161, 273);
             this.textvalorcompra.Name = "textvalorcompra";
             this.textvalorcompra.Size = new System.Drawing.Size(200, 20);
             this.textvalorcompra.TabIndex = 148;
+            this.textvalorcompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textvalorcompra_KeyPress);
             // 
             // textexistencia
             // 
             this.textexistencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textexistencia.Location = new System.Drawing.Point(206, 350);
+            this.textexistencia.Location = new System.Drawing.Point(161, 377);
             this.textexistencia.Name = "textexistencia";
             this.textexistencia.Size = new System.Drawing.Size(200, 20);
             this.textexistencia.TabIndex = 147;
@@ -191,7 +202,7 @@ namespace CapaPresentacion.Forms
             // textnombre
             // 
             this.textnombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textnombre.Location = new System.Drawing.Point(206, 96);
+            this.textnombre.Location = new System.Drawing.Point(161, 123);
             this.textnombre.Name = "textnombre";
             this.textnombre.Size = new System.Drawing.Size(135, 20);
             this.textnombre.TabIndex = 146;
@@ -201,55 +212,59 @@ namespace CapaPresentacion.Forms
             this.buttonconsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonconsultar.Location = new System.Drawing.Point(250, 394);
+            this.buttonconsultar.Location = new System.Drawing.Point(250, 473);
             this.buttonconsultar.Name = "buttonconsultar";
             this.buttonconsultar.Size = new System.Drawing.Size(75, 23);
             this.buttonconsultar.TabIndex = 145;
             this.buttonconsultar.Text = "Consultar";
             this.buttonconsultar.UseVisualStyleBackColor = true;
+            this.buttonconsultar.Click += new System.EventHandler(this.buttonconsultar_Click);
             // 
             // buttoneliminar
             // 
             this.buttoneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttoneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttoneliminar.Location = new System.Drawing.Point(88, 394);
+            this.buttoneliminar.Location = new System.Drawing.Point(88, 473);
             this.buttoneliminar.Name = "buttoneliminar";
             this.buttoneliminar.Size = new System.Drawing.Size(75, 23);
             this.buttoneliminar.TabIndex = 144;
             this.buttoneliminar.Text = "Eliminar";
             this.buttoneliminar.UseVisualStyleBackColor = true;
+            this.buttoneliminar.Click += new System.EventHandler(this.buttoneliminar_Click);
             // 
             // buttonmodificar
             // 
             this.buttonmodificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonmodificar.Location = new System.Drawing.Point(168, 394);
+            this.buttonmodificar.Location = new System.Drawing.Point(168, 473);
             this.buttonmodificar.Name = "buttonmodificar";
             this.buttonmodificar.Size = new System.Drawing.Size(75, 23);
             this.buttonmodificar.TabIndex = 143;
             this.buttonmodificar.Text = "Modificar";
             this.buttonmodificar.UseVisualStyleBackColor = true;
+            this.buttonmodificar.Click += new System.EventHandler(this.buttonmodificar_Click);
             // 
             // buttonguardar
             // 
             this.buttonguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonguardar.Location = new System.Drawing.Point(331, 394);
+            this.buttonguardar.Location = new System.Drawing.Point(331, 473);
             this.buttonguardar.Name = "buttonguardar";
             this.buttonguardar.Size = new System.Drawing.Size(75, 23);
             this.buttonguardar.TabIndex = 142;
             this.buttonguardar.Text = "Guardar";
             this.buttonguardar.UseVisualStyleBackColor = true;
+            this.buttonguardar.Click += new System.EventHandler(this.buttonguardar_Click);
             // 
             // labelfecchacompra
             // 
             this.labelfecchacompra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelfecchacompra.AutoSize = true;
             this.labelfecchacompra.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelfecchacompra.Location = new System.Drawing.Point(66, 308);
+            this.labelfecchacompra.Location = new System.Drawing.Point(21, 335);
             this.labelfecchacompra.Name = "labelfecchacompra";
             this.labelfecchacompra.Size = new System.Drawing.Size(130, 19);
             this.labelfecchacompra.TabIndex = 141;
@@ -260,7 +275,7 @@ namespace CapaPresentacion.Forms
             this.labelvalorcompra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelvalorcompra.AutoSize = true;
             this.labelvalorcompra.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelvalorcompra.Location = new System.Drawing.Point(67, 245);
+            this.labelvalorcompra.Location = new System.Drawing.Point(22, 272);
             this.labelvalorcompra.Name = "labelvalorcompra";
             this.labelvalorcompra.Size = new System.Drawing.Size(131, 19);
             this.labelvalorcompra.TabIndex = 140;
@@ -271,7 +286,7 @@ namespace CapaPresentacion.Forms
             this.labelcantidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelcantidad.AutoSize = true;
             this.labelcantidad.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcantidad.Location = new System.Drawing.Point(93, 349);
+            this.labelcantidad.Location = new System.Drawing.Point(48, 376);
             this.labelcantidad.Name = "labelcantidad";
             this.labelcantidad.Size = new System.Drawing.Size(103, 19);
             this.labelcantidad.TabIndex = 139;
@@ -282,7 +297,7 @@ namespace CapaPresentacion.Forms
             this.labeltipocedula.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labeltipocedula.AutoSize = true;
             this.labeltipocedula.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltipocedula.Location = new System.Drawing.Point(118, 208);
+            this.labeltipocedula.Location = new System.Drawing.Point(73, 235);
             this.labeltipocedula.Name = "labeltipocedula";
             this.labeltipocedula.Size = new System.Drawing.Size(78, 19);
             this.labeltipocedula.TabIndex = 138;
@@ -293,28 +308,168 @@ namespace CapaPresentacion.Forms
             this.labelcedula.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelcedula.AutoSize = true;
             this.labelcedula.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcedula.Location = new System.Drawing.Point(133, 67);
+            this.labelcedula.Location = new System.Drawing.Point(88, 94);
             this.labelcedula.Name = "labelcedula";
             this.labelcedula.Size = new System.Drawing.Size(64, 19);
             this.labelcedula.TabIndex = 137;
             this.labelcedula.Text = "Codigo";
+            // 
+            // comboBoxProveedor
+            // 
+            this.comboBoxProveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxProveedor.FormattingEnabled = true;
+            this.comboBoxProveedor.Location = new System.Drawing.Point(161, 403);
+            this.comboBoxProveedor.Name = "comboBoxProveedor";
+            this.comboBoxProveedor.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxProveedor.TabIndex = 162;
+            this.comboBoxProveedor.SelectedIndexChanged += new System.EventHandler(this.comboBoxProveedor_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(53, 402);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 19);
+            this.label1.TabIndex = 161;
+            this.label1.Text = "Proveedor:";
+            // 
+            // mskTamaño
+            // 
+            this.mskTamaño.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.mskTamaño.Location = new System.Drawing.Point(161, 235);
+            this.mskTamaño.Mask = "####.kg";
+            this.mskTamaño.Name = "mskTamaño";
+            this.mskTamaño.Size = new System.Drawing.Size(172, 20);
+            this.mskTamaño.TabIndex = 163;
+            this.mskTamaño.ValidatingType = typeof(int);
+            this.mskTamaño.TextChanged += new System.EventHandler(this.mskTamaño_TextChanged);
+            // 
+            // dataGridViewProductos
+            // 
+            this.dataGridViewProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre,
+            this.Precio,
+            this.PrecioVenta,
+            this.Proveedor,
+            this.FAdquirido,
+            this.Descripcion,
+            this.Cantidad,
+            this.FormaMedida,
+            this.Tamaño});
+            this.dataGridViewProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewProductos.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewProductos.Name = "dataGridViewProductos";
+            this.dataGridViewProductos.Size = new System.Drawing.Size(516, 529);
+            this.dataGridViewProductos.TabIndex = 164;
+            this.dataGridViewProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductos_CellDoubleClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio compra";
+            this.Precio.Name = "Precio";
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.HeaderText = "Precio venta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.HeaderText = "Preveedor";
+            this.Proveedor.Name = "Proveedor";
+            // 
+            // FAdquirido
+            // 
+            this.FAdquirido.HeaderText = "Fecha ingreso";
+            this.FAdquirido.Name = "FAdquirido";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcon";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // FormaMedida
+            // 
+            this.FormaMedida.HeaderText = "Forma de medida";
+            this.FormaMedida.Name = "FormaMedida";
+            // 
+            // Tamaño
+            // 
+            this.Tamaño.HeaderText = "Tamaño";
+            this.Tamaño.Name = "Tamaño";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridViewProductos);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(589, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(516, 529);
+            this.panel1.TabIndex = 165;
+            // 
+            // labelIdProveedor
+            // 
+            this.labelIdProveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelIdProveedor.AutoSize = true;
+            this.labelIdProveedor.Location = new System.Drawing.Point(290, 411);
+            this.labelIdProveedor.Name = "labelIdProveedor";
+            this.labelIdProveedor.Size = new System.Drawing.Size(13, 13);
+            this.labelIdProveedor.TabIndex = 166;
+            this.labelIdProveedor.Text = "?";
+            // 
+            // btnCantidaProductos
+            // 
+            this.btnCantidaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCantidaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCantidaProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCantidaProductos.Location = new System.Drawing.Point(375, 406);
+            this.btnCantidaProductos.Name = "btnCantidaProductos";
+            this.btnCantidaProductos.Size = new System.Drawing.Size(75, 23);
+            this.btnCantidaProductos.TabIndex = 167;
+            this.btnCantidaProductos.Text = "Compras";
+            this.btnCantidaProductos.UseVisualStyleBackColor = true;
+            this.btnCantidaProductos.Click += new System.EventHandler(this.btnCantidaProductos_Click);
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(659, 450);
+            this.ClientSize = new System.Drawing.Size(1105, 529);
+            this.Controls.Add(this.btnCantidaProductos);
+            this.Controls.Add(this.labelIdProveedor);
+            this.Controls.Add(this.labeltitulo1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.mskTamaño);
+            this.Controls.Add(this.comboBoxProveedor);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.comboBoxcategoria);
             this.Controls.Add(this.labelcategoria);
             this.Controls.Add(this.textBoxvalorventa);
             this.Controls.Add(this.labelvalorventa);
             this.Controls.Add(this.labelnav);
-            this.Controls.Add(this.labeltitulo1);
             this.Controls.Add(this.textBoxdescripcion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxtamaño);
             this.Controls.Add(this.dateTimePickerfechacompra);
             this.Controls.Add(this.mskcodigo);
             this.Controls.Add(this.textvalorcompra);
@@ -331,6 +486,8 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.labelcedula);
             this.Name = "frmProductos";
             this.Text = "frmProductos";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,7 +504,6 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Label labeltitulo1;
         private System.Windows.Forms.TextBox textBoxdescripcion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxtamaño;
         private System.Windows.Forms.DateTimePicker dateTimePickerfechacompra;
         private System.Windows.Forms.MaskedTextBox mskcodigo;
         private System.Windows.Forms.TextBox textvalorcompra;
@@ -362,5 +518,22 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Label labelcantidad;
         private System.Windows.Forms.Label labeltipocedula;
         private System.Windows.Forms.Label labelcedula;
+        private System.Windows.Forms.ComboBox comboBoxProveedor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox mskTamaño;
+        private System.Windows.Forms.DataGridView dataGridViewProductos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FAdquirido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormaMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tamaño;
+        private System.Windows.Forms.Label labelIdProveedor;
+        private System.Windows.Forms.Button btnCantidaProductos;
     }
 }

@@ -1,28 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaEntidades;
+using System.Data;
 using CapaUtilidades.Interfaces;
+using CapaEntidades;
 
 namespace CapaDatos
 {
-    public class DatosProveedor : IGenerica<tbProveedor>
+    public class DatosProductos : IGenerica<tbProducto>
     {
-        public tbProveedor consultarPorId(tbProveedor entidad)
+        public tbProducto consultarPorId(tbProducto entidad)
         {
             throw new NotImplementedException();
         }
 
-        public bool eliminar(tbProveedor entidad)
+        public bool eliminar(tbProducto entidad)
         {
             try
             {
                 using (dbSistemaCompraEntities contex = new dbSistemaCompraEntities())
                 {
-                    contex.Entry<tbProveedor>(entidad).State = System.Data.Entity.EntityState.Modified;
+                    contex.Entry<tbProducto>(entidad).State = System.Data.Entity.EntityState.Modified;
+                    contex.Entry<tbObjeto>(entidad.tbObjeto).State = System.Data.Entity.EntityState.Modified;
                     contex.SaveChanges();
                 }
                 return true;
@@ -33,13 +34,13 @@ namespace CapaDatos
             }
         }
 
-        public bool guarda(tbProveedor entidad)
+        public bool guarda(tbProducto entidad)
         {
             try
             {
                 using (dbSistemaCompraEntities contex = new dbSistemaCompraEntities())
                 {
-                    contex.tbProveedor.Add(entidad);
+                    contex.tbProducto.Add(entidad);
                     contex.SaveChanges();
                 }
                 return true;
@@ -50,14 +51,14 @@ namespace CapaDatos
             }
         }
 
-        public bool modificar(tbProveedor entidad)
+        public bool modificar(tbProducto entidad)
         {
             try
             {
                 using (dbSistemaCompraEntities contex = new dbSistemaCompraEntities())
                 {
-                    contex.Entry<tbProveedor>(entidad).State = System.Data.Entity.EntityState.Modified;
-                    contex.Entry<tbPersona>(entidad.tbPersona).State = System.Data.Entity.EntityState.Modified;
+                    contex.Entry<tbProducto>(entidad).State = System.Data.Entity.EntityState.Modified;
+                    contex.Entry<tbObjeto>(entidad.tbObjeto).State = System.Data.Entity.EntityState.Modified;
                     contex.SaveChanges();
                 }
                 return true;
@@ -68,27 +69,26 @@ namespace CapaDatos
             }
         }
 
-        public List<tbProveedor> obtenerLista(int estado)
+        public List<tbProducto> obtenerLista(int estado)
         {
             bool est = true;
             if (estado == 1)
             {
                 est = true;
             }
-            else if (estado == 2)
+            else if(estado == 2)
             {
                 est = false;
             }
-
-            using (var context = new dbSistemaCompraEntities())
+            using(var context = new dbSistemaCompraEntities())
             {
-                return (from c in context.tbProveedor.Include("tbPersona")
+                return (from c in context.tbProducto.Include("tbObjeto")
                         where c.Estado == est
                         select c).ToList();
             }
         }
 
-        public List<tbProveedor> obtenerListaId(string id)
+        public List<tbProducto> obtenerListaId(string id)
         {
             throw new NotImplementedException();
         }

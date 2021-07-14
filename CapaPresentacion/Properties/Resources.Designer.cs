@@ -139,5 +139,25 @@ namespace CapaPresentacion.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PicsArt_07_10_10_33_48_1_ {
+            get {
+                object obj = ResourceManager.GetObject("PicsArt_07-10-10.33.48[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PicsArt_07_13_02_52_25_1_ {
+            get {
+                object obj = ResourceManager.GetObject("PicsArt_07-13-02.52.25[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

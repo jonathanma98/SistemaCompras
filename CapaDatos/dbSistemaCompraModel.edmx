@@ -38,7 +38,7 @@
           </Key>
           <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
-          <Property Name="Monto" Type="int" Nullable="false" />
+          <Property Name="Monto" Type="money" />
           <Property Name="Tipo" Type="int" Nullable="false" />
           <Property Name="Factura" Type="varchar" MaxLength="25" />
         </EntityType>
@@ -51,17 +51,18 @@
           <Property Name="Tipo" Type="int" Nullable="false" />
           <Property Name="Productos" Type="varchar(max)" Nullable="false" />
           <Property Name="IdAsociada" Type="nchar" MaxLength="15" Nullable="false" />
-          <Property Name="Total" Type="int" Nullable="false" />
+          <Property Name="Total" Type="money" Nullable="false" />
           <Property Name="Estado" Type="bit" />
         </EntityType>
         <EntityType Name="tbObjeto">
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Precio" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="money" Nullable="false" />
           <Property Name="Proveedor" Type="nchar" MaxLength="15" />
+          <Property Name="FAdquirido" Type="date" />
         </EntityType>
         <EntityType Name="tbPersona">
           <Key>
@@ -78,23 +79,22 @@
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="varbinary" MaxLength="100" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrecioVenta" Type="int" Nullable="false" />
           <Property Name="FormaMedida" Type="int" Nullable="false" />
           <Property Name="Medida" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="FVenta" Type="date" />
           <Property Name="Estado" Type="bit" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="tbProductoProveedor">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="idProveedor" />
-            <PropertyRef Name="idObjeto" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idProveedor" Type="nchar" MaxLength="15" Nullable="false" />
-          <Property Name="idObjeto" Type="int" Nullable="false" />
+          <Property Name="idObjeto" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tbProveedor">
           <Key>
@@ -243,15 +243,9 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <EntitySet Name="tbObjeto" EntityType="Self.tbObjeto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbPersona" EntityType="Self.tbPersona" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProducto" EntityType="Self.tbProducto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbProductoProveedor" EntityType="Self.tbProductoProveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProveedor" EntityType="Self.tbProveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProveedorFactura" EntityType="Self.tbProveedorFactura" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbProductoProveedor" EntityType="Self.tbProductoProveedor" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [tbProductoProveedor].[id] AS [id], 
-    [tbProductoProveedor].[idProveedor] AS [idProveedor], 
-    [tbProductoProveedor].[idObjeto] AS [idObjeto]
-    FROM [dbo].[tbProductoProveedor] AS [tbProductoProveedor]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_ProductoProveedor_tbObjeto" Association="Self.FK_ProductoProveedor_tbObjeto">
             <End Role="tbObjeto" EntitySet="tbObjeto" />
             <End Role="tbProductoProveedor" EntitySet="tbProductoProveedor" />
@@ -335,7 +329,7 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           </Key>
           <Property Name="Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Monto" Type="Int32" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Tipo" Type="Int32" Nullable="false" />
           <Property Name="Factura" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tbFactura" Relationship="Self.FK_tbControlDinero_tbFactura" FromRole="tbControlDinero" ToRole="tbFactura" />
@@ -349,7 +343,7 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <Property Name="Tipo" Type="Int32" Nullable="false" />
           <Property Name="Productos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IdAsociada" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Total" Type="Int32" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Estado" Type="Boolean" />
           <NavigationProperty Name="tbClienteFactura" Relationship="Self.FK_tbClienteFactura_tbFactura" FromRole="tbFactura" ToRole="tbClienteFactura" />
           <NavigationProperty Name="tbControlDinero" Relationship="Self.FK_tbControlDinero_tbFactura" FromRole="tbFactura" ToRole="tbControlDinero" />
@@ -359,10 +353,11 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Precio" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Proveedor" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="FAdquirido" Type="DateTime" Precision="0" />
           <NavigationProperty Name="tbProductoProveedor" Relationship="Self.FK_ProductoProveedor_tbObjeto" FromRole="tbObjeto" ToRole="tbProductoProveedor" />
           <NavigationProperty Name="tbProducto" Relationship="Self.FK_tbProducto_tbObjeto" FromRole="tbObjeto" ToRole="tbProducto" />
         </EntityType>
@@ -383,12 +378,25 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="Binary" MaxLength="100" FixedLength="false" />
+          <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrecioVenta" Type="Int32" Nullable="false" />
           <Property Name="FormaMedida" Type="Int32" Nullable="false" />
           <Property Name="Medida" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="FVenta" Type="DateTime" Precision="0" />
           <Property Name="Estado" Type="Boolean" />
           <NavigationProperty Name="tbObjeto" Relationship="Self.FK_tbProducto_tbObjeto" FromRole="tbProducto" ToRole="tbObjeto" />
+        </EntityType>
+        <EntityType Name="tbProductoProveedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProveedor" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="idObjeto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tbObjeto" Relationship="Self.FK_ProductoProveedor_tbObjeto" FromRole="tbProductoProveedor" ToRole="tbObjeto" />
+          <NavigationProperty Name="tbProveedor" Relationship="Self.FK_ProductoProveedor_tbProveedor" FromRole="tbProductoProveedor" ToRole="tbProveedor" />
         </EntityType>
         <EntityType Name="tbProveedor">
           <Key>
@@ -412,18 +420,6 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <Property Name="IdFactura" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbFactura" Relationship="Self.FK_tbProveedorFactura_tbFactura" FromRole="tbProveedorFactura" ToRole="tbFactura" />
           <NavigationProperty Name="tbProveedor" Relationship="Self.FK_tbProveedorFactura_tbProveedor" FromRole="tbProveedorFactura" ToRole="tbProveedor" />
-        </EntityType>
-        <EntityType Name="tbProductoProveedor">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="idProveedor" />
-            <PropertyRef Name="idObjeto" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idProveedor" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="idObjeto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbObjeto" Relationship="Self.FK_ProductoProveedor_tbObjeto" FromRole="tbProductoProveedor" ToRole="tbObjeto" />
-          <NavigationProperty Name="tbProveedor" Relationship="Self.FK_ProductoProveedor_tbProveedor" FromRole="tbProductoProveedor" ToRole="tbProveedor" />
         </EntityType>
         <Association Name="FK_tbCliente_tbPersona">
           <End Role="tbPersona" Type="Self.tbPersona" Multiplicity="1" />
@@ -554,9 +550,9 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
           <EntitySet Name="tbObjeto" EntityType="Self.tbObjeto" />
           <EntitySet Name="tbPersona" EntityType="Self.tbPersona" />
           <EntitySet Name="tbProducto" EntityType="Self.tbProducto" />
+          <EntitySet Name="tbProductoProveedor" EntityType="Self.tbProductoProveedor" />
           <EntitySet Name="tbProveedor" EntityType="Self.tbProveedor" />
           <EntitySet Name="tbProveedorFactura" EntityType="Self.tbProveedorFactura" />
-          <EntitySet Name="tbProductoProveedor" EntityType="Self.tbProductoProveedor" />
           <AssociationSet Name="FK_tbCliente_tbPersona" Association="Self.FK_tbCliente_tbPersona">
             <End Role="tbPersona" EntitySet="tbPersona" />
             <End Role="tbCliente" EntitySet="tbCliente" />
@@ -665,6 +661,7 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="FAdquirido" ColumnName="FAdquirido" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -685,9 +682,21 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
               <MappingFragment StoreEntitySet="tbProducto">
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
                 <ScalarProperty Name="FormaMedida" ColumnName="FormaMedida" />
                 <ScalarProperty Name="Medida" ColumnName="Medida" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="FVenta" ColumnName="FVenta" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbProductoProveedor">
+            <EntityTypeMapping TypeName="dbSistemaCompraModel.tbProductoProveedor">
+              <MappingFragment StoreEntitySet="tbProductoProveedor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+                <ScalarProperty Name="idObjeto" ColumnName="idObjeto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -708,15 +717,6 @@ advertencia 6002: La tabla o vista 'dbSistemaCompra.dbo.tbProductoProveedor' no 
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
                 <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbProductoProveedor">
-            <EntityTypeMapping TypeName="dbSistemaCompraModel.tbProductoProveedor">
-              <MappingFragment StoreEntitySet="tbProductoProveedor">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
-                <ScalarProperty Name="idObjeto" ColumnName="idObjeto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

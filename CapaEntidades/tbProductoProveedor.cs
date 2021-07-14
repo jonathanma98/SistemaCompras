@@ -16,7 +16,7 @@ namespace CapaEntidades
     {
         public int id { get; set; }
         public string idProveedor { get; set; }
-        public int idObjeto { get; set; }
+        public string idObjeto { get; set; }
     
         public virtual tbObjeto tbObjeto { get; set; }
         public virtual tbProveedor tbProveedor { get; set; }

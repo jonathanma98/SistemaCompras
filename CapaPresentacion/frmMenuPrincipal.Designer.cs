@@ -30,28 +30,29 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnDetalledefactura = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.panellogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.paneltitulo = new System.Windows.Forms.Panel();
             this.labeltitulo = new System.Windows.Forms.Label();
             this.panelpantallahome = new System.Windows.Forms.Panel();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnPrincipal = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
-            this.panellogo.SuspendLayout();
-            this.paneltitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panellogo.SuspendLayout();
+            this.paneltitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -73,6 +74,46 @@ namespace CapaPresentacion
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 450);
             this.panelMenu.TabIndex = 4;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_fax_3_240;
+            this.pictureBox4.Location = new System.Drawing.Point(147, 254);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_11_2401;
+            this.pictureBox3.Location = new System.Drawing.Point(147, 200);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_1_240;
+            this.pictureBox2.Location = new System.Drawing.Point(147, 140);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.noun_Hairstylist_3925549;
+            this.pictureBox1.Location = new System.Drawing.Point(147, 80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // btnReportes
             // 
@@ -169,10 +210,30 @@ namespace CapaPresentacion
             this.btnProveedores.UseVisualStyleBackColor = true;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click_1);
             // 
+            // btnClientes
+            // 
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(0, 80);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnClientes.Size = new System.Drawing.Size(220, 60);
+            this.btnClientes.TabIndex = 1;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click_1);
+            // 
             // panellogo
             // 
             this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panellogo.Controls.Add(this.label1);
+            this.panellogo.Controls.Add(this.btnPrincipal);
             this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panellogo.Location = new System.Drawing.Point(0, 0);
             this.panellogo.Name = "panellogo";
@@ -221,64 +282,23 @@ namespace CapaPresentacion
             this.panelpantallahome.Size = new System.Drawing.Size(580, 370);
             this.panelpantallahome.TabIndex = 6;
             // 
-            // btnClientes
+            // btnPrincipal
             // 
-            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 80);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(220, 60);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click_1);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_11_2401;
-            this.pictureBox3.Location = new System.Drawing.Point(147, 200);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(67, 60);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_1_240;
-            this.pictureBox2.Location = new System.Drawing.Point(147, 140);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.noun_Hairstylist_3925549;
-            this.pictureBox1.Location = new System.Drawing.Point(147, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_fax_3_240;
-            this.pictureBox4.Location = new System.Drawing.Point(147, 254);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(67, 60);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
+            this.btnPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPrincipal.FlatAppearance.BorderSize = 0;
+            this.btnPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrincipal.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrincipal.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.btnPrincipal.Name = "btnPrincipal";
+            this.btnPrincipal.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPrincipal.Size = new System.Drawing.Size(220, 77);
+            this.btnPrincipal.TabIndex = 2;
+            this.btnPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrincipal.UseVisualStyleBackColor = true;
+            this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -293,14 +313,14 @@ namespace CapaPresentacion
             this.Text = "frmMenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panellogo.ResumeLayout(false);
             this.panellogo.PerformLayout();
             this.paneltitulo.ResumeLayout(false);
             this.paneltitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,5 +343,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnPrincipal;
     }
 }
