@@ -12,6 +12,7 @@ namespace CapaDatos
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Threading.Tasks;
     using CapaEntidades;
     
     public partial class dbSistemaCompraEntities : DbContext

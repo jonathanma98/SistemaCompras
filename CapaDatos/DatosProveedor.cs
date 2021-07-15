@@ -13,7 +13,19 @@ namespace CapaDatos
     {
         public tbProveedor consultarPorId(tbProveedor entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (dbSistemaCompraEntities contex = new dbSistemaCompraEntities())
+                {
+                    entidad = contex.tbProveedor.Include("tbPersona").Where(x => 
+                    x.Id == entidad.Id && x.Estado == true).FirstOrDefault();
+                }
+                return entidad;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public bool eliminar(tbProveedor entidad)

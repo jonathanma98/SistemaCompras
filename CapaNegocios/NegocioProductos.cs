@@ -29,6 +29,32 @@ namespace CapaNegocios
 
         public bool modificar(tbProducto entidad)
         {
+            //if (entidad.tbObjeto.tbProductoProveedor != null)
+            //{
+            //    tbProducto producto;
+            //    producto = DProducto.consultarPorId(entidad);
+
+            //    if (producto != null)
+            //    {
+            //        csDatosObjetoProveedor ObjProvee = new csDatosObjetoProveedor();
+            //        List<tbProductoProveedor> listaObjProve;
+            //        tbProductoProveedor PP = new tbProductoProveedor();
+
+            //        listaObjProve = ObjProvee.obtenerListaId(entidad.tbObjeto.Codigo);
+            //        if (listaObjProve != null)
+            //        {
+            //            foreach (tbProductoProveedor p in listaObjProve)
+            //            {
+            //                PP.id = p.id;
+            //                PP.idObjeto = p.idObjeto;
+            //                PP.idProveedor = p.idProveedor;
+            //                PP.tbObjeto = p.tbObjeto;
+            //                PP.tbProveedor = p.tbProveedor;
+            //            }
+            //            ObjProvee.modificar(PP);
+            //        }
+            //    }
+            //}
             return DProducto.modificar(entidad);
         }
 
@@ -39,7 +65,7 @@ namespace CapaNegocios
 
         public List<tbProducto> obtenerListaId(string id)
         {
-            throw new NotImplementedException();
+            return DProducto.obtenerListaId(id);
         }
     }
 }

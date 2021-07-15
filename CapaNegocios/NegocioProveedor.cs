@@ -15,7 +15,7 @@ namespace CapaNegocios
 
         public tbProveedor consultarPorId(tbProveedor entidad)
         {
-            throw new NotImplementedException();
+            return Dproveedor.consultarPorId(entidad);
         }
 
         public bool eliminar(tbProveedor entidad)
