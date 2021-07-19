@@ -17,8 +17,8 @@ namespace CapaEntidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbProveedor()
         {
+            this.tbFactura = new HashSet<tbFactura>();
             this.tbProductoProveedor = new HashSet<tbProductoProveedor>();
-            this.tbProveedorFactura = new HashSet<tbProveedorFactura>();
         }
     
         public string Id { get; set; }
@@ -27,10 +27,10 @@ namespace CapaEntidades
         public Nullable<int> Calificacion { get; set; }
         public Nullable<bool> Estado { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbFactura> tbFactura { get; set; }
         public virtual tbPersona tbPersona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbProductoProveedor> tbProductoProveedor { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbProveedorFactura> tbProveedorFactura { get; set; }
     }
 }

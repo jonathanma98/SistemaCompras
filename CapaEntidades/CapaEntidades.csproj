@@ -63,10 +63,10 @@
     <Compile Include="tbCliente.cs">
       <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tbClienteFactura.cs">
+    <Compile Include="tbControlDinero.cs">
       <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tbControlDinero.cs">
+    <Compile Include="tbEmpresa.cs">
       <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbFactura.cs">
@@ -85,9 +85,6 @@
       <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbProveedor.cs">
-      <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbProveedorFactura.cs">
       <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

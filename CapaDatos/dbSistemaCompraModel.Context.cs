@@ -12,7 +12,6 @@ namespace CapaDatos
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Threading.Tasks;
     using CapaEntidades;
     
     public partial class dbSistemaCompraEntities : DbContext
@@ -29,14 +28,13 @@ namespace CapaDatos
     
         public virtual DbSet<tbAdmin> tbAdmin { get; set; }
         public virtual DbSet<tbCliente> tbCliente { get; set; }
-        public virtual DbSet<tbClienteFactura> tbClienteFactura { get; set; }
         public virtual DbSet<tbControlDinero> tbControlDinero { get; set; }
+        public virtual DbSet<tbEmpresa> tbEmpresa { get; set; }
         public virtual DbSet<tbFactura> tbFactura { get; set; }
         public virtual DbSet<tbObjeto> tbObjeto { get; set; }
         public virtual DbSet<tbPersona> tbPersona { get; set; }
         public virtual DbSet<tbProducto> tbProducto { get; set; }
         public virtual DbSet<tbProductoProveedor> tbProductoProveedor { get; set; }
         public virtual DbSet<tbProveedor> tbProveedor { get; set; }
-        public virtual DbSet<tbProveedorFactura> tbProveedorFactura { get; set; }
     }
 }

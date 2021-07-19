@@ -12,13 +12,13 @@ namespace CapaEntidades
     using System;
     using System.Collections.Generic;
     
-    public partial class tbClienteFactura
+    public partial class tbEmpresa
     {
-        public int Id { get; set; }
-        public string IdCliente { get; set; }
-        public string idFactura { get; set; }
-    
-        public virtual tbCliente tbCliente { get; set; }
-        public virtual tbFactura tbFactura { get; set; }
+        public int id { get; set; }
+        public string Nombre { get; set; }
+        public byte[] Correo { get; set; }
+        public string Telefono { get; set; }
+        public string Ubicacion { get; set; }
+        public string contraseña { get; set; }
     }
 }

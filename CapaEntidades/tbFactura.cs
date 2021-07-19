@@ -17,24 +17,23 @@ namespace CapaEntidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbFactura()
         {
-            this.tbClienteFactura = new HashSet<tbClienteFactura>();
             this.tbControlDinero = new HashSet<tbControlDinero>();
-            this.tbProveedorFactura = new HashSet<tbProveedorFactura>();
         }
     
         public string IdFactura { get; set; }
         public System.DateTime FechaCompra { get; set; }
         public int Tipo { get; set; }
         public string Productos { get; set; }
-        public string IdAsociada { get; set; }
+        public Nullable<int> TipoAsocie { get; set; }
+        public string IdCliente { get; set; }
+        public string IdProveedor { get; set; }
+        public string NombreAsocie { get; set; }
         public decimal Total { get; set; }
         public Nullable<bool> Estado { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbClienteFactura> tbClienteFactura { get; set; }
+        public virtual tbCliente tbCliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbControlDinero> tbControlDinero { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbProveedorFactura> tbProveedorFactura { get; set; }
+        public virtual tbProveedor tbProveedor { get; set; }
     }
 }

@@ -48,6 +48,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +63,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormsMostracion\frmMostrarVentaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMostracion\frmMostrarVentaProveedor.Designer.cs">
+      <DependentUpon>frmMostrarVentaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsMostracion\frmVerProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMostracion\frmVerProveedores.Designer.cs">
+      <DependentUpon>frmVerProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmDetalleFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +150,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeColor.cs" />
+    <EmbeddedResource Include="FormsMostracion\frmMostrarVentaProveedor.resx">
+      <DependentUpon>frmMostrarVentaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsMostracion\frmVerProveedores.resx">
+      <DependentUpon>frmVerProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDetalleFactura.resx">
       <DependentUpon>frmDetalleFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +259,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PicsArt_07-13-02.52.25[1].jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_icon_143218.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_-34_icon-icons.com_73983_%281%29[1].ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prueba[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-prismáticos-16[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marcapáginas-16[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-editar-16[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marcapáginas-16[2].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eliminar-64[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eliminar-16[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-búsqueda-64[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-búsqueda-16[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-prismáticos-30[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-marcapáginas-16[1]1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-documento-30[1].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-documento-16[1].png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

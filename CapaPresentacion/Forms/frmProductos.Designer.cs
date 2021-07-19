@@ -43,16 +43,11 @@ namespace CapaPresentacion.Forms
             this.textvalorcompra = new System.Windows.Forms.TextBox();
             this.textexistencia = new System.Windows.Forms.TextBox();
             this.textnombre = new System.Windows.Forms.TextBox();
-            this.buttonconsultar = new System.Windows.Forms.Button();
-            this.buttoneliminar = new System.Windows.Forms.Button();
-            this.buttonmodificar = new System.Windows.Forms.Button();
-            this.buttonguardar = new System.Windows.Forms.Button();
             this.labelfecchacompra = new System.Windows.Forms.Label();
             this.labelvalorcompra = new System.Windows.Forms.Label();
             this.labelcantidad = new System.Windows.Forms.Label();
             this.labeltipocedula = new System.Windows.Forms.Label();
             this.labelcedula = new System.Windows.Forms.Label();
-            this.comboBoxProveedor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mskTamaño = new System.Windows.Forms.MaskedTextBox();
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
@@ -67,8 +62,13 @@ namespace CapaPresentacion.Forms
             this.FormaMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelIdProveedor = new System.Windows.Forms.Label();
+            this.textBoxProveedor = new System.Windows.Forms.TextBox();
+            this.btnSeleProveedor = new System.Windows.Forms.Button();
             this.btnCantidaProductos = new System.Windows.Forms.Button();
+            this.buttonconsultar = new System.Windows.Forms.Button();
+            this.buttoneliminar = new System.Windows.Forms.Button();
+            this.buttonmodificar = new System.Windows.Forms.Button();
+            this.buttonguardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,7 @@ namespace CapaPresentacion.Forms
             this.textBoxvalorventa.Name = "textBoxvalorventa";
             this.textBoxvalorventa.Size = new System.Drawing.Size(200, 20);
             this.textBoxvalorventa.TabIndex = 157;
+            this.textBoxvalorventa.TextChanged += new System.EventHandler(this.textBoxvalorventa_TextChanged);
             // 
             // labelvalorventa
             // 
@@ -189,15 +190,17 @@ namespace CapaPresentacion.Forms
             this.textvalorcompra.Name = "textvalorcompra";
             this.textvalorcompra.Size = new System.Drawing.Size(200, 20);
             this.textvalorcompra.TabIndex = 148;
+            this.textvalorcompra.TextChanged += new System.EventHandler(this.textvalorcompra_TextChanged);
             this.textvalorcompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textvalorcompra_KeyPress);
             // 
             // textexistencia
             // 
             this.textexistencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textexistencia.Location = new System.Drawing.Point(161, 377);
+            this.textexistencia.Location = new System.Drawing.Point(161, 375);
             this.textexistencia.Name = "textexistencia";
             this.textexistencia.Size = new System.Drawing.Size(200, 20);
             this.textexistencia.TabIndex = 147;
+            this.textexistencia.TextChanged += new System.EventHandler(this.textexistencia_TextChanged);
             // 
             // textnombre
             // 
@@ -206,58 +209,6 @@ namespace CapaPresentacion.Forms
             this.textnombre.Name = "textnombre";
             this.textnombre.Size = new System.Drawing.Size(135, 20);
             this.textnombre.TabIndex = 146;
-            // 
-            // buttonconsultar
-            // 
-            this.buttonconsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonconsultar.Location = new System.Drawing.Point(250, 473);
-            this.buttonconsultar.Name = "buttonconsultar";
-            this.buttonconsultar.Size = new System.Drawing.Size(75, 23);
-            this.buttonconsultar.TabIndex = 145;
-            this.buttonconsultar.Text = "Consultar";
-            this.buttonconsultar.UseVisualStyleBackColor = true;
-            this.buttonconsultar.Click += new System.EventHandler(this.buttonconsultar_Click);
-            // 
-            // buttoneliminar
-            // 
-            this.buttoneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttoneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttoneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttoneliminar.Location = new System.Drawing.Point(88, 473);
-            this.buttoneliminar.Name = "buttoneliminar";
-            this.buttoneliminar.Size = new System.Drawing.Size(75, 23);
-            this.buttoneliminar.TabIndex = 144;
-            this.buttoneliminar.Text = "Eliminar";
-            this.buttoneliminar.UseVisualStyleBackColor = true;
-            this.buttoneliminar.Click += new System.EventHandler(this.buttoneliminar_Click);
-            // 
-            // buttonmodificar
-            // 
-            this.buttonmodificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonmodificar.Location = new System.Drawing.Point(168, 473);
-            this.buttonmodificar.Name = "buttonmodificar";
-            this.buttonmodificar.Size = new System.Drawing.Size(75, 23);
-            this.buttonmodificar.TabIndex = 143;
-            this.buttonmodificar.Text = "Modificar";
-            this.buttonmodificar.UseVisualStyleBackColor = true;
-            this.buttonmodificar.Click += new System.EventHandler(this.buttonmodificar_Click);
-            // 
-            // buttonguardar
-            // 
-            this.buttonguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonguardar.Location = new System.Drawing.Point(331, 473);
-            this.buttonguardar.Name = "buttonguardar";
-            this.buttonguardar.Size = new System.Drawing.Size(75, 23);
-            this.buttonguardar.TabIndex = 142;
-            this.buttonguardar.Text = "Guardar";
-            this.buttonguardar.UseVisualStyleBackColor = true;
-            this.buttonguardar.Click += new System.EventHandler(this.buttonguardar_Click);
             // 
             // labelfecchacompra
             // 
@@ -286,7 +237,7 @@ namespace CapaPresentacion.Forms
             this.labelcantidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelcantidad.AutoSize = true;
             this.labelcantidad.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcantidad.Location = new System.Drawing.Point(48, 376);
+            this.labelcantidad.Location = new System.Drawing.Point(48, 374);
             this.labelcantidad.Name = "labelcantidad";
             this.labelcantidad.Size = new System.Drawing.Size(103, 19);
             this.labelcantidad.TabIndex = 139;
@@ -314,22 +265,12 @@ namespace CapaPresentacion.Forms
             this.labelcedula.TabIndex = 137;
             this.labelcedula.Text = "Codigo";
             // 
-            // comboBoxProveedor
-            // 
-            this.comboBoxProveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxProveedor.FormattingEnabled = true;
-            this.comboBoxProveedor.Location = new System.Drawing.Point(161, 403);
-            this.comboBoxProveedor.Name = "comboBoxProveedor";
-            this.comboBoxProveedor.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxProveedor.TabIndex = 162;
-            this.comboBoxProveedor.SelectedIndexChanged += new System.EventHandler(this.comboBoxProveedor_SelectedIndexChanged);
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 402);
+            this.label1.Location = new System.Drawing.Point(47, 407);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 19);
             this.label1.TabIndex = 161;
@@ -363,7 +304,7 @@ namespace CapaPresentacion.Forms
             this.dataGridViewProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewProductos.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProductos.Name = "dataGridViewProductos";
-            this.dataGridViewProductos.Size = new System.Drawing.Size(516, 529);
+            this.dataGridViewProductos.Size = new System.Drawing.Size(439, 529);
             this.dataGridViewProductos.TabIndex = 164;
             this.dataGridViewProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductos_CellDoubleClick);
             // 
@@ -419,35 +360,135 @@ namespace CapaPresentacion.Forms
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dataGridViewProductos);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(589, 0);
+            this.panel1.Location = new System.Drawing.Point(666, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(516, 529);
+            this.panel1.Size = new System.Drawing.Size(439, 529);
             this.panel1.TabIndex = 165;
             // 
-            // labelIdProveedor
+            // textBoxProveedor
             // 
-            this.labelIdProveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelIdProveedor.AutoSize = true;
-            this.labelIdProveedor.Location = new System.Drawing.Point(290, 411);
-            this.labelIdProveedor.Name = "labelIdProveedor";
-            this.labelIdProveedor.Size = new System.Drawing.Size(13, 13);
-            this.labelIdProveedor.TabIndex = 166;
-            this.labelIdProveedor.Text = "?";
+            this.textBoxProveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxProveedor.Enabled = false;
+            this.textBoxProveedor.Location = new System.Drawing.Point(161, 407);
+            this.textBoxProveedor.Name = "textBoxProveedor";
+            this.textBoxProveedor.Size = new System.Drawing.Size(200, 20);
+            this.textBoxProveedor.TabIndex = 168;
+            this.textBoxProveedor.TextChanged += new System.EventHandler(this.textBoxProveedor_TextChanged);
+            // 
+            // btnSeleProveedor
+            // 
+            this.btnSeleProveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSeleProveedor.AutoEllipsis = true;
+            this.btnSeleProveedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSeleProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleProveedor.FlatAppearance.BorderSize = 0;
+            this.btnSeleProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleProveedor.Image = global::CapaPresentacion.Properties.Resources.icons8_prismáticos_30_1_;
+            this.btnSeleProveedor.Location = new System.Drawing.Point(380, 402);
+            this.btnSeleProveedor.Name = "btnSeleProveedor";
+            this.btnSeleProveedor.Size = new System.Drawing.Size(39, 30);
+            this.btnSeleProveedor.TabIndex = 169;
+            this.btnSeleProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSeleProveedor.UseVisualStyleBackColor = true;
+            this.btnSeleProveedor.Click += new System.EventHandler(this.btnSeleProveedor_Click);
             // 
             // btnCantidaProductos
             // 
-            this.btnCantidaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCantidaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCantidaProductos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnCantidaProductos.AutoEllipsis = true;
+            this.btnCantidaProductos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCantidaProductos.BackColor = System.Drawing.Color.Gray;
+            this.btnCantidaProductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCantidaProductos.FlatAppearance.BorderSize = 0;
+            this.btnCantidaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCantidaProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCantidaProductos.Location = new System.Drawing.Point(375, 406);
+            this.btnCantidaProductos.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_16_1_;
+            this.btnCantidaProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCantidaProductos.Location = new System.Drawing.Point(428, 402);
             this.btnCantidaProductos.Name = "btnCantidaProductos";
-            this.btnCantidaProductos.Size = new System.Drawing.Size(75, 23);
+            this.btnCantidaProductos.Size = new System.Drawing.Size(98, 30);
             this.btnCantidaProductos.TabIndex = 167;
-            this.btnCantidaProductos.Text = "Compras";
-            this.btnCantidaProductos.UseVisualStyleBackColor = true;
+            this.btnCantidaProductos.Text = "Información";
+            this.btnCantidaProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCantidaProductos.UseVisualStyleBackColor = false;
+            this.btnCantidaProductos.Visible = false;
             this.btnCantidaProductos.Click += new System.EventHandler(this.btnCantidaProductos_Click);
+            // 
+            // buttonconsultar
+            // 
+            this.buttonconsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonconsultar.FlatAppearance.BorderSize = 0;
+            this.buttonconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonconsultar.Image = global::CapaPresentacion.Properties.Resources.icons8_búsqueda_64_1_;
+            this.buttonconsultar.Location = new System.Drawing.Point(518, 67);
+            this.buttonconsultar.Name = "buttonconsultar";
+            this.buttonconsultar.Size = new System.Drawing.Size(65, 57);
+            this.buttonconsultar.TabIndex = 145;
+            this.buttonconsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonconsultar.UseVisualStyleBackColor = true;
+            this.buttonconsultar.Click += new System.EventHandler(this.buttonconsultar_Click);
+            // 
+            // buttoneliminar
+            // 
+            this.buttoneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttoneliminar.BackColor = System.Drawing.Color.Red;
+            this.buttoneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttoneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttoneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttoneliminar.Image = global::CapaPresentacion.Properties.Resources.icons8_eliminar_16_1_;
+            this.buttoneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttoneliminar.Location = new System.Drawing.Point(78, 473);
+            this.buttoneliminar.Name = "buttoneliminar";
+            this.buttoneliminar.Size = new System.Drawing.Size(88, 31);
+            this.buttoneliminar.TabIndex = 144;
+            this.buttoneliminar.Text = "Eliminar";
+            this.buttoneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttoneliminar.UseVisualStyleBackColor = false;
+            this.buttoneliminar.Click += new System.EventHandler(this.buttoneliminar_Click);
+            // 
+            // buttonmodificar
+            // 
+            this.buttonmodificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonmodificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonmodificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonmodificar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonmodificar.Image = global::CapaPresentacion.Properties.Resources.icons8_editar_16_1_;
+            this.buttonmodificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonmodificar.Location = new System.Drawing.Point(237, 473);
+            this.buttonmodificar.Name = "buttonmodificar";
+            this.buttonmodificar.Size = new System.Drawing.Size(88, 31);
+            this.buttonmodificar.TabIndex = 143;
+            this.buttonmodificar.Text = "Modificar";
+            this.buttonmodificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonmodificar.UseVisualStyleBackColor = false;
+            this.buttonmodificar.Click += new System.EventHandler(this.buttonmodificar_Click);
+            // 
+            // buttonguardar
+            // 
+            this.buttonguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonguardar.BackColor = System.Drawing.Color.Lime;
+            this.buttonguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonguardar.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.buttonguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonguardar.Image = global::CapaPresentacion.Properties.Resources.icons8_marcapáginas_16_2_;
+            this.buttonguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonguardar.Location = new System.Drawing.Point(371, 473);
+            this.buttonguardar.Name = "buttonguardar";
+            this.buttonguardar.Size = new System.Drawing.Size(88, 31);
+            this.buttonguardar.TabIndex = 142;
+            this.buttonguardar.Text = "Guardar";
+            this.buttonguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonguardar.UseVisualStyleBackColor = false;
+            this.buttonguardar.Click += new System.EventHandler(this.buttonguardar_Click);
             // 
             // frmProductos
             // 
@@ -455,12 +496,12 @@ namespace CapaPresentacion.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1105, 529);
+            this.Controls.Add(this.btnSeleProveedor);
+            this.Controls.Add(this.textBoxProveedor);
             this.Controls.Add(this.btnCantidaProductos);
-            this.Controls.Add(this.labelIdProveedor);
             this.Controls.Add(this.labeltitulo1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mskTamaño);
-            this.Controls.Add(this.comboBoxProveedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.comboBoxcategoria);
@@ -484,8 +525,10 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.labelcantidad);
             this.Controls.Add(this.labeltipocedula);
             this.Controls.Add(this.labelcedula);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProductos";
             this.Text = "frmProductos";
+            this.Load += new System.EventHandler(this.frmProductos_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -518,7 +561,6 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Label labelcantidad;
         private System.Windows.Forms.Label labeltipocedula;
         private System.Windows.Forms.Label labelcedula;
-        private System.Windows.Forms.ComboBox comboBoxProveedor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox mskTamaño;
         private System.Windows.Forms.DataGridView dataGridViewProductos;
@@ -533,7 +575,8 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tamaño;
-        private System.Windows.Forms.Label labelIdProveedor;
+        private System.Windows.Forms.TextBox textBoxProveedor;
         private System.Windows.Forms.Button btnCantidaProductos;
+        private System.Windows.Forms.Button btnSeleProveedor;
     }
 }

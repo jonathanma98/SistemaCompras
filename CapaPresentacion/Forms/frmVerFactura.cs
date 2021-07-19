@@ -41,9 +41,17 @@ namespace CapaPresentacion.Forms
             {
                 labelfecha.Text = fc.FechaCompra.ToString();
                 labelID.Text = fc.IdFactura;
-                labelCliente.Text = fc.IdAsociada;
                 labelTipo.Text = Enum.GetName(typeof(csEnums.Tipo), fc.Tipo);
                 datosDeFactura = fc.Productos;
+
+                if(fc.TipoAsocie == 1)
+                {
+                    labelID.Text = fc.IdCliente;
+                }
+                if (fc.TipoAsocie == 2)
+                {
+                    labelID.Text = fc.IdProveedor;
+                }
             }
 
             cargarDataDeFactura(datosDeFactura);

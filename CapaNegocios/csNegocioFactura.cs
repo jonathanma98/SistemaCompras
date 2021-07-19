@@ -25,7 +25,7 @@ namespace CapaNegocios
 
         public bool guarda(tbFactura entidad)
         {
-            throw new NotImplementedException();
+            return datos.guarda(entidad);
         }
 
         public bool modificar(tbFactura entidad)

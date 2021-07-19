@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaEntidades;
 using CapaNegocios;
 using CapaUtilidades;
+using CapaPresentacion.FormsMostracion;
 
 namespace CapaPresentacion.Forms
 {
@@ -52,17 +53,7 @@ namespace CapaPresentacion.Forms
 
         private void Inializar()
         {
-
             comboBoxcategoria.DataSource = Enum.GetValues(typeof(csEnums.FormaMedida));
-
-            List<string> lis = new List<string>();
-            LP = obtenerlis(LP);
-            foreach (tbProveedor p in LP)
-            {
-                lis.Add(p.tbPersona.Nombre + " (" + p.Id + ")");
-            }
-            //con la lista de proveedores es convertida a lista string para ingresarla en el comboBox
-            comboBoxProveedor.DataSource = lis;
         }
 
         private List<tbProveedor> obtenerlis(List<tbProveedor> lis)//Retorna la lista de Proveedores
@@ -91,10 +82,10 @@ namespace CapaPresentacion.Forms
                     objeto.Nombre = textnombre.Text.Trim();
                     objeto.Precio = decimal.Parse(textvalorcompra.Text);
                     objeto.FAdquirido = dateTimePickerfechacompra.Value;
-                    objeto.Proveedor = labelIdProveedor.Text.Trim();
+                    objeto.Proveedor = textBoxProveedor.Text.Trim();
 
-                    
-                    if (objeto.Proveedor != null)//antes de guadar valida si el objeto esta asociado a un proveedor
+
+                    if (textBoxProveedor.Text != "")//antes de guadar valida si el objeto esta asociado a un proveedor
                     {
                         tbProductoProveedor ProdProv = new tbProductoProveedor();
                         tbProveedor proveedor = new tbProveedor();
@@ -104,15 +95,13 @@ namespace CapaPresentacion.Forms
 
                         ProdProv.idObjeto = objeto.Codigo.Trim();
                         ProdProv.idProveedor = objeto.Proveedor.Trim();
-                        ProdProv.tbObjeto = objeto;
-                        ProdProv.tbProveedor = proveedor;
 
                         objeto.tbProductoProveedor.Add(ProdProv);
                         messa = "con su proveedor " + proveedor.Id;
                     }
                     producto.Codigo = objeto.Codigo;
                     producto.Descripcion = textBoxdescripcion.Text.Trim();
-                    producto.PrecioVenta = int.Parse(textBoxvalorventa.Text);//se debe actualizar el int a decimal en la db
+                    producto.PrecioVenta = decimal.Parse(textBoxvalorventa.Text);//se debe actualizar el int a decimal en la db
                     producto.FormaMedida = comboBoxcategoria.SelectedIndex + 1;
                     producto.Medida = mskTamaño.Text.Trim();
                     producto.Cantidad = int.Parse(textexistencia.Text.Trim());
@@ -139,7 +128,13 @@ namespace CapaPresentacion.Forms
 
         private bool validarDatos()
         {
-            if (mskcodigo.Text == string.Empty)
+            string[] txt = mskcodigo.Text.Split(' ', '_', '-');
+            string txtCodigo = "";
+            foreach (string t in txt) 
+            {
+                txtCodigo += t;
+            }
+            if (txtCodigo == string.Empty)
             {
                 MessageBox.Show("Ingrese una codigo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mskcodigo.Focus();
@@ -198,16 +193,25 @@ namespace CapaPresentacion.Forms
             switch (p)
             {
                 case 1:
-                    mskTamaño.Mask = "###Lt";
+                    mskTamaño.Mask = "###ml";
                     break;
                 case 2:
-                    mskTamaño.Mask = "###Kg";
+                    mskTamaño.Mask = "###g";
                     break;
                 case 3:
-                    mskTamaño.Mask = "###Ml";
+                    mskTamaño.Mask = "###Kg";
                     break;
                 case 4:
-                    mskTamaño.Mask = "#####";
+                    mskTamaño.Mask = "###lb";
+                    break;
+                case 5:
+                    mskTamaño.Mask = "###ml";
+                    break;
+                case 6:
+                    mskTamaño.Mask = "###l";
+                    break;
+                case 7:
+                    mskTamaño.Mask = "###oz";
                     break;
                 default:
                     break;
@@ -216,7 +220,10 @@ namespace CapaPresentacion.Forms
 
         private void mskTamaño_TextChanged(object sender, EventArgs e)
         {
-
+            for(int i=0; i >= mskTamaño.Text.Length; i++)
+            {
+                mskTamaño.Mask.Insert(1, "##");
+            }
         }
 
         private void textvalorcompra_KeyPress(object sender, KeyPressEventArgs e)
@@ -256,23 +263,32 @@ namespace CapaPresentacion.Forms
                 dataGridViewProductos.Rows[nr].Cells[5].Value = p.tbObjeto.FAdquirido;
                 dataGridViewProductos.Rows[nr].Cells[6].Value = p.Descripcion;
                 dataGridViewProductos.Rows[nr].Cells[7].Value = p.Cantidad;
-                dataGridViewProductos.Rows[nr].Cells[8].Value = p.FormaMedida;
+                dataGridViewProductos.Rows[nr].Cells[8].Value = Enum.GetName(typeof(csEnums.FormaMedida),p.FormaMedida);
                 dataGridViewProductos.Rows[nr].Cells[9].Value = p.Medida;
 
             }
         }
 
         private void dataGridViewProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {   //saber que proveedor selecciono el cliente 
-            int n = e.RowIndex;// index seleccionado 
-            if (n != -1)
+        {
+            try
             {
-                string Codigo = dataGridViewProductos.Rows[n].Cells[0].Value.ToString();//sacamos el codigo se la seleccion
+                //saber que proveedor selecciono el cliente 
+                int n = e.RowIndex;// index seleccionado 
+                if (n != -1)
+                {
+                    string Codigo = dataGridViewProductos.Rows[n].Cells[0].Value.ToString();//sacamos el codigo se la seleccion
 
-                tbProducto seleProducto;//creamos un objeto para poder almacenar el producto
+                    tbProducto seleProducto;//creamos un objeto para poder almacenar el producto
 
-                seleProducto = listaProducto.Where(x => x.Codigo.Trim() == Codigo.Trim()).SingleOrDefault();
-                pasarDatos(seleProducto);//enviamos el producto
+                    seleProducto = listaProducto.Where(x => x.Codigo.Trim() == Codigo.Trim()).SingleOrDefault();
+                    pasarDatos(seleProducto);//enviamos el producto
+                }
+            }
+            catch(Exception E)
+            {
+                MessageBox.Show("Erro " + E.Message + " te recomendamos seleccionar una casilla que contenga datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -283,8 +299,7 @@ namespace CapaPresentacion.Forms
             textvalorcompra.Text = seleProducto.tbObjeto.Precio.ToString();
             textBoxvalorventa.Text = seleProducto.PrecioVenta.ToString();
             dateTimePickerfechacompra.Value = seleProducto.tbObjeto.FAdquirido.Value;
-            comboBoxProveedor.Text = seleProducto.tbObjeto.Proveedor;
-            labelIdProveedor.Text = seleProducto.tbObjeto.Proveedor.Trim();
+            textBoxProveedor.Text = seleProducto.tbObjeto.Proveedor.Trim();
             textBoxdescripcion.Text = seleProducto.Descripcion;
             comboBoxcategoria.Text = Enum.GetName(typeof(csEnums.FormaMedida), seleProducto.FormaMedida);
             mskTamaño.Text = seleProducto.Medida;
@@ -293,7 +308,7 @@ namespace CapaPresentacion.Forms
 
         private void buttonmodificar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Esta seguro que desea modificar el producto" + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("¿Esta seguro que desea modificar el producto? " + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if ((validarDatos()) && (result == DialogResult.Yes))//se validan los datos para no enviar datos null a la db
             {
                 
@@ -308,9 +323,9 @@ namespace CapaPresentacion.Forms
                     objeto.Nombre = textnombre.Text.Trim();
                     objeto.Precio = decimal.Parse(textvalorcompra.Text);
                     objeto.FAdquirido = dateTimePickerfechacompra.Value;
-                    objeto.Proveedor = labelIdProveedor.Text.Trim();
+                    objeto.Proveedor = textBoxProveedor.Text.Trim();
 
-                    if (objeto.Proveedor != null)//antes de guadar valida si el objeto esta asociado a un proveedor
+                    if (textBoxProveedor.Text != "")//antes de guadar valida si el objeto esta asociado a un proveedor
                     {
                         tbProductoProveedor ProdProv = new tbProductoProveedor();
                         tbProveedor InfoProveedor = new tbProveedor();
@@ -322,11 +337,11 @@ namespace CapaPresentacion.Forms
                         ProdProv.tbProveedor = InfoProveedor;//deacuerdo con el proveedor se lo accinamos
 
                         objeto.tbProductoProveedor.Add(ProdProv);
-                        messa = "con su proveedor" + InfoProveedor.Id;
+                        messa = "con su proveedor " + InfoProveedor.Id;
                     }
                     producto.Codigo = objeto.Codigo;
                     producto.Descripcion = textBoxdescripcion.Text.Trim();
-                    producto.PrecioVenta = int.Parse(textBoxvalorventa.Text);//se debe actualizar el int a decimal en la db
+                    producto.PrecioVenta = decimal.Parse(textBoxvalorventa.Text);//se debe actualizar el int a decimal en la db
                     producto.FormaMedida = comboBoxcategoria.SelectedIndex + 1;
                     producto.Medida = mskTamaño.Text.Trim();
                     producto.Cantidad = int.Parse(textexistencia.Text.Trim());
@@ -336,25 +351,24 @@ namespace CapaPresentacion.Forms
 
                     if (NProducto.modificar(producto))
                     {
-                        MessageBox.Show("Se modifico un producto " + messa, "Modificacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se modifico un producto " + messa, "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiarText();
                     }
                     else
                     {
-                        MessageBox.Show("Algo salio mal al modificar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Algo salió mal al modificar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception E)
                 {
                     MessageBox.Show("Error al modificar el producto, se debe a que: " + E.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 };
             }
         }
 
         private void buttoneliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Esta seguro que desea modificar el producto" + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("¿Esta seguro que desea eliminar el producto? " + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if ((validarDatos()) && (result == DialogResult.Yes))//se validan los datos para no enviar datos null a la db
             {// para eliminar logico se almacena todos los datos y se cambia unicamente el estado a false
                 string Codigo = mskcodigo.Text.Trim();
@@ -369,7 +383,7 @@ namespace CapaPresentacion.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Algo salio mal al modificar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Algo salió mal al modificar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -380,77 +394,71 @@ namespace CapaPresentacion.Forms
 
         }
 
-        private void comboBoxProveedor_SelectedIndexChanged(object sender, EventArgs e)
-        {   //para poder sacar la id del proveedor se hacen dos validaciones en la que se pide el numero de iten de la lista
-            //el campo que se encuente en la misma posicion se saca su id pero esto podria fallar si el usuario hace el evento pasarDatos
-            //para ello es la segunda validacion donde se saca un array de lo que este donde del () de combobox que representa la id
-            LP = obtenerlis(LP);
-            if(comboBoxProveedor.Text != "")
-            {
-                int cont = 0, n = comboBoxProveedor.SelectedIndex;//para la primera validacion
-                string txtcomprara = "", txtAlmacenarArray = "";
-                foreach (tbProveedor p in LP)
-                {
-                    if (n == cont)
-                    {
-                        txtcomprara = p.tbPersona.Id;//las id que esten en la misma posicion de la LP
-                    }
-                    cont++;
-                }
-                int i = 0, vecesParentesis = 0;//para la segunda validacion
-                bool capturaID = false;
-                char[] txt = comboBoxProveedor.Text.ToArray();//traemos el txt para comprar la id
-                while (txt[i] != ')')
-                {
-                    i++;
-                    if (txt[i] == ')')
-                    {
-                        capturaID = false;
-                    }
-                    if (capturaID)
-                    {
-                        //la cadena de text del comboBox viene algo así: pedro (123425466)
-                        txtAlmacenarArray += txt[i].ToString();//almacenamos la id que esta dentro ()
-                    }
-                    if (txt[i] == '(')
-                    {
-                        capturaID = true;
-                        vecesParentesis++;
-                    }
-                }
-                if (txtcomprara.Trim() == txtAlmacenarArray.Trim())
-                {
-                    labelIdProveedor.Text = txtcomprara;
-                }
-                else if (vecesParentesis >= 2)//por si la moscar la id tiene un carapter (
-                {
-                    labelIdProveedor.Text = txtAlmacenarArray;
-                    MessageBox.Show("Algo salio mal al sacar la id del proveedor, verifica que la cedula NO contega coracteres extraños", "Identificar Cedula", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
-
         private void btnCantidaProductos_Click(object sender, EventArgs e)
         {
-            if ((validarDatos()) && (comboBoxProveedor.Text != ""))
+            try
             {
-                csNegocioObjetoProveedor NObjProvee = new csNegocioObjetoProveedor();
-                int cantidadProductos = 0;
-                string productos = "", id = labelIdProveedor.Text.Trim();
-                listaPP = NObjProvee.obtenerLista(1);
-                foreach (tbProductoProveedor p in listaPP)
+                if ((validarDatos()) && (textBoxProveedor.Text != ""))
                 {
-                    if (p.idProveedor.Trim() == id.Trim())
-                    {
-                        cantidadProductos ++;
-                        productos += p.idObjeto.Trim() + "\n";
-                    }
-                }
-                MessageBox.Show("Productos que has comprado a " + comboBoxProveedor + " es de " + cantidadProductos + 
-                    " referente con su codigo: \n" + productos , " Productos por Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMostrarVentaProveedor frmVentaProve = new frmMostrarVentaProveedor();
 
+                    frmVentaProve.Show();
+                    frmVentaProve.resiveDatos(textBoxProveedor.Text.Trim());
+                }
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Erro " + E.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+
+        private void btnSeleProveedor_Click(object sender, EventArgs e)
+        {
+            frmVerProveedores frmProveedor = new frmVerProveedores();
+
+            frmProveedor.Show();
+            frmProveedor.refreData();
+
+            frmProveedor.pasaProveedor += FrmProveedor_pasaProveedor;
+        }
+
+        private void FrmProveedor_pasaProveedor(tbProveedor InfProveedor)
+        {
+            textBoxProveedor.Text = InfProveedor.Id.Trim();
+        }
+
+        private void textBoxProveedor_TextChanged(object sender, EventArgs e)
+        {
+            //ver o ver el buttom para ver la lista de proveedores
+            if(textBoxProveedor.Text != "")
+            {
+                btnCantidaProductos.Visible = true;
+            }
+            if(textBoxProveedor.Text.Length <= 1)
+            {
+                btnCantidaProductos.Visible = true;
             }
         }
 
+        private void frmProductos_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textexistencia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxvalorventa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textvalorcompra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

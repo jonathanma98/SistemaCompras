@@ -22,7 +22,19 @@ namespace CapaDatos
 
         public bool guarda(tbFactura entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (dbSistemaCompraEntities context = new dbSistemaCompraEntities())
+                {
+                    context.tbFactura.Add(entidad);
+                    context.SaveChanges();
+                }
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
         public bool modificar(tbFactura entidad)

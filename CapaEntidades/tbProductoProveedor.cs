@@ -11,7 +11,7 @@ namespace CapaEntidades
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class tbProductoProveedor
     {
         public int id { get; set; }
