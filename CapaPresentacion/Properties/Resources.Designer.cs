@@ -143,6 +143,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_actualizar_16_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-actualizar-16[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_apoyo_16_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-apoyo-16[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_búsqueda_16_1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-búsqueda-16[1]", resourceCulture);
@@ -156,6 +176,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap icons8_búsqueda_64_1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-búsqueda-64[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_carpeta_30_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-carpeta-30[1]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap icons8_editar_16_1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-editar-16[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_editar_16_1_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-editar-16[1]1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

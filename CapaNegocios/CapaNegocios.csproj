@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="csClienteNegocio.cs" />
+    <Compile Include="csNegocioControlDinero.cs" />
     <Compile Include="csNegocioFactura.cs" />
     <Compile Include="csNegocioLogin.cs" />
     <Compile Include="csNegocioObjetoProveedor.cs" />

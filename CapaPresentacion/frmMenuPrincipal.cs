@@ -137,7 +137,7 @@ namespace CapaPresentacion
 
         private void btnDetalledefactura_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.frmVerFactura(), sender);
+            OpenChildForm(new Forms.frmControlDinero(), sender);
         }
 
         private void btnReportes_Click_1(object sender, EventArgs e)

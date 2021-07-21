@@ -136,32 +136,32 @@
   <data name="eye_icon_143218" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_icon_143218.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-eliminar-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-eliminar-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-búsqueda-64[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-búsqueda-64[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconmonstr-delivery-11-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconmonstr-delivery-11-2401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconmonstr-delivery-1-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconmonstr-delivery-1-2401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-búsqueda-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-búsqueda-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-marcapáginas-16[1]1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-marcapáginas-16[1]1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="noun_Hairstylist_3925549" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noun_Hairstylist_39255491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconmonstr-delivery-11-2401" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-delivery-11-2402.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-prismáticos-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-prismáticos-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconmonstr-delivery-11-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconmonstr-delivery-11-2401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-búsqueda-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-búsqueda-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-documento-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-documento-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-eliminar-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-eliminar-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconmonstr-user-20-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconmonstr-user-20-2402.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconmonstr-delivery-1-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconmonstr-delivery-1-2401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-marcapáginas-16[2]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-marcapáginas-16[2].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconmonstr-friend-2-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-friend-2-2401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,23 +169,26 @@
   <data name="prueba[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prueba[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="noun_salon_3973880" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noun_salon_3973880.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-marcapáginas-16[1]1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-marcapáginas-16[1]1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-marcapáginas-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-marcapáginas-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-editar-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-editar-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="noun_Hairstylist_3925549" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noun_Hairstylist_39255491.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-marcapáginas-16[2]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-marcapáginas-16[2].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="noun_salon_3973880" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noun_salon_3973880.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconmonstr-user-20-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconmonstr-user-20-2402.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-prismáticos-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-prismáticos-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-prismáticos-30[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-prismáticos-30[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-editar-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-editar-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-eliminar-64[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-eliminar-64[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,7 +196,16 @@
   <data name="icons8-documento-30[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-documento-30[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-documento-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-documento-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-carpeta-30[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-carpeta-30[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-actualizar-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-actualizar-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-apoyo-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-apoyo-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-editar-16[1]1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-editar-16[1]1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

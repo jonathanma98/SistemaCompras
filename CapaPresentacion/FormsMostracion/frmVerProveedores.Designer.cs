@@ -30,22 +30,22 @@ namespace CapaPresentacion.FormsMostracion
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelImage = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelImage = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelImage)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,20 +59,6 @@ namespace CapaPresentacion.FormsMostracion
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(603, 80);
             this.panel1.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(78)))), ((int)(((byte)(27)))));
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_door_4_240;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(58, 67);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // labelTitulo
             // 
@@ -92,18 +78,6 @@ namespace CapaPresentacion.FormsMostracion
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(225, 329);
             this.panel2.TabIndex = 2;
-            // 
-            // panelImage
-            // 
-            this.panelImage.BackColor = System.Drawing.Color.White;
-            this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelImage.Image = global::CapaPresentacion.Properties.Resources.PicsArt_07_13_02_52_25_1_;
-            this.panelImage.Location = new System.Drawing.Point(0, 0);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(225, 329);
-            this.panelImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.panelImage.TabIndex = 1;
-            this.panelImage.TabStop = false;
             // 
             // panel3
             // 
@@ -128,6 +102,7 @@ namespace CapaPresentacion.FormsMostracion
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(378, 329);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // Cedula
@@ -150,6 +125,33 @@ namespace CapaPresentacion.FormsMostracion
             this.Telefono.HeaderText = "Teléfono";
             this.Telefono.Name = "Telefono";
             // 
+            // panelImage
+            // 
+            this.panelImage.BackColor = System.Drawing.Color.White;
+            this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImage.Image = global::CapaPresentacion.Properties.Resources.PicsArt_07_13_02_52_25_1_;
+            this.panelImage.Location = new System.Drawing.Point(0, 0);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(225, 329);
+            this.panelImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.panelImage.TabIndex = 1;
+            this.panelImage.TabStop = false;
+            this.panelImage.Click += new System.EventHandler(this.panelImage_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(78)))), ((int)(((byte)(27)))));
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_door_4_240;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 67);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // frmVerProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,11 +165,11 @@ namespace CapaPresentacion.FormsMostracion
             this.Text = "frmVerProveedores";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelImage)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

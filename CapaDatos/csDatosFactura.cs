@@ -44,7 +44,12 @@ namespace CapaDatos
 
         public List<tbFactura> obtenerLista(int estado)
         {
-            throw new NotImplementedException();
+            using (var context = new dbSistemaCompraEntities())
+            {
+                return (from c in context.tbFactura
+                        where c.Estado == true
+                        select c).ToList();
+            }
         }
 
 

@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="csClienteDatos.cs" />
+    <Compile Include="csDatosControlDinero.cs" />
     <Compile Include="csDatosFactura.cs" />
     <Compile Include="csDatosLogin.cs" />
     <Compile Include="csDatosObjetoProveedor.cs" />

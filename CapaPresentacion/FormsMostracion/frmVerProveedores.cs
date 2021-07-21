@@ -76,5 +76,15 @@ namespace CapaPresentacion.FormsMostracion
         {
             Close();
         }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

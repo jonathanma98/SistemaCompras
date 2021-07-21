@@ -11,7 +11,7 @@ using CapaNegocios;
 using CapaEntidades;
 using CapaUtilidades;
 
-namespace CapaPresentacion.Forms
+namespace CapaPresentacion.FormsMostracion
 {
     public partial class frmVerFactura : Form
     {
@@ -25,6 +25,7 @@ namespace CapaPresentacion.Forms
             InitializeComponent();
             SolicitarFactura();
         }
+
 
         private void SolicitarFactura()
         {
@@ -41,10 +42,11 @@ namespace CapaPresentacion.Forms
             {
                 labelfecha.Text = fc.FechaCompra.ToString();
                 labelID.Text = fc.IdFactura;
+                labelANombreDe.Text = fc.NombreAsocie;
                 labelTipo.Text = Enum.GetName(typeof(csEnums.Tipo), fc.Tipo);
                 datosDeFactura = fc.Productos;
 
-                if(fc.TipoAsocie == 1)
+                if (fc.TipoAsocie == 1)
                 {
                     labelID.Text = fc.IdCliente;
                 }
@@ -75,20 +77,24 @@ namespace CapaPresentacion.Forms
                 {
                     case 1:
                         item = listViewFactura.Items.Add(o);
-                        textBox1.Text += "--------()------- \n";
                         break;
 
                     case 2:
-                        item.SubItems.Add(o);
-                        cantidad = int.Parse(o);
+                        item = listViewFactura.Items.Add(o);
+                        textBox1.Text += "--------()------- \n";
                         break;
 
                     case 3:
                         item.SubItems.Add(o);
-                        precio = int.Parse(o);
+                        cantidad = int.Parse(o);
                         break;
 
                     case 4:
+                        item.SubItems.Add(o);
+                        precio = int.Parse(o);
+                        break;
+
+                    case 5:
                         iva = 0;
 
                         iva = iva / 100;
@@ -104,16 +110,6 @@ namespace CapaPresentacion.Forms
                 }
 
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewFactura_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
