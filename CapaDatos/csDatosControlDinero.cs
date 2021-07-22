@@ -32,7 +32,7 @@ namespace CapaDatos
 
         public List<tbControlDinero> obtenerLista(int estado)
         {
-            DateTime año = DateTime.Today;
+            DateTime año = DateTime.Now;
             try
             {
                 using (var context = new dbSistemaCompraEntities())

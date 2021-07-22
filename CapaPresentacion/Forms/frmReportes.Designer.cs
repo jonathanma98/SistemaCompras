@@ -54,6 +54,7 @@ namespace CapaPresentacion.Forms
             this.labelapellido2 = new System.Windows.Forms.Label();
             this.labeltelefono = new System.Windows.Forms.Label();
             this.labelcedula = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labeltitulo1
@@ -285,12 +286,25 @@ namespace CapaPresentacion.Forms
             this.labelcedula.TabIndex = 128;
             this.labelcedula.Text = "Cedula";
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(438, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 153;
+            this.button1.Text = "Consultar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(582, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labeltitulo1);
             this.Controls.Add(this.textBoxdescripcion);
             this.Controls.Add(this.label2);
@@ -350,5 +364,6 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Label labelapellido2;
         private System.Windows.Forms.Label labeltelefono;
         private System.Windows.Forms.Label labelcedula;
+        private System.Windows.Forms.Button button1;
     }
 }

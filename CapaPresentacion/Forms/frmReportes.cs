@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CapaPresentacion.Reportes;
 namespace CapaPresentacion.Forms
 {
     public partial class frmReportes : Form
@@ -36,6 +36,12 @@ namespace CapaPresentacion.Forms
             }
             labeltitulo1.ForeColor = ThemeColor.SecondaryColor;
             labelfechanacimiento.ForeColor = ThemeColor.PrimaryColor;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmReportesClientes reportesCliente = new frmReportesClientes();
+            reportesCliente.Show();
         }
     }
 }

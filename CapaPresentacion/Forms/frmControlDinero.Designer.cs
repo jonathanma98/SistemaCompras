@@ -35,24 +35,29 @@ namespace CapaPresentacion.Forms
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.panelInferior = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chartVentas = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartControlDinero = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEstadisInventario = new System.Windows.Forms.Button();
-            this.panelSuperior.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControlDinero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperior
             // 
             this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
-            this.panelSuperior.Controls.Add(this.btnEstadisInventario);
-            this.panelSuperior.Controls.Add(this.label1);
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelSuperior.Name = "panelSuperior";
@@ -73,6 +78,7 @@ namespace CapaPresentacion.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.chartVentas, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.chartControlDinero, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.chartProductos, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 64);
@@ -91,6 +97,7 @@ namespace CapaPresentacion.Forms
             this.chartVentas.BorderlineColor = System.Drawing.Color.Black;
             this.chartVentas.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
             this.chartVentas.BorderSkin.PageColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
             chartArea1.Name = "ChartArea1";
             this.chartVentas.ChartAreas.Add(chartArea1);
             this.chartVentas.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,6 +106,7 @@ namespace CapaPresentacion.Forms
             this.chartVentas.Location = new System.Drawing.Point(474, 3);
             this.chartVentas.Name = "chartVentas";
             series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
             series1.Legend = "Legend1";
             series1.Name = "Ventas";
             this.chartVentas.Series.Add(series1);
@@ -106,53 +114,81 @@ namespace CapaPresentacion.Forms
             this.chartVentas.TabIndex = 0;
             this.chartVentas.Text = "chart1";
             // 
+            // chartControlDinero
+            // 
+            this.chartControlDinero.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartControlDinero.BackColor = System.Drawing.Color.Black;
+            this.chartControlDinero.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
+            chartArea2.Name = "ChartArea1";
+            this.chartControlDinero.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartControlDinero.Legends.Add(legend2);
+            this.chartControlDinero.Location = new System.Drawing.Point(3, 200);
+            this.chartControlDinero.Name = "chartControlDinero";
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Lime;
+            series2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.LabelBorderWidth = 5;
+            series2.Legend = "Legend1";
+            series2.Name = "Ingreso";
+            series3.BorderWidth = 3;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.LabelBorderWidth = 5;
+            series3.Legend = "Legend1";
+            series3.Name = "Gastos";
+            this.chartControlDinero.Series.Add(series2);
+            this.chartControlDinero.Series.Add(series3);
+            this.chartControlDinero.Size = new System.Drawing.Size(465, 191);
+            this.chartControlDinero.TabIndex = 2;
+            this.chartControlDinero.Text = "chart1";
+            // 
             // chartProductos
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartProductos.ChartAreas.Add(chartArea2);
-            this.chartProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartProductos.Legends.Add(legend2);
+            this.chartProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea3.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend3);
             this.chartProductos.Location = new System.Drawing.Point(474, 200);
             this.chartProductos.Name = "chartProductos";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartProductos.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Legend = "Legend1";
+            series4.Name = "P1";
+            series4.YValuesPerPoint = 4;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series5.Legend = "Legend1";
+            series5.Name = "P2";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series6.Legend = "Legend1";
+            series6.Name = "P3";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series7.Legend = "Legend1";
+            series7.Name = "P4";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series8.Legend = "Legend1";
+            series8.Name = "P5";
+            this.chartProductos.Series.Add(series4);
+            this.chartProductos.Series.Add(series5);
+            this.chartProductos.Series.Add(series6);
+            this.chartProductos.Series.Add(series7);
+            this.chartProductos.Series.Add(series8);
             this.chartProductos.Size = new System.Drawing.Size(466, 191);
-            this.chartProductos.TabIndex = 1;
+            this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(761, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ver inventario";
-            // 
-            // btnEstadisInventario
-            // 
-            this.btnEstadisInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEstadisInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEstadisInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEstadisInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadisInventario.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisInventario.Image = global::CapaPresentacion.Properties.Resources.icons8_prismáticos_16_1_;
-            this.btnEstadisInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisInventario.Location = new System.Drawing.Point(860, 28);
-            this.btnEstadisInventario.Name = "btnEstadisInventario";
-            this.btnEstadisInventario.Size = new System.Drawing.Size(71, 24);
-            this.btnEstadisInventario.TabIndex = 1;
-            this.btnEstadisInventario.Text = "Cargar";
-            this.btnEstadisInventario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEstadisInventario.UseVisualStyleBackColor = false;
-            this.btnEstadisInventario.Click += new System.EventHandler(this.btnEstadisInventario_Click);
             // 
             // frmControlDinero
             // 
@@ -164,10 +200,9 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.panelSuperior);
             this.Name = "frmControlDinero";
             this.Text = "frmControlDinero";
-            this.panelSuperior.ResumeLayout(false);
-            this.panelSuperior.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControlDinero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).EndInit();
             this.ResumeLayout(false);
 
@@ -179,8 +214,7 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Panel panelInferior;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVentas;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartControlDinero;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartProductos;
-        private System.Windows.Forms.Button btnEstadisInventario;
-        private System.Windows.Forms.Label label1;
     }
 }

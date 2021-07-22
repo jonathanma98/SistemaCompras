@@ -63,9 +63,49 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap credit_card_22167 {
+            get {
+                object obj = ResourceManager.GetObject("credit_card_22167", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap designstudio_120431__2_ {
+            get {
+                object obj = ResourceManager.GetObject("designstudio_120431 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap designstudio_120431__2__1_ {
+            get {
+                object obj = ResourceManager.GetObject("designstudio_120431_(2)[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_icon_143218 {
             get {
                 object obj = ResourceManager.GetObject("eye_icon_143218", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_local_shipping_128_28443_1_ {
+            get {
+                object obj = ResourceManager.GetObject("ic_local_shipping_128_28443[1]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,6 +396,56 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap prueba_1_ {
             get {
                 object obj = ResourceManager.GetObject("prueba[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salon_mirror_makeup_cosmetics_beauty_icon_186792 {
+            get {
+                object obj = ResourceManager.GetObject("salon_mirror_makeup_cosmetics_beauty_icon_186792", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salon_mirror_makeup_cosmetics_beauty_icon_186822 {
+            get {
+                object obj = ResourceManager.GetObject("salon_mirror_makeup_cosmetics_beauty_icon_186822", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shipping_products_22121_1_ {
+            get {
+                object obj = ResourceManager.GetObject("shipping_products_22121[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_accounts_15362_1_ {
+            get {
+                object obj = ResourceManager.GetObject("user_accounts_15362[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wa_link_1757tl_1_ {
+            get {
+                object obj = ResourceManager.GetObject("wa.link_1757tl[1]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
