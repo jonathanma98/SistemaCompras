@@ -22,7 +22,20 @@ namespace CapaDatos
 
         public bool guarda(tbControlDinero entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using(dbSistemaCompraEntities context = new dbSistemaCompraEntities())
+                {
+                    context.tbControlDinero.Add(entidad);
+                    context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
         }
 
         public bool modificar(tbControlDinero entidad)

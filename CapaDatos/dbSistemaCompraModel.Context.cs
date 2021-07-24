@@ -29,6 +29,7 @@ namespace CapaDatos
         public virtual DbSet<tbAdmin> tbAdmin { get; set; }
         public virtual DbSet<tbCliente> tbCliente { get; set; }
         public virtual DbSet<tbControlDinero> tbControlDinero { get; set; }
+        public virtual DbSet<tbDetalleFactura> tbDetalleFactura { get; set; }
         public virtual DbSet<tbEmpresa> tbEmpresa { get; set; }
         public virtual DbSet<tbFactura> tbFactura { get; set; }
         public virtual DbSet<tbObjeto> tbObjeto { get; set; }

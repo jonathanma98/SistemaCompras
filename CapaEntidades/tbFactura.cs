@@ -18,22 +18,25 @@ namespace CapaEntidades
         public tbFactura()
         {
             this.tbControlDinero = new HashSet<tbControlDinero>();
+            this.tbDetalleFactura = new HashSet<tbDetalleFactura>();
         }
     
         public string IdFactura { get; set; }
         public System.DateTime FechaCompra { get; set; }
         public int Tipo { get; set; }
-        public string Productos { get; set; }
         public Nullable<int> TipoAsocie { get; set; }
         public string IdCliente { get; set; }
         public string IdProveedor { get; set; }
         public string NombreAsocie { get; set; }
         public decimal Total { get; set; }
         public Nullable<bool> Estado { get; set; }
+        public string DetalleExtra { get; set; }
     
         public virtual tbCliente tbCliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbControlDinero> tbControlDinero { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbDetalleFactura> tbDetalleFactura { get; set; }
         public virtual tbProveedor tbProveedor { get; set; }
     }
 }

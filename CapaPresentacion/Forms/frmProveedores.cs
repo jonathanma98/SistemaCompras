@@ -124,14 +124,14 @@ namespace CapaPresentacion.Forms
 
         private void limpiarText()//limpear los textos
         {
-            maskedTextBoxcedula.Refresh();
-            comboBoxtipocedula.Refresh();
-            textnombre.Refresh();
-            textapellido1.Refresh();
-            maskedTextBoxtelefono.Refresh();
-            textemail.Refresh();
-            textBoxdescripcion.Refresh();
-            comboBoxcalificacion.Refresh();
+            maskedTextBoxcedula.ResetText();
+            comboBoxtipocedula.ResetText();
+            textnombre.ResetText();
+            textapellido1.ResetText();
+            maskedTextBoxtelefono.ResetText();
+            textemail.ResetText();
+            textBoxdescripcion.ResetText();
+            comboBoxcalificacion.ResetText();
         }
 
         //al seleccionar un tipo de cedula se cambia la mascara

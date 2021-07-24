@@ -12,16 +12,18 @@ namespace CapaEntidades
     using System;
     using System.Collections.Generic;
     
-    public partial class tbControlDinero
+    public partial class tbDetalleFactura
     {
-        public string Id { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public Nullable<decimal> Monto { get; set; }
-        public int Tipo { get; set; }
-        public string Factura { get; set; }
-        public Nullable<bool> Estado { get; set; }
-        public string DetalleExtra { get; set; }
+        public int Id { get; set; }
+        public string IdProductos { get; set; }
+        public string IdFactura { get; set; }
+        public Nullable<decimal> Precio { get; set; }
+        public int Cantiadad { get; set; }
+        public Nullable<decimal> IVA { get; set; }
+        public Nullable<decimal> Descuento { get; set; }
+        public Nullable<decimal> Subtotal { get; set; }
     
         public virtual tbFactura tbFactura { get; set; }
+        public virtual tbProducto tbProducto { get; set; }
     }
 }

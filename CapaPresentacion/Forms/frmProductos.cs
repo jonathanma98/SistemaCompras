@@ -172,15 +172,15 @@ namespace CapaPresentacion.Forms
 
         private void limpiarText()//limpear los textos
         {
-            mskcodigo.Refresh();
-            textnombre.Refresh();
-            textnombre.Refresh();
-            comboBoxcategoria.Refresh();
-            mskTamaño.Refresh();
-            textvalorcompra.Refresh();
-            textBoxvalorventa.Refresh();
-            dateTimePickerfechacompra.Refresh();
-            textexistencia.Refresh();
+            mskcodigo.ResetText();
+            textnombre.ResetText();
+            textnombre.ResetText();
+            comboBoxcategoria.ResetText();
+            mskTamaño.ResetText();
+            textvalorcompra.ResetText();
+            textBoxvalorventa.ResetText();
+            dateTimePickerfechacompra.ResetText();
+            textexistencia.ResetText();
         }
 
         private void comboBoxcategoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -196,7 +196,7 @@ namespace CapaPresentacion.Forms
                     mskTamaño.Mask = "###ml";
                     break;
                 case 2:
-                    mskTamaño.Mask = "###g";
+                    mskTamaño.Mask = "###.g";
                     break;
                 case 3:
                     mskTamaño.Mask = "###Kg";
@@ -208,7 +208,7 @@ namespace CapaPresentacion.Forms
                     mskTamaño.Mask = "###ml";
                     break;
                 case 6:
-                    mskTamaño.Mask = "###l";
+                    mskTamaño.Mask = "###.l";
                     break;
                 case 7:
                     mskTamaño.Mask = "###oz";
@@ -220,10 +220,11 @@ namespace CapaPresentacion.Forms
 
         private void mskTamaño_TextChanged(object sender, EventArgs e)
         {
-            for(int i=0; i >= mskTamaño.Text.Length; i++)
-            {
-                mskTamaño.Mask.Insert(1, "##");
-            }
+            string mskText = "";
+            
+            mskText = mskTamaño.Text;
+            mskTamaño.Mask.Insert(mskTamaño.Mask.Length,"#");
+            
         }
 
         private void textvalorcompra_KeyPress(object sender, KeyPressEventArgs e)

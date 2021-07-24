@@ -28,11 +28,26 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Id" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
-          <Property Name="Monto" Type="money" />
+          <Property Name="Monto" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Tipo" Type="int" Nullable="false" />
           <Property Name="Factura" Type="varchar" MaxLength="40" />
+          <Property Name="Estado" Type="bit" />
+          <Property Name="DetalleExtra" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbDetalleFactura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProductos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdFactura" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cantiadad" Type="int" Nullable="false" />
+          <Property Name="IVA" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Descuento" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Subtotal" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="tbEmpresa">
           <Key>
@@ -40,7 +55,7 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="70" Nullable="false" />
-          <Property Name="Correo" Type="varbinary" MaxLength="80" />
+          <Property Name="Correo" Type="varchar" MaxLength="80" />
           <Property Name="Telefono" Type="varchar" MaxLength="20" />
           <Property Name="Ubicacion" Type="varchar" MaxLength="80" />
           <Property Name="contraseña" Type="varchar(max)" Nullable="false" />
@@ -52,13 +67,13 @@
           <Property Name="IdFactura" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="FechaCompra" Type="datetime" Nullable="false" />
           <Property Name="Tipo" Type="int" Nullable="false" />
-          <Property Name="Productos" Type="text" Nullable="false" />
           <Property Name="TipoAsocie" Type="int" />
           <Property Name="IdCliente" Type="nchar" MaxLength="15" />
           <Property Name="IdProveedor" Type="nchar" MaxLength="15" />
           <Property Name="NombreAsocie" Type="varchar" MaxLength="50" />
-          <Property Name="Total" Type="money" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Estado" Type="bit" />
+          <Property Name="DetalleExtra" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbObjeto">
           <Key>
@@ -66,7 +81,7 @@
           </Key>
           <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Precio" Type="money" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Proveedor" Type="nchar" MaxLength="15" />
           <Property Name="FAdquirido" Type="date" />
         </EntityType>
@@ -87,7 +102,8 @@
           </Key>
           <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PrecioVenta" Type="money" Nullable="false" />
+          <Property Name="PrecioVenta" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IVA" Type="decimal" Precision="18" Scale="2" />
           <Property Name="FormaMedida" Type="int" Nullable="false" />
           <Property Name="Medida" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Cantidad" Type="int" />
@@ -159,6 +175,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tbDetalleFactura_tbFactura">
+          <End Role="tbFactura" Type="Self.tbFactura" Multiplicity="1" />
+          <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbFactura">
+              <PropertyRef Name="IdFactura" />
+            </Principal>
+            <Dependent Role="tbDetalleFactura">
+              <PropertyRef Name="IdFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbDetalleFactura_tbProducto">
+          <End Role="tbProducto" Type="Self.tbProducto" Multiplicity="1" />
+          <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProducto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tbDetalleFactura">
+              <PropertyRef Name="IdProductos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tbFactura_tbCliente">
           <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="0..1" />
           <End Role="tbFactura" Type="Self.tbFactura" Multiplicity="*" />
@@ -211,6 +251,7 @@
           <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbControlDinero" EntityType="Self.tbControlDinero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbDetalleFactura" EntityType="Self.tbDetalleFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbEmpresa" EntityType="Self.tbEmpresa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbFactura" EntityType="Self.tbFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbObjeto" EntityType="Self.tbObjeto" Schema="dbo" store:Type="Tables" />
@@ -233,6 +274,14 @@
           <AssociationSet Name="FK_tbControlDinero_tbFactura" Association="Self.FK_tbControlDinero_tbFactura">
             <End Role="tbFactura" EntitySet="tbFactura" />
             <End Role="tbControlDinero" EntitySet="tbControlDinero" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbDetalleFactura_tbFactura" Association="Self.FK_tbDetalleFactura_tbFactura">
+            <End Role="tbFactura" EntitySet="tbFactura" />
+            <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbDetalleFactura_tbProducto" Association="Self.FK_tbDetalleFactura_tbProducto">
+            <End Role="tbProducto" EntitySet="tbProducto" />
+            <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
           </AssociationSet>
           <AssociationSet Name="FK_tbFactura_tbCliente" Association="Self.FK_tbFactura_tbCliente">
             <End Role="tbCliente" EntitySet="tbCliente" />
@@ -281,12 +330,29 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Monto" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Tipo" Type="Int32" Nullable="false" />
           <Property Name="Factura" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Boolean" />
+          <Property Name="DetalleExtra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tbFactura" Relationship="Self.FK_tbControlDinero_tbFactura" FromRole="tbControlDinero" ToRole="tbFactura" />
+        </EntityType>
+        <EntityType Name="tbDetalleFactura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProductos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdFactura" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cantiadad" Type="Int32" Nullable="false" />
+          <Property Name="IVA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Descuento" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="tbFactura" Relationship="Self.FK_tbDetalleFactura_tbFactura" FromRole="tbDetalleFactura" ToRole="tbFactura" />
+          <NavigationProperty Name="tbProducto" Relationship="Self.FK_tbDetalleFactura_tbProducto" FromRole="tbDetalleFactura" ToRole="tbProducto" />
         </EntityType>
         <EntityType Name="tbEmpresa">
           <Key>
@@ -294,7 +360,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Correo" Type="Binary" MaxLength="80" FixedLength="false" />
+          <Property Name="Correo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Ubicacion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="contraseña" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
@@ -306,15 +372,16 @@
           <Property Name="IdFactura" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FechaCompra" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Tipo" Type="Int32" Nullable="false" />
-          <Property Name="Productos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TipoAsocie" Type="Int32" />
           <Property Name="IdCliente" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="IdProveedor" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="NombreAsocie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Estado" Type="Boolean" />
+          <Property Name="DetalleExtra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tbCliente" Relationship="Self.FK_tbFactura_tbCliente" FromRole="tbFactura" ToRole="tbCliente" />
           <NavigationProperty Name="tbControlDinero" Relationship="Self.FK_tbControlDinero_tbFactura" FromRole="tbFactura" ToRole="tbControlDinero" />
+          <NavigationProperty Name="tbDetalleFactura" Relationship="Self.FK_tbDetalleFactura_tbFactura" FromRole="tbFactura" ToRole="tbDetalleFactura" />
           <NavigationProperty Name="tbProveedor" Relationship="Self.FK_tbFactura_tbProveedor" FromRole="tbFactura" ToRole="tbProveedor" />
         </EntityType>
         <EntityType Name="tbObjeto">
@@ -323,7 +390,7 @@
           </Key>
           <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Proveedor" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="FAdquirido" Type="DateTime" Precision="0" />
           <NavigationProperty Name="tbProductoProveedor" Relationship="Self.FK_ProductoProveedor_tbObjeto" FromRole="tbObjeto" ToRole="tbProductoProveedor" />
@@ -348,11 +415,13 @@
           </Key>
           <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PrecioVenta" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PrecioVenta" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IVA" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="FormaMedida" Type="Int32" Nullable="false" />
           <Property Name="Medida" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Cantidad" Type="Int32" />
           <Property Name="Estado" Type="Boolean" />
+          <NavigationProperty Name="tbDetalleFactura" Relationship="Self.FK_tbDetalleFactura_tbProducto" FromRole="tbProducto" ToRole="tbDetalleFactura" />
           <NavigationProperty Name="tbObjeto" Relationship="Self.FK_tbProducto_tbObjeto" FromRole="tbProducto" ToRole="tbObjeto" />
         </EntityType>
         <EntityType Name="tbProductoProveedor">
@@ -411,6 +480,30 @@
             </Principal>
             <Dependent Role="tbControlDinero">
               <PropertyRef Name="Factura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbDetalleFactura_tbFactura">
+          <End Role="tbFactura" Type="Self.tbFactura" Multiplicity="1" />
+          <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbFactura">
+              <PropertyRef Name="IdFactura" />
+            </Principal>
+            <Dependent Role="tbDetalleFactura">
+              <PropertyRef Name="IdFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbDetalleFactura_tbProducto">
+          <End Role="tbProducto" Type="Self.tbProducto" Multiplicity="1" />
+          <End Role="tbDetalleFactura" Type="Self.tbDetalleFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbProducto">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tbDetalleFactura">
+              <PropertyRef Name="IdProductos" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -478,6 +571,7 @@
           <EntitySet Name="tbAdmin" EntityType="Self.tbAdmin" />
           <EntitySet Name="tbCliente" EntityType="Self.tbCliente" />
           <EntitySet Name="tbControlDinero" EntityType="Self.tbControlDinero" />
+          <EntitySet Name="tbDetalleFactura" EntityType="Self.tbDetalleFactura" />
           <EntitySet Name="tbEmpresa" EntityType="Self.tbEmpresa" />
           <EntitySet Name="tbFactura" EntityType="Self.tbFactura" />
           <EntitySet Name="tbObjeto" EntityType="Self.tbObjeto" />
@@ -496,6 +590,14 @@
           <AssociationSet Name="FK_tbControlDinero_tbFactura" Association="Self.FK_tbControlDinero_tbFactura">
             <End Role="tbFactura" EntitySet="tbFactura" />
             <End Role="tbControlDinero" EntitySet="tbControlDinero" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbDetalleFactura_tbFactura" Association="Self.FK_tbDetalleFactura_tbFactura">
+            <End Role="tbFactura" EntitySet="tbFactura" />
+            <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbDetalleFactura_tbProducto" Association="Self.FK_tbDetalleFactura_tbProducto">
+            <End Role="tbProducto" EntitySet="tbProducto" />
+            <End Role="tbDetalleFactura" EntitySet="tbDetalleFactura" />
           </AssociationSet>
           <AssociationSet Name="FK_tbFactura_tbProveedor" Association="Self.FK_tbFactura_tbProveedor">
             <End Role="tbProveedor" EntitySet="tbProveedor" />
@@ -553,6 +655,22 @@
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Factura" ColumnName="Factura" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="DetalleExtra" ColumnName="DetalleExtra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDetalleFactura">
+            <EntityTypeMapping TypeName="dbSistemaCompraModel.tbDetalleFactura">
+              <MappingFragment StoreEntitySet="tbDetalleFactura">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdProductos" ColumnName="IdProductos" />
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Cantiadad" ColumnName="Cantiadad" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -574,13 +692,13 @@
                 <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
                 <ScalarProperty Name="FechaCompra" ColumnName="FechaCompra" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-                <ScalarProperty Name="Productos" ColumnName="Productos" />
                 <ScalarProperty Name="TipoAsocie" ColumnName="TipoAsocie" />
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
                 <ScalarProperty Name="NombreAsocie" ColumnName="NombreAsocie" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="DetalleExtra" ColumnName="DetalleExtra" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -613,6 +731,7 @@
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
                 <ScalarProperty Name="FormaMedida" ColumnName="FormaMedida" />
                 <ScalarProperty Name="Medida" ColumnName="Medida" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />

@@ -14,14 +14,23 @@ namespace CapaEntidades
     
     public partial class tbProducto
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbProducto()
+        {
+            this.tbDetalleFactura = new HashSet<tbDetalleFactura>();
+        }
+    
         public string Codigo { get; set; }
         public string Descripcion { get; set; }
         public decimal PrecioVenta { get; set; }
+        public Nullable<decimal> IVA { get; set; }
         public int FormaMedida { get; set; }
         public string Medida { get; set; }
         public Nullable<int> Cantidad { get; set; }
         public Nullable<bool> Estado { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbDetalleFactura> tbDetalleFactura { get; set; }
         public virtual tbObjeto tbObjeto { get; set; }
     }
 }

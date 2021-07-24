@@ -18,10 +18,11 @@ namespace CapaPresentacion.Forms
     {
         csNegocioFactura NFactura = new csNegocioFactura();
         NegocioProductos NProducto = new NegocioProductos();
+        csNegociosDetalleFactura NDetalleFactura = new csNegociosDetalleFactura();
 
-        ICollection<tbControlDinero> IcollControlDinero;
 
         List<tbProducto> listaProducto;
+        List<tbDetalleFactura> listaDF = new List<tbDetalleFactura>();
         public frmFactura()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace CapaPresentacion.Forms
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-            labeltitulo1.ForeColor = ThemeColor.SecondaryColor;
+            panel2.ForeColor = ThemeColor.SecondaryColor;
         }
 
         private void cargarTxts()
@@ -143,17 +144,24 @@ namespace CapaPresentacion.Forms
 
         private void btnBuscaProducto_Click(object sender, EventArgs e)
         {   //Buscador de productos
-            IEnumerable<tbProducto> listaAux = new List<tbProducto>();
+            if(dataGridViewProductos.Rows.Count >= 1)
+            {
+                IEnumerable<tbProducto> listaAux = new List<tbProducto>();
 
-            if (txtBusProducto.Text != string.Empty)
-            {
-                listaAux = listaProducto.Where(x => x.tbObjeto.Nombre.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
+                if (txtBusProducto.Text != string.Empty)
+                {
+                    listaAux = listaProducto.Where(x => x.tbObjeto.Nombre.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
+                }
+                if (listaAux.Count() == 0 && txtBusProducto.Text == string.Empty)
+                {
+                    listaAux = listaProducto;
+                }
+                cargarDatos((List<tbProducto>)listaAux);
             }
-            if (listaAux.Count() == 0 && txtBusProducto.Text == string.Empty)
+            else
             {
-                listaAux = listaProducto;
+                refreData();
             }
-            cargarDatos((List<tbProducto>)listaAux);
         }
 
 
@@ -280,25 +288,12 @@ namespace CapaPresentacion.Forms
 
         private void buttonguardar_Click(object sender, EventArgs e)
         {
+
             if (validarDatos())
             {
                 tbFactura factura = new tbFactura();
                 tbControlDinero ControlDiner = new tbControlDinero();
-                string detalleFactura = "";
-                foreach (DataGridViewRow row in dataGVDetalleFactura.Rows)
-                {
-                    if (row.Cells[0].Value != null)
-                    {
-                        detalleFactura += row.Cells[0].Value.ToString() + "}";
-                        detalleFactura += row.Cells[1].Value.ToString() + "}";
-                        detalleFactura += row.Cells[2].Value.ToString() + "}";
-                        detalleFactura += row.Cells[3].Value.ToString() + "}";
-                        detalleFactura += row.Cells[4].Value.ToString() + "}";
-                        detalleFactura += row.Cells[5].Value.ToString() + "}";
-                    }
-                }
-                MessageBox.Show(detalleFactura);
-                factura.Productos = detalleFactura.Trim();
+                
                 factura.IdFactura = LabelPara.Text.Trim() + labelIdFactura.Text.Trim();
                 factura.NombreAsocie = labelANombreDe.Text.Trim();
                 factura.Tipo = cbTipoFactura.SelectedIndex + 1;
@@ -332,8 +327,33 @@ namespace CapaPresentacion.Forms
 
                 factura.tbControlDinero.Add(ControlDiner);
 
-                if (NFactura.guarda(factura))
+                
+                List<tbDetalleFactura> listaDetalleFactura = new List<tbDetalleFactura>();
+                int i=0;
+                foreach (DataGridViewRow row in dataGVDetalleFactura.Rows)
                 {
+
+                    if (row.Cells[0].Value != null)
+                    {
+                        tbDetalleFactura detalleFactura = new tbDetalleFactura();
+                        detalleFactura.IdFactura += factura.IdFactura;
+                        detalleFactura.IdProductos = row.Cells[0].Value.ToString();
+                        row.Cells[1].Value.ToString();
+                        detalleFactura.Precio = (decimal)row.Cells[2].Value;
+                        detalleFactura.Cantiadad = int.Parse(row.Cells[3].Value.ToString().Trim());
+                        detalleFactura.IVA = decimal.Parse(row.Cells[4].Value.ToString().Trim());
+                        detalleFactura.Subtotal = (decimal)row.Cells[5].Value;
+                        detalleFactura.Descuento = 0;
+
+                        listaDF.Insert(i,detalleFactura);
+                        listaDetalleFactura.Add(listaDF[i]);
+                        i++;
+                    }
+                }
+                
+                if (NFactura.GuardarFacura(factura, listaDF))
+                {
+                    
                     MessageBox.Show("Se ingreseo la factura ", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -412,6 +432,11 @@ namespace CapaPresentacion.Forms
         }
 
         private void btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

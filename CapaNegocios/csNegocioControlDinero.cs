@@ -24,7 +24,7 @@ namespace CapaNegocios
 
         public bool guarda(tbControlDinero entidad)
         {
-            throw new NotImplementedException();
+            return DControlDinero.guarda(entidad);
         }
 
         public bool modificar(tbControlDinero entidad)

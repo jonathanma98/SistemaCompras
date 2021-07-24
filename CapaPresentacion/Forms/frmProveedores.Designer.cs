@@ -331,6 +331,9 @@ namespace CapaPresentacion.Forms
             // 
             // dataGridViewProveedor
             // 
+            this.dataGridViewProveedor.AllowUserToAddRows = false;
+            this.dataGridViewProveedor.AllowUserToDeleteRows = false;
+            this.dataGridViewProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProveedor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dataGridViewProveedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -359,9 +362,9 @@ namespace CapaPresentacion.Forms
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewProveedor.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewProveedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.dataGridViewProveedor.Location = new System.Drawing.Point(0, 34);
+            this.dataGridViewProveedor.MultiSelect = false;
             this.dataGridViewProveedor.Name = "dataGridViewProveedor";
             this.dataGridViewProveedor.Size = new System.Drawing.Size(525, 484);
             this.dataGridViewProveedor.TabIndex = 159;
@@ -410,9 +413,9 @@ namespace CapaPresentacion.Forms
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dataGridViewProveedor);
             this.panel1.Controls.Add(this.labeltitulo1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(413, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(525, 518);

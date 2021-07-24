@@ -56,6 +56,7 @@
     <Compile Include="csNegocioFactura.cs" />
     <Compile Include="csNegocioLogin.cs" />
     <Compile Include="csNegocioObjetoProveedor.cs" />
+    <Compile Include="csNegociosDetalleFactura.cs" />
     <Compile Include="NegocioProductos.cs" />
     <Compile Include="NegocioProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

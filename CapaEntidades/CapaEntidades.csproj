@@ -66,6 +66,9 @@
     <Compile Include="tbControlDinero.cs">
       <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbDetalleFactura.cs">
+      <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbEmpresa.cs">
       <DependentUpon>dbSistemaCompraModel.tt</DependentUpon>
     </Compile>

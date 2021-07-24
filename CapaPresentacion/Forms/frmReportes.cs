@@ -40,7 +40,7 @@ namespace CapaPresentacion.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmReportesClientes reportesCliente = new frmReportesClientes();
+            frmReporteCliente reportesCliente = new frmReporteCliente();
             reportesCliente.Show();
         }
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion.Reportes
 {
-    partial class frmReportesClientes
+    partial class frmReporteCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,31 @@ namespace CapaPresentacion.Reportes
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reporteCliente = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // reporteCliente
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(542, 527);
-            this.reportViewer1.TabIndex = 0;
+            this.reporteCliente.LocalReport.DisplayName = "reporteCliente";
+            this.reporteCliente.Location = new System.Drawing.Point(0, 0);
+            this.reporteCliente.Name = "ReportViewer";
+            this.reporteCliente.ServerReport.BearerToken = null;
+            this.reporteCliente.Size = new System.Drawing.Size(396, 246);
+            this.reporteCliente.TabIndex = 0;
             // 
-            // frmReportesClientes
+            // frmReporteCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 527);
-            this.Controls.Add(this.reportViewer1);
-            this.Name = "frmReportesClientes";
-            this.Text = "frmReportesClientes";
-            this.Load += new System.EventHandler(this.frmReportesClientes_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmReporteCliente";
+            this.Text = "frmReporteCliente";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reporteCliente;
     }
 }

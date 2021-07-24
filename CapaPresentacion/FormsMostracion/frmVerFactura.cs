@@ -44,7 +44,6 @@ namespace CapaPresentacion.FormsMostracion
                 labelID.Text = fc.IdFactura;
                 labelANombreDe.Text = fc.NombreAsocie;
                 labelTipo.Text = Enum.GetName(typeof(csEnums.Tipo), fc.Tipo);
-                datosDeFactura = fc.Productos;
 
                 if (fc.TipoAsocie == 1)
                 {

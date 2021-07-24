@@ -17,7 +17,18 @@ namespace CapaDatos
 
         public bool eliminar(tbFactura entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using(dbSistemaCompraEntities context = new dbSistemaCompraEntities())
+                {
+                    context.Entry<tbFactura>(entidad).State = System.Data.Entity.EntityState.Deleted;
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool guarda(tbFactura entidad)
@@ -36,6 +47,7 @@ namespace CapaDatos
                 return false;
             }
         }
+
 
         public bool modificar(tbFactura entidad)
         {
@@ -62,5 +74,30 @@ namespace CapaDatos
                         select c).ToList();
             }
         }
+
+
+        public bool GuardarFacura(tbFactura factura, List<tbDetalleFactura> listaDetalleFactura)
+        {
+            try
+            {
+                using (dbSistemaCompraEntities context = new dbSistemaCompraEntities())
+                {
+                    context.tbFactura.Add(factura);
+
+                    foreach(tbDetalleFactura lis in listaDetalleFactura)
+                    {
+                        context.tbDetalleFactura.Add(lis);
+                    }
+                    context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
+        }
+        
     }
 }

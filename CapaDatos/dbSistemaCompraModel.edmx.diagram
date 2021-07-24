@@ -4,20 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2519a97089024130afbbaf7d11b450e8" Name="Diagram1">
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbAdmin" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbCliente" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbControlDinero" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbEmpresa" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbFactura" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbObjeto" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbPersona" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbProducto" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbProductoProveedor" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSistemaCompraModel.tbProveedor" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+      <Diagram DiagramId="c965294516164070bf64e333973f3eb9" Name="Diagram1">
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbAdmin" Width="1.5" PointX="7.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbCliente" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbControlDinero" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbDetalleFactura" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbEmpresa" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbFactura" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbObjeto" Width="1.5" PointX="6" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbPersona" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbProducto" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbProductoProveedor" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistemaCompraModel.tbProveedor" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
         <AssociationConnector Association="dbSistemaCompraModel.FK_tbCliente_tbPersona" ManuallyRouted="false" />
         <AssociationConnector Association="dbSistemaCompraModel.FK_tbFactura_tbCliente" ManuallyRouted="false" />
         <AssociationConnector Association="dbSistemaCompraModel.FK_tbControlDinero_tbFactura" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistemaCompraModel.FK_tbDetalleFactura_tbFactura" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistemaCompraModel.FK_tbDetalleFactura_tbProducto" ManuallyRouted="false" />
         <AssociationConnector Association="dbSistemaCompraModel.FK_tbFactura_tbProveedor" ManuallyRouted="false" />
         <AssociationConnector Association="dbSistemaCompraModel.FK_ProductoProveedor_tbObjeto" ManuallyRouted="false" />
         <AssociationConnector Association="dbSistemaCompraModel.FK_tbProducto_tbObjeto" ManuallyRouted="false" />

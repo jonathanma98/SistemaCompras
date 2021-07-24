@@ -20,8 +20,6 @@ namespace CapaPresentacion.Forms
         NegocioProductos NProducto = new NegocioProductos();
         csNegocioControlDinero NControlDinero = new csNegocioControlDinero();
 
-        tbFactura factura = new tbFactura();
-        tbProducto producto= new tbProducto();
 
         List<tbFactura> listaFactura;
         List<tbProducto> listaProductos;
@@ -31,6 +29,19 @@ namespace CapaPresentacion.Forms
         {
             InitializeComponent();
             cargarGrafico();
+            cargarDate();
+        }
+
+        private void cargarDate()
+        {
+            labelDate.Text = "";
+            labelHora.Text = "";
+            DateTime date = DateTime.Now;
+
+            labelDate.Text = date.Date.ToString();
+            labelDate.Text = date.ToLocalTime().ToString();
+
+            cbTipo.DataSource = Enum.GetValues(typeof(csEnums.Tipo));
         }
 
         private void cargarGrafico()
@@ -58,47 +69,9 @@ namespace CapaPresentacion.Forms
                     serie.Points.Add((double)p.Total, p.FechaCompra.Day);
                 }
             }
-            donaProducto();
-        }
-
-        private void donaProducto()
-        {
-
-            chartProductos.Titles.Clear();
-            DateTime mes = DateTime.Today;
-            //pedimos la lista de productos activo
-            listaProductos = NProducto.obtenerLista(1);
-            //ordenamos la lista en cantidad
-            var listaProductosOrdenada = listaProductos.OrderBy(x => x.Cantidad);
-           
-            chartProductos.Titles.Add("Los 5 Productos que más tienes");
-            tbProducto p;
-            for (int i=0; i <= 4; i++)
-            {
-                p = listaProductosOrdenada.ElementAt(i);
-                if (i == 0)
-                {
-                    this.chartProductos.Series["P1"].Points.AddXY(p.Codigo, (double)p.Cantidad);
-                }
-                if (i == 1)
-                {
-                    this.chartProductos.Series["P2"].Points.AddXY(p.Codigo, (double)p.Cantidad);
-                }
-                if (i == 2)
-                {
-                    this.chartProductos.Series["P3"].Points.AddXY(p.Codigo, (double)p.Cantidad);
-                }
-                if (i == 3)
-                {
-                    this.chartProductos.Series["P4"].Points.AddXY(p.Codigo, (double)p.Cantidad);
-                }
-                if (i == 4)
-                {
-                    this.chartProductos.Series["P5"].Points.AddXY(p.Codigo, (double)p.Cantidad);
-                }
-            }
             graficoControlDinero();
         }
+
 
 
         private void graficoControlDinero()
@@ -126,6 +99,67 @@ namespace CapaPresentacion.Forms
                     montoMenos = ((decimal)cd.Monto);
                     chartControlDinero.Series["Gastos"].Points.AddXY(cd.Fecha.Day, montoMenos += montoMenos);
                 }
+            }
+        }
+
+        private void buttonguardar_Click(object sender, EventArgs e)
+        {
+            if (validarDatos())
+            {
+                DateTime dt = DateTime.Now;
+                tbControlDinero controlDinero = new tbControlDinero();
+
+                controlDinero.Fecha = dt.Date;
+                controlDinero.Id = labelDate.Text + "/" + labelHora.Text;
+                controlDinero.Tipo = cbTipo.SelectedIndex - 1;
+                controlDinero.Monto = decimal.Parse(txtMonto.Text);
+                controlDinero.DetalleExtra = txtDescripcion.Text.Trim();
+                controlDinero.Estado = true;
+
+                if (NControlDinero.guarda(controlDinero))
+                {
+                    MessageBox.Show("Se ingreso un monto", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un erro al ingresar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private bool validarDatos()
+        {
+            if(txtMonto.Text == string.Empty)
+            {
+                MessageBox.Show("Ingresa un monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMonto.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void txtMonto_TextChanged(object sender, EventArgs e)
+        {
+           if(txtMonto.Text.Length > 1)
+            {
+                if(txtDescripcion.Text == string.Empty)
+                {
+                    DateTime dt = DateTime.Now;
+                    txtDescripcion.Text = ("Se realizo el día " + dt.Day + "/" + dt.Month + "/" + dt.Year);
+                }
+            }
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo puedes ingresar precios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+                return;
             }
         }
     }

@@ -32,16 +32,16 @@ namespace CapaPresentacion
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnDetalledefactura = new System.Windows.Forms.Button();
+            this.btnFactura = new System.Windows.Forms.Button();
+            this.btnProductos = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.panellogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPrincipal = new System.Windows.Forms.Button();
             this.paneltitulo = new System.Windows.Forms.Panel();
             this.labeltitulo = new System.Windows.Forms.Label();
             this.panelpantallahome = new System.Windows.Forms.Panel();
-            this.btnFactura = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panellogo.SuspendLayout();
             this.paneltitulo.SuspendLayout();
@@ -89,88 +89,18 @@ namespace CapaPresentacion
             this.btnDetalledefactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalledefactura.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalledefactura.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDetalledefactura.Image = global::CapaPresentacion.Properties.Resources.project_plan_22131;
             this.btnDetalledefactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetalledefactura.Location = new System.Drawing.Point(0, 320);
             this.btnDetalledefactura.Name = "btnDetalledefactura";
             this.btnDetalledefactura.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnDetalledefactura.Size = new System.Drawing.Size(220, 60);
             this.btnDetalledefactura.TabIndex = 5;
-            this.btnDetalledefactura.Text = "Detalle de Factura";
-            this.btnDetalledefactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalledefactura.Text = "Control dinero";
+            this.btnDetalledefactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetalledefactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetalledefactura.UseVisualStyleBackColor = true;
             this.btnDetalledefactura.Click += new System.EventHandler(this.btnDetalledefactura_Click_1);
-            // 
-            // panellogo
-            // 
-            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panellogo.Controls.Add(this.label1);
-            this.panellogo.Controls.Add(this.btnPrincipal);
-            this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panellogo.Location = new System.Drawing.Point(0, 0);
-            this.panellogo.Name = "panellogo";
-            this.panellogo.Size = new System.Drawing.Size(220, 80);
-            this.panellogo.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(12, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema de Compras";
-            // 
-            // btnPrincipal
-            // 
-            this.btnPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPrincipal.FlatAppearance.BorderSize = 0;
-            this.btnPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrincipal.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrincipal.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.btnPrincipal.Name = "btnPrincipal";
-            this.btnPrincipal.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPrincipal.Size = new System.Drawing.Size(220, 77);
-            this.btnPrincipal.TabIndex = 2;
-            this.btnPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrincipal.UseVisualStyleBackColor = true;
-            this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click);
-            // 
-            // paneltitulo
-            // 
-            this.paneltitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.paneltitulo.Controls.Add(this.labeltitulo);
-            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneltitulo.Location = new System.Drawing.Point(220, 0);
-            this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(580, 80);
-            this.paneltitulo.TabIndex = 5;
-            // 
-            // labeltitulo
-            // 
-            this.labeltitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labeltitulo.AutoSize = true;
-            this.labeltitulo.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitulo.ForeColor = System.Drawing.Color.White;
-            this.labeltitulo.Location = new System.Drawing.Point(203, 25);
-            this.labeltitulo.Name = "labeltitulo";
-            this.labeltitulo.Size = new System.Drawing.Size(63, 25);
-            this.labeltitulo.TabIndex = 0;
-            this.labeltitulo.Text = "Home";
-            this.labeltitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panelpantallahome
-            // 
-            this.panelpantallahome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelpantallahome.Location = new System.Drawing.Point(220, 80);
-            this.panelpantallahome.Name = "panelpantallahome";
-            this.panelpantallahome.Size = new System.Drawing.Size(580, 370);
-            this.panelpantallahome.TabIndex = 6;
             // 
             // btnFactura
             // 
@@ -248,6 +178,77 @@ namespace CapaPresentacion
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click_1);
+            // 
+            // panellogo
+            // 
+            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panellogo.Controls.Add(this.label1);
+            this.panellogo.Controls.Add(this.btnPrincipal);
+            this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panellogo.Location = new System.Drawing.Point(0, 0);
+            this.panellogo.Name = "panellogo";
+            this.panellogo.Size = new System.Drawing.Size(220, 80);
+            this.panellogo.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(182, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sistema de Compras";
+            // 
+            // btnPrincipal
+            // 
+            this.btnPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPrincipal.FlatAppearance.BorderSize = 0;
+            this.btnPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrincipal.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrincipal.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.btnPrincipal.Name = "btnPrincipal";
+            this.btnPrincipal.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPrincipal.Size = new System.Drawing.Size(220, 77);
+            this.btnPrincipal.TabIndex = 2;
+            this.btnPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrincipal.UseVisualStyleBackColor = true;
+            this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click);
+            // 
+            // paneltitulo
+            // 
+            this.paneltitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.paneltitulo.Controls.Add(this.labeltitulo);
+            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneltitulo.Location = new System.Drawing.Point(220, 0);
+            this.paneltitulo.Name = "paneltitulo";
+            this.paneltitulo.Size = new System.Drawing.Size(580, 80);
+            this.paneltitulo.TabIndex = 5;
+            // 
+            // labeltitulo
+            // 
+            this.labeltitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labeltitulo.AutoSize = true;
+            this.labeltitulo.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltitulo.ForeColor = System.Drawing.Color.White;
+            this.labeltitulo.Location = new System.Drawing.Point(203, 25);
+            this.labeltitulo.Name = "labeltitulo";
+            this.labeltitulo.Size = new System.Drawing.Size(63, 25);
+            this.labeltitulo.TabIndex = 0;
+            this.labeltitulo.Text = "Home";
+            this.labeltitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelpantallahome
+            // 
+            this.panelpantallahome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelpantallahome.Location = new System.Drawing.Point(220, 80);
+            this.panelpantallahome.Name = "panelpantallahome";
+            this.panelpantallahome.Size = new System.Drawing.Size(580, 370);
+            this.panelpantallahome.TabIndex = 6;
             // 
             // frmMenuPrincipal
             // 
