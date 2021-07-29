@@ -45,14 +45,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -75,11 +75,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dbSistemaCompraDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbSistemaCompraDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FormsMostracion\frmBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +147,12 @@
     <Compile Include="Forms\frmReportes.Designer.cs">
       <DependentUpon>frmReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSelecReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelecReportes.Designer.cs">
+      <DependentUpon>frmSelecReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,11 +179,55 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\frmReporteCliente.cs">
+    <Compile Include="Reportes\frmVentaClientePorId.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\frmReporteCliente.Designer.cs">
-      <DependentUpon>frmReporteCliente.cs</DependentUpon>
+    <Compile Include="Reportes\frmVentaClientePorId.Designer.cs">
+      <DependentUpon>frmVentaClientePorId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptControlDineroPorFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptControlDineroPorFecha.Designer.cs">
+      <DependentUpon>rptControlDineroPorFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptProductosInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptProductosInventario.Designer.cs">
+      <DependentUpon>rptProductosInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptProductosPorCantidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptProductosPorCantidad.Designer.cs">
+      <DependentUpon>rptProductosPorCantidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptProductosPorCantidadDeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptProductosPorCantidadDeVentas.Designer.cs">
+      <DependentUpon>rptProductosPorCantidadDeVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptVentaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptVentaClientes.Designer.cs">
+      <DependentUpon>rptVentaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptVentaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptVentaProveedores.Designer.cs">
+      <DependentUpon>rptVentaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\SistemaCompraDataSet.cs">
+      <DependentUpon>SistemaCompraDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\SistemaCompraDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaCompraDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThemeColor.cs" />
@@ -222,6 +267,9 @@
     <EmbeddedResource Include="Forms\frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelecReportes.resx">
+      <DependentUpon>frmSelecReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,20 +292,34 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\frmReporteCliente.resx">
-      <DependentUpon>frmReporteCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\ControlDineroPorFecha.rdlc" />
+    <EmbeddedResource Include="Reportes\frmVentaClientePorId.resx">
+      <DependentUpon>frmVentaClientePorId.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="dbSistemaCompraDataSet.xsc">
-      <DependentUpon>dbSistemaCompraDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="dbSistemaCompraDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dbSistemaCompraDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dbSistemaCompraDataSet.xss">
-      <DependentUpon>dbSistemaCompraDataSet.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="Reportes\ProductosInventario.rdlc" />
+    <EmbeddedResource Include="Reportes\ProductosPorCantidad.rdlc" />
+    <EmbeddedResource Include="Reportes\ProductosPorCantidaDeVentas.rdlc" />
+    <EmbeddedResource Include="Reportes\rptControlDineroPorFecha.resx">
+      <DependentUpon>rptControlDineroPorFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptProductosInventario.resx">
+      <DependentUpon>rptProductosInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptProductosPorCantidad.resx">
+      <DependentUpon>rptProductosPorCantidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptProductosPorCantidadDeVentas.resx">
+      <DependentUpon>rptProductosPorCantidadDeVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptVentaClientes.resx">
+      <DependentUpon>rptVentaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptVentaProveedores.resx">
+      <DependentUpon>rptVentaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VentaClientes.rdlc" />
+    <EmbeddedResource Include="Reportes\VentasClientePorId.rdlc" />
+    <EmbeddedResource Include="Reportes\VentasPorProveedor.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -273,6 +335,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reportes\SistemaCompraDataSet.xsc">
+      <DependentUpon>SistemaCompraDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\SistemaCompraDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaCompraDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\SistemaCompraDataSet.xss">
+      <DependentUpon>SistemaCompraDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\noun_salon_3973880.png" />
   </ItemGroup>
   <ItemGroup>

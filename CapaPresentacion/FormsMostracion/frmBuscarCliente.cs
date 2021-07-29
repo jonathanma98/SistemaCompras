@@ -52,15 +52,23 @@ namespace CapaPresentacion.FormsMostracion
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int n = e.RowIndex;// index seleccionado 
-            if (n != -1)
+            try
             {
-                string id = dataGridView.Rows[n].Cells[0].Value.ToString();//sacamos el codigo se la seleccion
+                int n = e.RowIndex;// index seleccionado 
+                if (n != -1)
+                {
+                    string id = dataGridView.Rows[n].Cells[0].Value.ToString();//sacamos el codigo se la seleccion
 
-                tbCliente seleCliente;//creamos un objeto para poder almacenar el producto
+                    tbCliente seleCliente;//creamos un objeto para poder almacenar el producto
 
-                seleCliente = listaCliente.Where(x => x.tbPersona.Id.Trim() == id.Trim()).SingleOrDefault();
-                pasarDatos(seleCliente);//enviamos el producto
+                    seleCliente = listaCliente.Where(x => x.tbPersona.Id.Trim() == id.Trim()).SingleOrDefault();
+                    pasarDatos(seleCliente);//enviamos el producto
+                }
+            }
+            catch (Exception E)
+            {
+
+                MessageBox.Show("Error se debe que " + E.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

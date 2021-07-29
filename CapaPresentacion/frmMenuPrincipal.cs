@@ -143,7 +143,7 @@ namespace CapaPresentacion
 
         private void btnReportes_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.frmReportes(), sender);
+            OpenChildForm(new Forms.frmSelecReportes(), sender);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
