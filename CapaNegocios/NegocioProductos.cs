@@ -14,7 +14,7 @@ namespace CapaNegocios
         DatosProductos DProducto = new DatosProductos();
         public tbProducto consultarPorId(tbProducto entidad)
         {
-            throw new NotImplementedException();
+            return DProducto.consultarPorId(entidad);
         }
 
         public bool eliminar(tbProducto entidad)

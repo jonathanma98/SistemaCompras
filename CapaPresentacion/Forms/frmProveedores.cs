@@ -299,5 +299,10 @@ namespace CapaPresentacion.Forms
                 }
             }
         }
+
+        private void frmProveedores_Load_1(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
     }
 }

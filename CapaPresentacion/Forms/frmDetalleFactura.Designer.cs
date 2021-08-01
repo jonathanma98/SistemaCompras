@@ -318,6 +318,7 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.labelcedula);
             this.Name = "frmDetalleFactura";
             this.Text = "frmDetalleFactura";
+            this.Load += new System.EventHandler(this.frmDetalleFactura_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

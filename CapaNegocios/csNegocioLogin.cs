@@ -21,7 +21,7 @@ namespace CapaNegocios
 
         public bool eliminar(tbAdmin entidad)
         {
-            throw new NotImplementedException();
+            return dato.eliminar(entidad);
         }
 
         public bool guarda(tbAdmin admin)
@@ -31,7 +31,7 @@ namespace CapaNegocios
 
         public bool modificar(tbAdmin entidad)
         {
-            throw new NotImplementedException();
+            return dato.modificar(entidad);
         }
 
         public List<tbAdmin> obtenerLista(int estado)

@@ -43,9 +43,14 @@ namespace CapaNegocios
             return datos.obtenerListaId(id);
         }
 
-        public bool GuardarFacura(tbFactura factura, List<tbDetalleFactura> listaDetalleFactura)
+        public bool GuardarFacura(tbFactura factura, List<tbDetalleFactura> listaDetalleFactura, List<tbProducto> listaProducto)
         {
-            return datos.GuardarFacura(factura, listaDetalleFactura);
+            return datos.GuardarFacura(factura, listaDetalleFactura, listaProducto);
+        }
+
+        public bool ModificarFactura(tbFactura factura, List<tbDetalleFactura> listaDF, List<tbProducto> listaP)
+        {
+            return datos.ModificarFactura(factura, listaDF, listaP);
         }
     }
 }

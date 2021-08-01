@@ -30,6 +30,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnPantaInicio = new System.Windows.Forms.Button();
+            this.buttonbackup = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnDetalledefactura = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
@@ -38,7 +40,6 @@ namespace CapaPresentacion
             this.btnClientes = new System.Windows.Forms.Button();
             this.panellogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPrincipal = new System.Windows.Forms.Button();
             this.paneltitulo = new System.Windows.Forms.Panel();
             this.labeltitulo = new System.Windows.Forms.Label();
             this.panelpantallahome = new System.Windows.Forms.Panel();
@@ -50,6 +51,8 @@ namespace CapaPresentacion
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnPantaInicio);
+            this.panelMenu.Controls.Add(this.buttonbackup);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.btnDetalledefactura);
             this.panelMenu.Controls.Add(this.btnFactura);
@@ -60,8 +63,46 @@ namespace CapaPresentacion
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 450);
+            this.panelMenu.Size = new System.Drawing.Size(220, 564);
             this.panelMenu.TabIndex = 4;
+            // 
+            // btnPantaInicio
+            // 
+            this.btnPantaInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPantaInicio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPantaInicio.FlatAppearance.BorderSize = 0;
+            this.btnPantaInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantaInicio.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPantaInicio.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPantaInicio.Image = global::CapaPresentacion.Properties.Resources.salon_mirror_makeup_cosmetics_beauty_icon_186822;
+            this.btnPantaInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPantaInicio.Location = new System.Drawing.Point(0, 500);
+            this.btnPantaInicio.Name = "btnPantaInicio";
+            this.btnPantaInicio.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPantaInicio.Size = new System.Drawing.Size(220, 64);
+            this.btnPantaInicio.TabIndex = 8;
+            this.btnPantaInicio.Text = "Inicio";
+            this.btnPantaInicio.UseVisualStyleBackColor = true;
+            this.btnPantaInicio.Click += new System.EventHandler(this.btnPantaInicio_Click);
+            // 
+            // buttonbackup
+            // 
+            this.buttonbackup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonbackup.FlatAppearance.BorderSize = 0;
+            this.buttonbackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonbackup.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonbackup.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonbackup.Image = global::CapaPresentacion.Properties.Resources.security_10791;
+            this.buttonbackup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonbackup.Location = new System.Drawing.Point(0, 440);
+            this.buttonbackup.Name = "buttonbackup";
+            this.buttonbackup.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.buttonbackup.Size = new System.Drawing.Size(220, 60);
+            this.buttonbackup.TabIndex = 7;
+            this.buttonbackup.Text = "Seguridad";
+            this.buttonbackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonbackup.UseVisualStyleBackColor = true;
+            this.buttonbackup.Click += new System.EventHandler(this.buttonbackup_Click);
             // 
             // btnReportes
             // 
@@ -70,6 +111,7 @@ namespace CapaPresentacion
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReportes.Image = global::CapaPresentacion.Properties.Resources.Distributor_report_25402;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.Location = new System.Drawing.Point(0, 380);
             this.btnReportes.Name = "btnReportes";
@@ -183,7 +225,6 @@ namespace CapaPresentacion
             // 
             this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panellogo.Controls.Add(this.label1);
-            this.panellogo.Controls.Add(this.btnPrincipal);
             this.panellogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panellogo.Location = new System.Drawing.Point(0, 0);
             this.panellogo.Name = "panellogo";
@@ -201,24 +242,6 @@ namespace CapaPresentacion
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema de Compras";
             // 
-            // btnPrincipal
-            // 
-            this.btnPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPrincipal.FlatAppearance.BorderSize = 0;
-            this.btnPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrincipal.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrincipal.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.btnPrincipal.Name = "btnPrincipal";
-            this.btnPrincipal.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPrincipal.Size = new System.Drawing.Size(220, 77);
-            this.btnPrincipal.TabIndex = 2;
-            this.btnPrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrincipal.UseVisualStyleBackColor = true;
-            this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click);
-            // 
             // paneltitulo
             // 
             this.paneltitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -226,7 +249,7 @@ namespace CapaPresentacion
             this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltitulo.Location = new System.Drawing.Point(220, 0);
             this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(580, 80);
+            this.paneltitulo.Size = new System.Drawing.Size(586, 80);
             this.paneltitulo.TabIndex = 5;
             // 
             // labeltitulo
@@ -235,7 +258,7 @@ namespace CapaPresentacion
             this.labeltitulo.AutoSize = true;
             this.labeltitulo.Font = new System.Drawing.Font("Script MT Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeltitulo.ForeColor = System.Drawing.Color.White;
-            this.labeltitulo.Location = new System.Drawing.Point(203, 25);
+            this.labeltitulo.Location = new System.Drawing.Point(206, 25);
             this.labeltitulo.Name = "labeltitulo";
             this.labeltitulo.Size = new System.Drawing.Size(63, 25);
             this.labeltitulo.TabIndex = 0;
@@ -247,14 +270,14 @@ namespace CapaPresentacion
             this.panelpantallahome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelpantallahome.Location = new System.Drawing.Point(220, 80);
             this.panelpantallahome.Name = "panelpantallahome";
-            this.panelpantallahome.Size = new System.Drawing.Size(580, 370);
+            this.panelpantallahome.Size = new System.Drawing.Size(586, 484);
             this.panelpantallahome.TabIndex = 6;
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(806, 564);
             this.Controls.Add(this.panelpantallahome);
             this.Controls.Add(this.paneltitulo);
             this.Controls.Add(this.panelMenu);
@@ -285,6 +308,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel paneltitulo;
         private System.Windows.Forms.Label labeltitulo;
         private System.Windows.Forms.Panel panelpantallahome;
-        private System.Windows.Forms.Button btnPrincipal;
+        private System.Windows.Forms.Button buttonbackup;
+        private System.Windows.Forms.Button btnPantaInicio;
     }
 }

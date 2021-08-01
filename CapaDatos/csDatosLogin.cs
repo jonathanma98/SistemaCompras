@@ -17,7 +17,19 @@ namespace CapaDatos
 
         public bool eliminar(tbAdmin entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (dbSistemaCompraEntities contex = new dbSistemaCompraEntities())
+                {
+                    contex.Entry<tbAdmin>(entidad).State = System.Data.Entity.EntityState.Deleted;
+                    contex.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool guarda(tbAdmin admin)
@@ -39,7 +51,19 @@ namespace CapaDatos
 
         public bool modificar(tbAdmin entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (dbSistemaCompraEntities contex = new dbSistemaCompraEntities())
+                {
+                    contex.Entry<tbAdmin>(entidad).State = System.Data.Entity.EntityState.Modified;
+                    contex.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public List<tbAdmin> obtenerLista(int estado)

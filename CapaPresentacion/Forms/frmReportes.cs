@@ -43,5 +43,10 @@ namespace CapaPresentacion.Forms
             rptControlDineroPorFecha reportesCliente = new rptControlDineroPorFecha();
             reportesCliente.Show();
         }
+
+        private void frmReportes_Load_1(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
     }
 }

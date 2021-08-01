@@ -34,7 +34,7 @@ namespace CapaNegocios
 
         public List<tbDetalleFactura> obtenerLista(int estado)
         {
-            throw new NotImplementedException();
+            return DDetalleFactur.obtenerLista(estado);
         }
 
         public List<tbDetalleFactura> obtenerListaId(string id)

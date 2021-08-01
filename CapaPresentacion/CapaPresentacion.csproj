@@ -55,7 +55,9 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
@@ -80,6 +82,12 @@
     </Compile>
     <Compile Include="FormsMostracion\frmBuscarCliente.Designer.cs">
       <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsMostracion\frmListaFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMostracion\frmListaFacturas.Designer.cs">
+      <DependentUpon>frmListaFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsMostracion\frmMostrarVentaProveedor.cs">
       <SubType>Form</SubType>
@@ -146,6 +154,12 @@
     </Compile>
     <Compile Include="Forms\frmReportes.Designer.cs">
       <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRespaldoDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRespaldoDB.Designer.cs">
+      <DependentUpon>frmRespaldoDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmSelecReportes.cs">
       <SubType>Form</SubType>
@@ -229,10 +243,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaCompraDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="FormsMostracion\frmBuscarCliente.resx">
       <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsMostracion\frmListaFacturas.resx">
+      <DependentUpon>frmListaFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMostracion\frmMostrarVentaProveedor.resx">
       <DependentUpon>frmMostrarVentaProveedor.cs</DependentUpon>
@@ -266,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRespaldoDB.resx">
+      <DependentUpon>frmRespaldoDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSelecReportes.resx">
       <DependentUpon>frmSelecReportes.cs</DependentUpon>
@@ -457,19 +476,24 @@
     <None Include="Resources\user_accounts_15362[1].ico" />
     <None Include="Resources\ic_local_shipping_128_28443[1].png" />
     <None Include="Resources\project_plan_22131.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security_10791.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Distributor-report_25402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_81440.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_81440 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup_and_restore_15493 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drive_Backup_23188.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

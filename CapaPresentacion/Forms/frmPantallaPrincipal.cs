@@ -27,13 +27,19 @@ namespace CapaPresentacion.Forms
 
         private void inializar()
         {
-            listaProducto = NProducto.obtenerLista(1);
-            labelProductos.Text += " " + listaProducto.Count().ToString();
+            try
+            {
+                listaProducto = NProducto.obtenerLista(1);
+                labelProductos.Text += " " + listaProducto.Count().ToString();
 
-            listaProveedor = NProveedor.obtenerLista(1);
-            labelProveedores.Text += " " + listaProveedor.Count().ToString();
+                listaProveedor = NProveedor.obtenerLista(1);
+                labelProveedores.Text += " " + listaProveedor.Count().ToString();
+            }
+            catch (Exception ex)
+            {
 
-           
+                MessageBox.Show("");
+            }
         }
     }
 }

@@ -63,6 +63,38 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1486505375_files_folder_search_magnifying_glass_file_search_magnifier_storage_81440 {
+            get {
+                object obj = ResourceManager.GetObject("1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_814" +
+                        "40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486505375_files_folder_search_magnifying_glass_file_search_magnifier_storage_81440__2_ {
+            get {
+                object obj = ResourceManager.GetObject("1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_814" +
+                        "40 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backup_and_restore_15493__1_ {
+            get {
+                object obj = ResourceManager.GetObject("backup_and_restore_15493 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap credit_card_22167 {
             get {
                 object obj = ResourceManager.GetObject("credit_card_22167", resourceCulture);
@@ -86,6 +118,26 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap designstudio_120431__2__1_ {
             get {
                 object obj = ResourceManager.GetObject("designstudio_120431_(2)[1]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Distributor_report_25402 {
+            get {
+                object obj = ResourceManager.GetObject("Distributor-report_25402", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Drive_Backup_23188 {
+            get {
+                object obj = ResourceManager.GetObject("Drive_Backup_23188", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,6 +478,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap salon_mirror_makeup_cosmetics_beauty_icon_186822 {
             get {
                 object obj = ResourceManager.GetObject("salon_mirror_makeup_cosmetics_beauty_icon_186822", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap security_10791 {
+            get {
+                object obj = ResourceManager.GetObject("security_10791", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

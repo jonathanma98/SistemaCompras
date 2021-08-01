@@ -388,7 +388,8 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.labelcedula);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRegistrarclientes";
-            this.Text = "frmRegistrarclientes";
+            this.Text = "Registrar Clientes";
+            this.Load += new System.EventHandler(this.frmRegistrarclientes_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();

@@ -65,7 +65,17 @@ namespace CapaDatos
 
         public List<tbDetalleFactura> obtenerLista(int estado)
         {
-            throw new NotImplementedException();
+            bool valo = true;
+            if(estado == 2)
+            {
+                valo = false;
+            }
+            using (var context = new dbSistemaCompraEntities())
+            {
+                return (from c in context.tbDetalleFactura
+                        where c.tbFactura.Estado == valo
+                        select c).ToList();
+            }
         }
 
         public List<tbDetalleFactura> obtenerListaId(string id)

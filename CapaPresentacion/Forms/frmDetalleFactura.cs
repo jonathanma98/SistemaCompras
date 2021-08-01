@@ -37,5 +37,10 @@ namespace CapaPresentacion.Forms
             labeltitulo1.ForeColor = ThemeColor.SecondaryColor;
             labelfechanacimiento.ForeColor = ThemeColor.PrimaryColor;
         }
+
+        private void frmDetalleFactura_Load_1(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
     }
 }

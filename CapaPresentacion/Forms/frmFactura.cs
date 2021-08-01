@@ -20,9 +20,9 @@ namespace CapaPresentacion.Forms
         NegocioProductos NProducto = new NegocioProductos();
         csNegociosDetalleFactura NDetalleFactura = new csNegociosDetalleFactura();
 
-
-        List<tbProducto> listaProducto;
         List<tbDetalleFactura> listaDF = new List<tbDetalleFactura>();
+        List<tbProducto> listaP = new List<tbProducto>();
+        List<tbProducto> listaProducto;
         public frmFactura()
         {
             InitializeComponent();
@@ -50,7 +50,10 @@ namespace CapaPresentacion.Forms
         }
 
         private void cargarTxts()
-        {    //Cagamos los datos al abrir la venta
+        {
+            panel1.Height = 0;
+            panel2.Width = 7;
+            //Cagamos los datos al abrir la venta
             cbTipoFactura.DataSource = Enum.GetValues(typeof(csEnums.Tipo));
             labelIdFactura.Text = dateTimeFactura.Value.ToString().Trim();
         }
@@ -116,7 +119,25 @@ namespace CapaPresentacion.Forms
 
         private void buttonconsultar_Click_1(object sender, EventArgs e)
         {
-            refreData();
+            panel1.Height = 193;
+            if (dataGridViewProductos.Rows.Count >= 1)
+            {
+                IEnumerable<tbProducto> listaAux = new List<tbProducto>();
+
+                if (txtBusProducto.Text != string.Empty)
+                {
+                    listaAux = listaProducto.Where(x => x.tbObjeto.Nombre.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
+                }
+                if (listaAux.Count() == 0 && txtBusProducto.Text == string.Empty)
+                {
+                    listaAux = listaProducto;
+                }
+                cargarDatos((List<tbProducto>)listaAux);
+            }
+            else
+            {
+                refreData();
+            }
         }
 
         private void refreData()
@@ -142,29 +163,6 @@ namespace CapaPresentacion.Forms
             }
         }
 
-        private void btnBuscaProducto_Click(object sender, EventArgs e)
-        {   //Buscador de productos
-            if(dataGridViewProductos.Rows.Count >= 1)
-            {
-                IEnumerable<tbProducto> listaAux = new List<tbProducto>();
-
-                if (txtBusProducto.Text != string.Empty)
-                {
-                    listaAux = listaProducto.Where(x => x.tbObjeto.Nombre.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
-                }
-                if (listaAux.Count() == 0 && txtBusProducto.Text == string.Empty)
-                {
-                    listaAux = listaProducto;
-                }
-                cargarDatos((List<tbProducto>)listaAux);
-            }
-            else
-            {
-                refreData();
-            }
-        }
-
-
         private void dataGVDetalleFactura_MouseClick(object sender, MouseEventArgs e)
         {
             //al darle click a un dato del dataGV se creara un menu de opciones
@@ -187,7 +185,7 @@ namespace CapaPresentacion.Forms
             {
                 case "EliLis":
                     dataGVDetalleFactura.Rows.RemoveAt(dataGVDetalleFactura.CurrentRow.Index);
-                    SacarTotal();
+                    SacarSubTotal();
                     break;
                 case "EliCell":
                      dataGVDetalleFactura.CurrentCell.Value = "";
@@ -220,7 +218,7 @@ namespace CapaPresentacion.Forms
                     }
                     else
                     {
-                        SacarTotal();
+                        SacarSubTotal();
                     }
                 }
             }
@@ -231,6 +229,7 @@ namespace CapaPresentacion.Forms
             }
         }
         
+        //se produce cuando se ingresa un dato repetido
 
         private bool sabersiProductoEstaIngresadoParaAumentarcantidad(tbProducto seleProducto)
         {
@@ -245,7 +244,6 @@ namespace CapaPresentacion.Forms
                         decimal cantidad = Convert.ToDecimal(row.Cells["Cantidad"].Value);
                         cantidad += 1;
                         row.Cells["Cantidad"].Value = cantidad;
-                        row.Cells[5].Value = (cantidad * seleProducto.PrecioVenta);
                         return comparar;
                     }
                 }
@@ -264,8 +262,29 @@ namespace CapaPresentacion.Forms
             dataGVDetalleFactura.Rows[nr].Cells[3].Value = 1;
             int cantida = (int)dataGVDetalleFactura.Rows[nr].Cells[3].Value;
             dataGVDetalleFactura.Rows[nr].Cells[4].Value = 0;
-            dataGVDetalleFactura.Rows[nr].Cells[5].Value = (seleProducto.PrecioVenta * cantida);
+            int imp = (int)dataGVDetalleFactura.Rows[nr].Cells[4].Value;//samos el total 
+            dataGVDetalleFactura.Rows[nr].Cells[5].Value = 0;
+            dataGVDetalleFactura.Rows[nr].Cells[6].Value = (((seleProducto.PrecioVenta + (seleProducto.PrecioVenta * imp) /100)) * cantida);
 
+            SacarSubTotal();
+        }
+
+        private void SacarSubTotal()
+        {
+            foreach (DataGridViewRow row in dataGVDetalleFactura.Rows)
+            {
+                if (row.Cells["Id"].Value != null)
+                {
+                    int cantidad = int.Parse(row.Cells["Cantidad"].Value.ToString());
+                    decimal precio = (decimal)row.Cells[2].Value;
+                    decimal imp = decimal.Parse(row.Cells[4].Value.ToString().Trim());
+                    decimal desc = decimal.Parse(row.Cells[5].Value.ToString().Trim());
+
+                    decimal valorImpu = (precio * Convert.ToInt32(imp) / 1000);
+
+                    row.Cells[6].Value = ( ((precio + valorImpu) - Convert.ToInt32(desc)) * cantidad);
+                }
+            }
             SacarTotal();
         }
 
@@ -280,11 +299,12 @@ namespace CapaPresentacion.Forms
             labelTotalFactura.Text = Total.ToString();
         }
 
-        private void buttoneliminar_Click(object sender, EventArgs e)
+
+        private void dataGVDetalleFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-
-
+            SacarSubTotal();
         }
+
 
         private void buttonguardar_Click(object sender, EventArgs e)
         {
@@ -293,24 +313,16 @@ namespace CapaPresentacion.Forms
             {
                 tbFactura factura = new tbFactura();
                 tbControlDinero ControlDiner = new tbControlDinero();
-                
+
                 factura.IdFactura = LabelPara.Text.Trim() + labelIdFactura.Text.Trim();
                 factura.NombreAsocie = labelANombreDe.Text.Trim();
-                factura.Tipo = cbTipoFactura.SelectedIndex + 1;
+                factura.Tipo = (cbTipoFactura.SelectedIndex + 1);//El indice empieza en 0 entoces se suma 1 (1=venta, 2=compra)
                 factura.FechaCompra = dateTimeFactura.Value;
                 factura.Total = decimal.Parse(labelTotalFactura.Text.Trim());
                 factura.NombreAsocie = labelANombreDe.Text.Trim();
                 factura.Estado = true;
-               
-                if (LabelPara.Text == Enum.GetName(typeof(csEnums.FacturaPara), 2))
-                {
-                    tbProveedor proveedor = new tbProveedor();
-
-                    proveedor.Id = labelIdAsociado.Text.Trim();
-                    factura.IdProveedor = proveedor.Id.Trim();
-                    factura.TipoAsocie = (int)csEnums.FacturaPara.P;
-                }
-                if (LabelPara.Text == Enum.GetName(typeof(csEnums.FacturaPara), 1))
+                // la llave de tipo cliente o proveedor se saca por la eleccion del usuario
+                if (LabelPara.Text == Enum.GetName(typeof(csEnums.FacturaPara), 1))//tipo cliente
                 {
                     tbCliente cliente = new tbCliente();
 
@@ -318,43 +330,73 @@ namespace CapaPresentacion.Forms
                     factura.IdCliente = cliente.Id.Trim();
                     factura.TipoAsocie = (int)csEnums.FacturaPara.C;
                 }
+                if (LabelPara.Text == Enum.GetName(typeof(csEnums.FacturaPara), 2))//tipo proveedor
+                {
+                    tbProveedor proveedor = new tbProveedor();
 
+                    proveedor.Id = labelIdAsociado.Text.Trim();
+                    factura.IdProveedor = proveedor.Id.Trim();
+                    factura.TipoAsocie = (int)csEnums.FacturaPara.P;
+                }
+                //control dinero debe registrar el todal de dicha factura
                 ControlDiner.Id = dateTimeFactura.Value.ToString();
                 ControlDiner.Factura = factura.IdFactura.Trim();/*Se debe verificar*/
                 ControlDiner.Fecha = factura.FechaCompra;
                 ControlDiner.Monto = factura.Total;
                 ControlDiner.Tipo = factura.Tipo;
+                ControlDiner.DetalleExtra = "Se realizado atravez de una factura. ";
+                ControlDiner.Estado = true;
 
                 factura.tbControlDinero.Add(ControlDiner);
 
-                
-                List<tbDetalleFactura> listaDetalleFactura = new List<tbDetalleFactura>();
-                int i=0;
-                foreach (DataGridViewRow row in dataGVDetalleFactura.Rows)
+                //Antes de llenar la lista se limpiar porque puede quedar rastros de una factura anterior 
+                listaP.Clear();
+                listaDF.Clear();
+                int i = 0;
+                foreach (DataGridViewRow row in dataGVDetalleFactura.Rows)//recorremos el data grid para detectar los prodcutos a vender
                 {
 
                     if (row.Cells[0].Value != null)
                     {
                         tbDetalleFactura detalleFactura = new tbDetalleFactura();
-                        detalleFactura.IdFactura += factura.IdFactura;
+                        tbProducto producto = new tbProducto();
+                        detalleFactura.IdFactura = factura.IdFactura;
                         detalleFactura.IdProductos = row.Cells[0].Value.ToString();
                         row.Cells[1].Value.ToString();
                         detalleFactura.Precio = (decimal)row.Cells[2].Value;
                         detalleFactura.Cantiadad = int.Parse(row.Cells[3].Value.ToString().Trim());
                         detalleFactura.IVA = decimal.Parse(row.Cells[4].Value.ToString().Trim());
-                        detalleFactura.Subtotal = (decimal)row.Cells[5].Value;
-                        detalleFactura.Descuento = 0;
+                        detalleFactura.Descuento = decimal.Parse(row.Cells[5].Value.ToString().Trim());
+                        detalleFactura.Subtotal = (decimal)row.Cells[6].Value;
 
-                        listaDF.Insert(i,detalleFactura);
-                        listaDetalleFactura.Add(listaDF[i]);
+                        producto.Codigo = detalleFactura.IdProductos;
+                        producto = NProducto.consultarPorId(producto);//Optenemos el producto correpondiendte a su id para modifica
+                        //si es un tipo = 1 (quiere decir se vende por ello se rebaja la cantidad en el inventario)
+                        if ((producto.Cantidad > detalleFactura.Cantiadad) && (factura.Tipo == 1))
+                        {
+                            producto.Cantidad -= detalleFactura.Cantiadad;
+                        }
+                        else if ((factura.Tipo == 1) && (producto.Cantidad < detalleFactura.Cantiadad))//para no tener cantidad -1
+                        {
+                            producto.Cantidad = 0;
+                        }
+                        else if (factura.Tipo == 2)// tipo 2 es una compra por ello el producto aumenta su cantidad
+                        {
+                            producto.Cantidad += detalleFactura.Cantiadad;
+                        }
+                        listaP.Insert(i, producto);
+                        listaDF.Insert(i, detalleFactura);
                         i++;
                     }
                 }
-                
-                if (NFactura.GuardarFacura(factura, listaDF))
+
+                if (NFactura.GuardarFacura(factura, listaDF, listaP))
                 {
-                    
+
                     MessageBox.Show("Se ingreseo la factura ", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    listaDF.Clear();
+                    listaP.Clear();
+                    limpiar();
                 }
                 else
                 {
@@ -368,6 +410,25 @@ namespace CapaPresentacion.Forms
             }
         }
 
+        private void limpiar()
+        {
+            dataGVDetalleFactura.Rows.Clear();
+            dateTimeFactura.Value = DateTime.Now;
+            labelANombreDe.Text = "?";
+            labelIdAsociado.Text = "?";
+            labelIdFactura.Text = "?";
+            LabelPara.Text = "?";
+
+            Refresh();
+            buttonguardar.Refresh();
+            dateTimeFactura.Refresh();
+            labelANombreDe.Refresh();
+            labelIdAsociado.Refresh();
+            labelIdFactura.Refresh();
+            LabelPara.Refresh();
+            refreData();
+        }
+
         private bool validarDatos()
         {
             if (labelIdFactura.Text == "?" && labelIdFactura.Text.Length >= 3)
@@ -379,12 +440,6 @@ namespace CapaPresentacion.Forms
             if(labelIdAsociado.Text == "?" && labelIdAsociado.Text.Length >= 3)
             {
                 MessageBox.Show("Ingresa una cedula para quien va la factura", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                labelIdAsociado.Focus();
-                return false;
-            }
-            if(dataGridViewProductos.RowCount <= 1)
-            {
-                MessageBox.Show("Ingrese datos a la factura ", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 labelIdAsociado.Focus();
                 return false;
             }
@@ -439,6 +494,213 @@ namespace CapaPresentacion.Forms
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void frmFactura_Load_1(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
+
+        private void btnVerListaFacuta_Click(object sender, EventArgs e)
+        {
+            frmListaFacturas lisFac = new frmListaFacturas();
+            lisFac.Show();
+            btnModificar.CausesValidation = true;
+            lisFac.pasarFactura += LisFac_pasarFactura;
+        }
+
+        private void LisFac_pasarFactura(tbFactura InfFactura)
+        {
+            string idF = InfFactura.IdFactura.Trim();
+            int caracteres = idF.Length;
+            labelIdFactura.Text = idF.Remove(0, 1);
+            labelANombreDe.Text = InfFactura.NombreAsocie;
+            dateTimeFactura.Value = InfFactura.FechaCompra;
+            cbTipoFactura.SelectedIndex = InfFactura.Tipo-1;
+
+            if (InfFactura.IdCliente != null)
+            {
+                LabelPara.Text = Enum.GetName(typeof(csEnums.FacturaPara), 1);
+                labelIdAsociado.Text = InfFactura.IdCliente.Trim();
+            }
+            if(InfFactura.IdProveedor != null)
+            {
+                LabelPara.Text = Enum.GetName(typeof(csEnums.FacturaPara), 2);
+                labelIdAsociado.Text = InfFactura.IdProveedor.Trim();
+            }
+            dataGVDetalleFactura.Rows.Clear();
+            dataGVDetalleFactura.Refresh();
+            foreach(tbDetalleFactura df in InfFactura.tbDetalleFactura)
+            {
+                int nr = dataGVDetalleFactura.Rows.Add();
+                dataGVDetalleFactura.Rows[nr].Cells[0].Value = df.IdProductos.Trim();
+                dataGVDetalleFactura.Rows[nr].Cells[1].Value = "Producto";
+                dataGVDetalleFactura.Rows[nr].Cells[2].Value = df.Precio;
+                dataGVDetalleFactura.Rows[nr].Cells[3].Value = df.Cantiadad;
+                dataGVDetalleFactura.Rows[nr].Cells[4].Value = df.IVA;
+                dataGVDetalleFactura.Rows[nr].Cells[5].Value = df.Descuento;
+            }
+            SacarSubTotal();
+        }
+
+        private void btnMostraPanel2_Click(object sender, EventArgs e)
+        {
+            if (panel2.Width < 8)
+            {
+                timer1.Start();
+            }
+            else
+            {
+                timer2.Start();
+
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (panel2.Width < 405)
+            {
+                panel2.Width += 15;
+            }
+            else
+            {
+                panel2.BackColor = Color.Fuchsia;
+                timer1.Stop();
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (panel2.Width > 10)
+            {
+                panel2.Width -= 15;
+            }
+            else
+            {
+                panel2.Width = 7;
+                panel2.BackColor = Color.Transparent;
+                timer2.Stop();
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (validarDatos())
+            {
+                tbFactura factura = new tbFactura();
+                tbControlDinero ControlDiner = new tbControlDinero();
+
+                factura.IdFactura = LabelPara.Text.Trim() + labelIdFactura.Text.Trim();
+                factura.NombreAsocie = labelANombreDe.Text.Trim();
+                factura.Tipo = (cbTipoFactura.SelectedIndex + 1);//El indice empieza en 0 entoces se suma 1 (1=venta, 2=compra)
+                factura.FechaCompra = dateTimeFactura.Value;
+                factura.Total = decimal.Parse(labelTotalFactura.Text.Trim());
+                factura.NombreAsocie = labelANombreDe.Text.Trim();
+                factura.Estado = true;
+                // la llave de tipo cliente o proveedor se saca por la eleccion del usuario
+                if (LabelPara.Text == Enum.GetName(typeof(csEnums.FacturaPara), 1))//tipo cliente
+                {
+                    tbCliente cliente = new tbCliente();
+
+                    cliente.Id = labelIdAsociado.Text.Trim();
+                    factura.IdCliente = cliente.Id.Trim();
+                    factura.TipoAsocie = (int)csEnums.FacturaPara.C;
+                }
+                if (LabelPara.Text == Enum.GetName(typeof(csEnums.FacturaPara), 2))//tipo proveedor
+                {
+                    tbProveedor proveedor = new tbProveedor();
+
+                    proveedor.Id = labelIdAsociado.Text.Trim();
+                    factura.IdProveedor = proveedor.Id.Trim();
+                    factura.TipoAsocie = (int)csEnums.FacturaPara.P;
+                }
+                //control dinero debe registrar el todal de dicha factura
+                ControlDiner.Id = dateTimeFactura.Value.ToString();
+                ControlDiner.Factura = factura.IdFactura.Trim();/*Se debe verificar*/
+                ControlDiner.Fecha = factura.FechaCompra;
+                ControlDiner.Monto = factura.Total;
+                ControlDiner.Tipo = factura.Tipo;
+                ControlDiner.DetalleExtra = "Se realizado atravez de una factura. ";
+                ControlDiner.Estado = true;
+
+                factura.tbControlDinero.Add(ControlDiner);
+
+                //Antes de llenar la lista se limpiar porque puede quedar rastros de una factura anterior 
+                listaP.Clear();
+                listaDF.Clear();
+                List<tbDetalleFactura> listIdDF = new List<tbDetalleFactura>();
+
+                listIdDF = NDetalleFactura.obtenerLista(1);
+                int i = 0;
+                foreach (DataGridViewRow row in dataGVDetalleFactura.Rows)//recorremos el data grid para detectar los prodcutos a vender
+                {
+
+                    if (row.Cells[0].Value != null)
+                    {
+                        tbDetalleFactura detalleFactura = new tbDetalleFactura();
+                        tbProducto producto = new tbProducto();
+                        detalleFactura.IdFactura = factura.IdFactura;
+                        detalleFactura.IdProductos = row.Cells[0].Value.ToString();
+
+                        try
+                        {
+                            //Sacamos la ide dal detallefactura para que puede ser localizado en la bd
+                            tbDetalleFactura df;
+                            df = (from c in listIdDF
+                                  where c.IdFactura == detalleFactura.IdFactura && c.IdProductos == detalleFactura.IdProductos
+                                  select c).Single();
+                            detalleFactura.Id = df.Id;
+                        }
+                        catch (Exception)
+                        {
+                            
+                        }
+
+                        row.Cells[1].Value.ToString();
+                        detalleFactura.Precio = (decimal)row.Cells[2].Value;
+                        detalleFactura.Cantiadad = int.Parse(row.Cells[3].Value.ToString().Trim());
+                        detalleFactura.IVA = decimal.Parse(row.Cells[4].Value.ToString().Trim());
+                        detalleFactura.Descuento = decimal.Parse(row.Cells[5].Value.ToString().Trim());
+                        detalleFactura.Subtotal = (decimal)row.Cells[6].Value;
+                        producto.Codigo = detalleFactura.IdProductos;
+                        producto = NProducto.consultarPorId(producto);//Optenemos el producto correpondiendte a su id para modifica
+                        //si es un tipo = 1 (quiere decir se vende por ello se rebaja la cantidad en el inventario)
+                        if ((producto.Cantidad > detalleFactura.Cantiadad) && (factura.Tipo == 1))
+                        {
+                            producto.Cantidad -= detalleFactura.Cantiadad;
+                        }
+                        else if ((factura.Tipo == 1) && (producto.Cantidad < detalleFactura.Cantiadad))//para no tener cantidad -1
+                        {
+                            producto.Cantidad = 0;
+                        }
+                        else if (factura.Tipo == 2)// tipo 2 es una compra por ello el producto aumenta su cantidad
+                        {
+                            producto.Cantidad += detalleFactura.Cantiadad;
+                        }
+                        listaP.Insert(i, producto);
+                        listaDF.Insert(i, detalleFactura);
+                        i++;
+                    }
+                }
+
+                if (NFactura.ModificarFactura(factura, listaDF, listaP))
+                {
+
+                    MessageBox.Show("Se ingreseo la factura ", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    listaDF.Clear();
+                    listaP.Clear();
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se podo guardar la factura ", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No se podo guardar la factura ", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

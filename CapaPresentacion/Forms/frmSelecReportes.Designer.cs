@@ -32,26 +32,26 @@ namespace CapaPresentacion.Forms
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panelIngresos = new System.Windows.Forms.Panel();
+            this.btn1PorFecha = new System.Windows.Forms.Button();
             this.panelProveedores = new System.Windows.Forms.Panel();
+            this.btnCompraProveedores = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelClientes = new System.Windows.Forms.Panel();
+            this.btnVentaID = new System.Windows.Forms.Button();
+            this.btnTotalCompraClientes = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panelProductos = new System.Windows.Forms.Panel();
+            this.btnProducCantidadVentas = new System.Windows.Forms.Button();
+            this.btnProductoCantidad = new System.Windows.Forms.Button();
+            this.btnProductoFecha = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
-            this.btnProducCantidadVentas = new System.Windows.Forms.Button();
-            this.btnProductoCantidad = new System.Windows.Forms.Button();
-            this.btnProductoFecha = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.btnVentaID = new System.Windows.Forms.Button();
-            this.btnTotalCompraClientes = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.btnCompraProveedores = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
-            this.btn1PorFecha = new System.Windows.Forms.Button();
             this.btnIngresos = new System.Windows.Forms.Button();
             this.panelIngresos.SuspendLayout();
             this.panelProveedores.SuspendLayout();
@@ -80,6 +80,24 @@ namespace CapaPresentacion.Forms
             this.panelIngresos.Size = new System.Drawing.Size(153, 275);
             this.panelIngresos.TabIndex = 2;
             // 
+            // btn1PorFecha
+            // 
+            this.btn1PorFecha.AutoEllipsis = true;
+            this.btn1PorFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn1PorFecha.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btn1PorFecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btn1PorFecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1PorFecha.ForeColor = System.Drawing.Color.Blue;
+            this.btn1PorFecha.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
+            this.btn1PorFecha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn1PorFecha.Location = new System.Drawing.Point(3, 16);
+            this.btn1PorFecha.Name = "btn1PorFecha";
+            this.btn1PorFecha.Size = new System.Drawing.Size(144, 42);
+            this.btn1PorFecha.TabIndex = 2;
+            this.btn1PorFecha.Text = "Ver por fecha";
+            this.btn1PorFecha.UseVisualStyleBackColor = false;
+            this.btn1PorFecha.Click += new System.EventHandler(this.btn1PorFecha_Click);
+            // 
             // panelProveedores
             // 
             this.panelProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -89,6 +107,25 @@ namespace CapaPresentacion.Forms
             this.panelProveedores.Name = "panelProveedores";
             this.panelProveedores.Size = new System.Drawing.Size(153, 275);
             this.panelProveedores.TabIndex = 2;
+            // 
+            // btnCompraProveedores
+            // 
+            this.btnCompraProveedores.AutoEllipsis = true;
+            this.btnCompraProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCompraProveedores.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btnCompraProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnCompraProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompraProveedores.ForeColor = System.Drawing.Color.Blue;
+            this.btnCompraProveedores.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
+            this.btnCompraProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompraProveedores.Location = new System.Drawing.Point(3, 16);
+            this.btnCompraProveedores.Name = "btnCompraProveedores";
+            this.btnCompraProveedores.Size = new System.Drawing.Size(144, 42);
+            this.btnCompraProveedores.TabIndex = 5;
+            this.btnCompraProveedores.Text = "Productos asociados";
+            this.btnCompraProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCompraProveedores.UseVisualStyleBackColor = false;
+            this.btnCompraProveedores.Click += new System.EventHandler(this.btnCompraProveedores_Click);
             // 
             // label2
             // 
@@ -110,6 +147,43 @@ namespace CapaPresentacion.Forms
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(153, 275);
             this.panelClientes.TabIndex = 2;
+            // 
+            // btnVentaID
+            // 
+            this.btnVentaID.AutoEllipsis = true;
+            this.btnVentaID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnVentaID.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btnVentaID.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnVentaID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentaID.ForeColor = System.Drawing.Color.Blue;
+            this.btnVentaID.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
+            this.btnVentaID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentaID.Location = new System.Drawing.Point(3, 91);
+            this.btnVentaID.Name = "btnVentaID";
+            this.btnVentaID.Size = new System.Drawing.Size(144, 42);
+            this.btnVentaID.TabIndex = 3;
+            this.btnVentaID.Text = "Ventas por cliente";
+            this.btnVentaID.UseVisualStyleBackColor = false;
+            this.btnVentaID.Click += new System.EventHandler(this.btnVentaID_Click);
+            // 
+            // btnTotalCompraClientes
+            // 
+            this.btnTotalCompraClientes.AutoEllipsis = true;
+            this.btnTotalCompraClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnTotalCompraClientes.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btnTotalCompraClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnTotalCompraClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotalCompraClientes.ForeColor = System.Drawing.Color.Blue;
+            this.btnTotalCompraClientes.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
+            this.btnTotalCompraClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTotalCompraClientes.Location = new System.Drawing.Point(0, 16);
+            this.btnTotalCompraClientes.Name = "btnTotalCompraClientes";
+            this.btnTotalCompraClientes.Size = new System.Drawing.Size(150, 42);
+            this.btnTotalCompraClientes.TabIndex = 2;
+            this.btnTotalCompraClientes.Text = "Acumulado de compras";
+            this.btnTotalCompraClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTotalCompraClientes.UseVisualStyleBackColor = false;
+            this.btnTotalCompraClientes.Click += new System.EventHandler(this.btnTotalCompraClientes_Click);
             // 
             // label3
             // 
@@ -133,36 +207,6 @@ namespace CapaPresentacion.Forms
             this.panelProductos.Name = "panelProductos";
             this.panelProductos.Size = new System.Drawing.Size(153, 275);
             this.panelProductos.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(902, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Productos";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 24;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 27;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Interval = 27;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // timer4
-            // 
-            this.timer4.Interval = 27;
-            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // btnProducCantidadVentas
             // 
@@ -221,6 +265,36 @@ namespace CapaPresentacion.Forms
             this.btnProductoFecha.UseVisualStyleBackColor = false;
             this.btnProductoFecha.Click += new System.EventHandler(this.btnProductoFecha_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(902, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Productos";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 24;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 27;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 27;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Interval = 27;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
             // btnProductos
             // 
             this.btnProductos.AutoSize = true;
@@ -239,43 +313,6 @@ namespace CapaPresentacion.Forms
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            // 
-            // btnVentaID
-            // 
-            this.btnVentaID.AutoEllipsis = true;
-            this.btnVentaID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnVentaID.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
-            this.btnVentaID.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnVentaID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentaID.ForeColor = System.Drawing.Color.Blue;
-            this.btnVentaID.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
-            this.btnVentaID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaID.Location = new System.Drawing.Point(3, 91);
-            this.btnVentaID.Name = "btnVentaID";
-            this.btnVentaID.Size = new System.Drawing.Size(144, 42);
-            this.btnVentaID.TabIndex = 3;
-            this.btnVentaID.Text = "Ventas por cliente";
-            this.btnVentaID.UseVisualStyleBackColor = false;
-            this.btnVentaID.Click += new System.EventHandler(this.btnVentaID_Click);
-            // 
-            // btnTotalCompraClientes
-            // 
-            this.btnTotalCompraClientes.AutoEllipsis = true;
-            this.btnTotalCompraClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnTotalCompraClientes.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
-            this.btnTotalCompraClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnTotalCompraClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotalCompraClientes.ForeColor = System.Drawing.Color.Blue;
-            this.btnTotalCompraClientes.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
-            this.btnTotalCompraClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTotalCompraClientes.Location = new System.Drawing.Point(0, 16);
-            this.btnTotalCompraClientes.Name = "btnTotalCompraClientes";
-            this.btnTotalCompraClientes.Size = new System.Drawing.Size(150, 42);
-            this.btnTotalCompraClientes.TabIndex = 2;
-            this.btnTotalCompraClientes.Text = "Acumulado de compras";
-            this.btnTotalCompraClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTotalCompraClientes.UseVisualStyleBackColor = false;
-            this.btnTotalCompraClientes.Click += new System.EventHandler(this.btnTotalCompraClientes_Click);
             // 
             // btnClientes
             // 
@@ -296,25 +333,6 @@ namespace CapaPresentacion.Forms
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // btnCompraProveedores
-            // 
-            this.btnCompraProveedores.AutoEllipsis = true;
-            this.btnCompraProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCompraProveedores.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
-            this.btnCompraProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnCompraProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompraProveedores.ForeColor = System.Drawing.Color.Blue;
-            this.btnCompraProveedores.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
-            this.btnCompraProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompraProveedores.Location = new System.Drawing.Point(3, 16);
-            this.btnCompraProveedores.Name = "btnCompraProveedores";
-            this.btnCompraProveedores.Size = new System.Drawing.Size(144, 42);
-            this.btnCompraProveedores.TabIndex = 5;
-            this.btnCompraProveedores.Text = "Productos asociados";
-            this.btnCompraProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCompraProveedores.UseVisualStyleBackColor = false;
-            this.btnCompraProveedores.Click += new System.EventHandler(this.btnCompraProveedores_Click);
-            // 
             // btnProveedores
             // 
             this.btnProveedores.AutoEllipsis = true;
@@ -333,24 +351,6 @@ namespace CapaPresentacion.Forms
             this.btnProveedores.Text = "Provedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
-            // 
-            // btn1PorFecha
-            // 
-            this.btn1PorFecha.AutoEllipsis = true;
-            this.btn1PorFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn1PorFecha.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
-            this.btn1PorFecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btn1PorFecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn1PorFecha.ForeColor = System.Drawing.Color.Blue;
-            this.btn1PorFecha.Image = global::CapaPresentacion.Properties.Resources.icons8_documento_30_1_;
-            this.btn1PorFecha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn1PorFecha.Location = new System.Drawing.Point(3, 16);
-            this.btn1PorFecha.Name = "btn1PorFecha";
-            this.btn1PorFecha.Size = new System.Drawing.Size(144, 42);
-            this.btn1PorFecha.TabIndex = 2;
-            this.btn1PorFecha.Text = "Ver por fecha";
-            this.btn1PorFecha.UseVisualStyleBackColor = false;
-            this.btn1PorFecha.Click += new System.EventHandler(this.btn1PorFecha_Click);
             // 
             // btnIngresos
             // 
@@ -391,7 +391,8 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelecReportes";
-            this.Text = "frmSelecReportes";
+            this.Text = "Realizar Reporte";
+            this.Load += new System.EventHandler(this.frmSelecReportes_Load);
             this.panelIngresos.ResumeLayout(false);
             this.panelProveedores.ResumeLayout(false);
             this.panelClientes.ResumeLayout(false);

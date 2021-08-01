@@ -31,27 +31,27 @@ namespace CapaPresentacion.Forms
         {
             this.panelProveedores = new System.Windows.Forms.Panel();
             this.labelProveedores = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelProductos = new System.Windows.Forms.Panel();
             this.labelProductos = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelGastos = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBoxPincipal = new System.Windows.Forms.PictureBox();
             this.panelProveedores.SuspendLayout();
-            this.panelProductos.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPincipal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,16 @@ namespace CapaPresentacion.Forms
             this.labelProveedores.TabIndex = 2;
             this.labelProveedores.Text = "Proveedores: ";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_1_240;
+            this.pictureBox2.Location = new System.Drawing.Point(15, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(109, 78);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // panelProductos
             // 
             this.panelProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -94,6 +104,16 @@ namespace CapaPresentacion.Forms
             this.labelProductos.Size = new System.Drawing.Size(86, 18);
             this.labelProductos.TabIndex = 2;
             this.labelProductos.Text = "Productos ";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_11_2401;
+            this.pictureBox3.Location = new System.Drawing.Point(15, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(109, 78);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // panel1
             // 
@@ -115,6 +135,16 @@ namespace CapaPresentacion.Forms
             this.labelGastos.TabIndex = 2;
             this.labelGastos.Text = "Gastos: ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_fax_3_240;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Lime;
@@ -135,29 +165,6 @@ namespace CapaPresentacion.Forms
             this.label1.TabIndex = 2;
             this.label1.Text = "Ingresos: ";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.panelProveedores);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.panelProductos);
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 116);
-            this.panel3.TabIndex = 6;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_1_240;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(109, 78);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.noun_Hairstylist_3925549;
@@ -168,25 +175,18 @@ namespace CapaPresentacion.Forms
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox3
+            // panel3
             // 
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_11_2401;
-            this.pictureBox3.Location = new System.Drawing.Point(15, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 78);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_fax_3_240;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.panelProveedores);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.panelProductos);
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(798, 116);
+            this.panel3.TabIndex = 6;
             // 
             // pictureBoxPincipal
             // 
@@ -194,7 +194,7 @@ namespace CapaPresentacion.Forms
             this.pictureBoxPincipal.Image = global::CapaPresentacion.Properties.Resources.PicsArt_07_13_02_52_25_1_;
             this.pictureBoxPincipal.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxPincipal.Name = "pictureBoxPincipal";
-            this.pictureBoxPincipal.Size = new System.Drawing.Size(800, 450);
+            this.pictureBoxPincipal.Size = new System.Drawing.Size(798, 450);
             this.pictureBoxPincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPincipal.TabIndex = 0;
             this.pictureBoxPincipal.TabStop = false;
@@ -203,7 +203,7 @@ namespace CapaPresentacion.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(798, 450);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBoxPincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -211,17 +211,17 @@ namespace CapaPresentacion.Forms
             this.Text = "frmPantallaPrincipal";
             this.panelProveedores.ResumeLayout(false);
             this.panelProveedores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelProductos.ResumeLayout(false);
             this.panelProductos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPincipal)).EndInit();
             this.ResumeLayout(false);
 

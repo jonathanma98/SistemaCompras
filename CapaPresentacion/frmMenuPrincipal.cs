@@ -155,5 +155,15 @@ namespace CapaPresentacion
         {
             OpenChildForm(new Forms.frmPantallaPrincipal(), sender);
         }
+
+        private void buttonbackup_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmRespaldoDB(), sender);
+        }
+
+        private void btnPantaInicio_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmPantallaPrincipal(), sender);
+        }
     }
 }

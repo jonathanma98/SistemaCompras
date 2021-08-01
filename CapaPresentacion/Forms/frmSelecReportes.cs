@@ -187,5 +187,24 @@ namespace CapaPresentacion.Forms
             rptProductosPorCantidadDeVentas ProductosCantidaVenta = new rptProductosPorCantidadDeVentas();
             ProductosCantidaVenta.Show();
         }
+
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.Gainsboro;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+        }
+
+        private void frmSelecReportes_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
     }
 }

@@ -104,9 +104,17 @@ namespace CapaDatos
             }
             using(var context = new dbSistemaCompraEntities())
             {
-                return (from c in context.tbProducto.Include("tbObjeto")
-                        where c.Estado == est
-                        select c).ToList();
+                try
+                {
+                    return (from c in context.tbProducto.Include("tbObjeto")
+                            where c.Estado == est
+                            select c).ToList();
+                }
+                catch (Exception)
+                {
+
+                    return null;
+                }
             }
         }
 

@@ -444,7 +444,7 @@ namespace CapaPresentacion.Forms
 
         private void frmProductos_Load_1(object sender, EventArgs e)
         {
-
+            LoadTheme();
         }
 
         private void textexistencia_TextChanged(object sender, EventArgs e)

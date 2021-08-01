@@ -332,6 +332,7 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.labelcedula);
             this.Name = "frmReportes";
             this.Text = "frmReportes";
+            this.Load += new System.EventHandler(this.frmReportes_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
