@@ -161,7 +161,13 @@ namespace CapaPresentacion
             OpenChildForm(new Forms.frmRespaldoDB(), sender);
         }
 
-        private void btnPantaInicio_Click(object sender, EventArgs e)
+
+        private void btnMantenimiento_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmAjusteDatos(), sender);
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.frmPantallaPrincipal(), sender);
         }

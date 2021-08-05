@@ -534,7 +534,7 @@ namespace CapaPresentacion.Forms
             {
                 int nr = dataGVDetalleFactura.Rows.Add();
                 dataGVDetalleFactura.Rows[nr].Cells[0].Value = df.IdProductos.Trim();
-                dataGVDetalleFactura.Rows[nr].Cells[1].Value = "Producto";
+                dataGVDetalleFactura.Rows[nr].Cells[1].Value = df.tbProducto.tbObjeto.Nombre;
                 dataGVDetalleFactura.Rows[nr].Cells[2].Value = df.Precio;
                 dataGVDetalleFactura.Rows[nr].Cells[3].Value = df.Cantiadad;
                 dataGVDetalleFactura.Rows[nr].Cells[4].Value = df.IVA;

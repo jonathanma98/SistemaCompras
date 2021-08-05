@@ -133,8 +133,8 @@
   <data name="salon_mirror_makeup_cosmetics_beauty_icon_186822" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salon_mirror_makeup_cosmetics_beauty_icon_186822.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-documento-30[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-documento-30[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_accounts_15362[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_accounts_15362[1].ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye_icon_143218" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_icon_143218.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,6 +160,9 @@
   <data name="iconmonstr-fax-3-240" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-fax-3-2401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-documento-30[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-documento-30[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-búsqueda-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-búsqueda-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,6 +175,9 @@
   <data name="Office_-34_icon-icons.com_73983_(1)[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Office_-34_icon-icons.com_73983_(1)[1].ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bluehousehousehome_azulcasa_cas_6791 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bluehousehousehome_azulcasa_cas_6791 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="noun_salon_3973880" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noun_salon_3973880.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -180,9 +186,6 @@
   </data>
   <data name="icons8-editar-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-editar-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_accounts_15362[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_accounts_15362[1].ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-editar-16[1]1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-editar-16[1]1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,6 +238,9 @@
   <data name="icons8-documento-16[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-documento-16[1].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Drive_Backup_23188" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Drive_Backup_23188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="project_plan_22131" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\project_plan_22131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -253,7 +259,7 @@
   <data name="icons8-marcapáginas-16[1]1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-marcapáginas-16[1]1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Drive_Backup_23188" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Drive_Backup_23188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Office_-20_icon-icons.com_73985 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Office_-20_icon-icons.com_73985 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

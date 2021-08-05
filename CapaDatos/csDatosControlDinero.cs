@@ -48,11 +48,23 @@ namespace CapaDatos
             DateTime año = DateTime.Now;
             try
             {
-                using (var context = new dbSistemaCompraEntities())
+                if(estado == 1)
                 {
-                    return (from f in context.tbControlDinero
-                            where f.Fecha.Month == estado && f.Fecha.Year == año.Year
-                            select f).ToList();
+                    using (var context = new dbSistemaCompraEntities())
+                    {
+                        return (from f in context.tbControlDinero
+                                where f.Fecha.Month == año.Month && f.Fecha.Year == año.Year
+                                select f).ToList();
+                    }
+                }
+                else
+                {
+                    using (var context = new dbSistemaCompraEntities())
+                    {
+                        return (from f in context.tbControlDinero
+                                where  f.Fecha.Year == año.Year
+                                select f).ToList();
+                    }
                 }
             }
             catch (Exception e)

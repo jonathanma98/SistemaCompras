@@ -95,6 +95,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bluehousehousehome_azulcasa_cas_6791__1_ {
+            get {
+                object obj = ResourceManager.GetObject("bluehousehousehome_azulcasa_cas_6791 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap credit_card_22167 {
             get {
                 object obj = ResourceManager.GetObject("credit_card_22167", resourceCulture);
@@ -408,6 +418,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap noun_salon_3973880 {
             get {
                 object obj = ResourceManager.GetObject("noun_salon_3973880", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Office__20_icon_icons_com_73985__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Office_-20_icon-icons.com_73985 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -68,7 +68,14 @@ namespace CapaDatos
 
         public List<tbAdmin> obtenerLista(int estado)
         {
-            throw new NotImplementedException();
+            int  op = estado;
+            using (var context = new dbSistemaCompraEntities())
+            {
+
+                return (from c in context.tbAdmin
+                        where c.id != ""
+                        select c).ToList();
+            }
         }
 
         public List<tbAdmin> obtenerListaId(string id)

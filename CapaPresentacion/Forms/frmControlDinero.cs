@@ -50,7 +50,7 @@ namespace CapaPresentacion.Forms
             chartVentas.Titles.Clear();
             DateTime mes = DateTime.Now;
             //pedimos la lista esta vendra solo del año y el mes actual
-            listaFactura = NFactura.obtenerLista(mes.Month);
+            listaFactura = NFactura.obtenerLista(1);
             //ordenamos la lista 
             var listaFacturaOrdenada = listaFactura.OrderBy(x => x.FechaCompra);
 
@@ -111,7 +111,7 @@ namespace CapaPresentacion.Forms
 
                 controlDinero.Fecha = dt.Date;
                 controlDinero.Id = labelDate.Text + "/" + labelHora.Text;
-                controlDinero.Tipo = cbTipo.SelectedIndex - 1;
+                controlDinero.Tipo = cbTipo.SelectedIndex + 1;
                 controlDinero.Monto = decimal.Parse(txtMonto.Text);
                 controlDinero.DetalleExtra = txtDescripcion.Text.Trim();
                 controlDinero.Estado = true;

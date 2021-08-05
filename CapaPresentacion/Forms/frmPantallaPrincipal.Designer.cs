@@ -39,7 +39,7 @@ namespace CapaPresentacion.Forms
             this.labelGastos = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelIngresos = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBoxPincipal = new System.Windows.Forms.PictureBox();
@@ -148,22 +148,22 @@ namespace CapaPresentacion.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Lime;
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.labelIngresos);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Location = new System.Drawing.Point(605, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(138, 107);
             this.panel2.TabIndex = 5;
             // 
-            // label1
+            // labelIngresos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Ingresos: ";
+            this.labelIngresos.AutoSize = true;
+            this.labelIngresos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIngresos.Location = new System.Drawing.Point(3, 84);
+            this.labelIngresos.Name = "labelIngresos";
+            this.labelIngresos.Size = new System.Drawing.Size(79, 18);
+            this.labelIngresos.TabIndex = 2;
+            this.labelIngresos.Text = "Ingresos: ";
             // 
             // pictureBox4
             // 
@@ -185,7 +185,7 @@ namespace CapaPresentacion.Forms
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(798, 116);
+            this.panel3.Size = new System.Drawing.Size(901, 116);
             this.panel3.TabIndex = 6;
             // 
             // pictureBoxPincipal
@@ -194,7 +194,7 @@ namespace CapaPresentacion.Forms
             this.pictureBoxPincipal.Image = global::CapaPresentacion.Properties.Resources.PicsArt_07_13_02_52_25_1_;
             this.pictureBoxPincipal.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxPincipal.Name = "pictureBoxPincipal";
-            this.pictureBoxPincipal.Size = new System.Drawing.Size(798, 450);
+            this.pictureBoxPincipal.Size = new System.Drawing.Size(901, 536);
             this.pictureBoxPincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPincipal.TabIndex = 0;
             this.pictureBoxPincipal.TabStop = false;
@@ -203,7 +203,7 @@ namespace CapaPresentacion.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 450);
+            this.ClientSize = new System.Drawing.Size(901, 536);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBoxPincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -240,7 +240,7 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Label labelGastos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelIngresos;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel3;
     }

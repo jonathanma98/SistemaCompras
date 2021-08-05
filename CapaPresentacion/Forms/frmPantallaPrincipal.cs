@@ -16,9 +16,11 @@ namespace CapaPresentacion.Forms
     {
         NegocioProductos NProducto = new NegocioProductos();
         NegocioProveedor NProveedor = new NegocioProveedor();
+        csNegocioControlDinero NControlDiner = new csNegocioControlDinero();
 
         List<tbProducto> listaProducto;
         List<tbProveedor> listaProveedor;
+        List<tbControlDinero> listaControlDiner;
         public frmPantallaPrincipal()
         {
             InitializeComponent();
@@ -38,8 +40,34 @@ namespace CapaPresentacion.Forms
             catch (Exception ex)
             {
 
-                MessageBox.Show("");
             }
+
+            cargaControldinero();
+        }
+
+        private void cargaControldinero()
+        {
+            DateTime date = DateTime.Now;//fecha actual
+            double ingreso = 0, gastos = 0;
+            listaControlDiner = NControlDiner.obtenerLista(1);
+
+            foreach(tbControlDinero cd in listaControlDiner)
+            {
+                if((date.Year == cd.Fecha.Year) && (date.Month == cd.Fecha.Month))
+                {
+                    if (cd.Tipo == 1)
+                    {
+                        ingreso += (double)cd.Monto;
+                    }
+                    if (cd.Tipo == 2)
+                    {
+                        gastos += (double)cd.Monto;
+                    }
+                }
+            }
+
+            labelGastos.Text += " " + gastos.ToString();
+            labelIngresos.Text += " " + ingreso.ToString();
         }
     }
 }

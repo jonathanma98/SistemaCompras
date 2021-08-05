@@ -70,6 +70,18 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (txtContra.PasswordChar == '*')
+            {
+                txtContra.PasswordChar = '\0';
+            }
+            else
+            {
+                txtContra.PasswordChar = '*';
+            }
+        }
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             csNegocioLogin login = new csNegocioLogin();
@@ -105,8 +117,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("Algo salio mal ");
-                labelId.Visible = true;
+               labelId.Visible = true;
                 timer1.Start();
             }
         }

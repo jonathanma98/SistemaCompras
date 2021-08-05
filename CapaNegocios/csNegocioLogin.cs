@@ -36,7 +36,7 @@ namespace CapaNegocios
 
         public List<tbAdmin> obtenerLista(int estado)
         {
-            throw new NotImplementedException();
+            return dato.obtenerLista(estado);
         }
 
         public List<tbAdmin> obtenerListaId(string id)
