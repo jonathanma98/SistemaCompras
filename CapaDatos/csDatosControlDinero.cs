@@ -12,12 +12,29 @@ namespace CapaDatos
     {
         public tbControlDinero consultarPorId(tbControlDinero entidad)
         {
-            throw new NotImplementedException();
+            using (var context = new dbSistemaCompraEntities())
+            {
+                return (from f in context.tbControlDinero
+                        where f.Id.Trim() == entidad.Id.Trim()
+                        select f).FirstOrDefault();
+            }
         }
 
         public bool eliminar(tbControlDinero entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (dbSistemaCompraEntities context = new dbSistemaCompraEntities())
+                {
+                    context.Entry<tbControlDinero>(entidad).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool guarda(tbControlDinero entidad)
@@ -53,7 +70,7 @@ namespace CapaDatos
                     using (var context = new dbSistemaCompraEntities())
                     {
                         return (from f in context.tbControlDinero
-                                where f.Fecha.Month == año.Month && f.Fecha.Year == año.Year
+                                where f.Fecha.Month == año.Month && f.Fecha.Year == año.Year && f.Estado == true
                                 select f).ToList();
                     }
                 }
@@ -62,7 +79,7 @@ namespace CapaDatos
                     using (var context = new dbSistemaCompraEntities())
                     {
                         return (from f in context.tbControlDinero
-                                where  f.Fecha.Year == año.Year
+                                where  f.Fecha.Year == año.Year && f.Estado == true
                                 select f).ToList();
                     }
                 }
@@ -75,7 +92,12 @@ namespace CapaDatos
 
         public List<tbControlDinero> obtenerListaId(string id)
         {
-            throw new NotImplementedException();
+            using (var context = new dbSistemaCompraEntities())
+            {
+                return (from f in context.tbControlDinero
+                        where f.Id.Trim() == id.Trim()
+                        select f).ToList();
+            }
         }
     }
 }

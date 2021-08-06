@@ -190,12 +190,15 @@ namespace CapaPresentacion.FormsMostracion
             // 
             // btnEnviarDato
             // 
-            this.btnEnviarDato.Location = new System.Drawing.Point(628, 48);
+            this.btnEnviarDato.BackColor = System.Drawing.Color.Lime;
+            this.btnEnviarDato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarDato.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarDato.Location = new System.Drawing.Point(586, 49);
             this.btnEnviarDato.Name = "btnEnviarDato";
-            this.btnEnviarDato.Size = new System.Drawing.Size(75, 23);
+            this.btnEnviarDato.Size = new System.Drawing.Size(99, 30);
             this.btnEnviarDato.TabIndex = 164;
-            this.btnEnviarDato.Text = "button1";
-            this.btnEnviarDato.UseVisualStyleBackColor = true;
+            this.btnEnviarDato.Text = "Enviar datos";
+            this.btnEnviarDato.UseVisualStyleBackColor = false;
             this.btnEnviarDato.Click += new System.EventHandler(this.btnEnviarDato_Click);
             // 
             // dataGVDetalleFactura

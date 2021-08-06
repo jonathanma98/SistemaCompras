@@ -85,6 +85,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_top_15599 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_top_15599", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backup_and_restore_15493__1_ {
             get {
                 object obj = ResourceManager.GetObject("backup_and_restore_15493 (1)", resourceCulture);
@@ -98,6 +108,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap bluehousehousehome_azulcasa_cas_6791__1_ {
             get {
                 object obj = ResourceManager.GetObject("bluehousehousehome_azulcasa_cas_6791 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap business_color_money_13_icon_icons_com_53448 {
+            get {
+                object obj = ResourceManager.GetObject("business-color_money-13_icon-icons.com_53448", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -138,6 +158,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap Distributor_report_25402 {
             get {
                 object obj = ResourceManager.GetObject("Distributor-report_25402", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Download_25378 {
+            get {
+                object obj = ResourceManager.GetObject("Download_25378", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

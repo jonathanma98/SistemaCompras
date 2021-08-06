@@ -115,23 +115,26 @@ namespace CapaPresentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            tbAdmin admin = new tbAdmin();
-
-            admin.id = txtId.Text;
-            admin.Nombre = txtNombre.Text;
-            admin.contraseña = csEncryp.GetSHA256(txtContreseña.Text.Trim());
-            //MessageBox.Show(csEncryp.GetSHA256(txtContreseña.Text));
-            admin.telefono = txtTelefono.Text;
-            admin.correo = txtCorreo.Text;
-
-            if (login.modificar(admin))
+            if (verificarDatos())
             {
-                MessageBox.Show("Se a modificado un usuario", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //Close();
-            }
-            else
-            {
-                MessageBox.Show("Algo selio mal al modificar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbAdmin admin = new tbAdmin();
+
+                admin.id = txtId.Text;
+                admin.Nombre = txtNombre.Text;
+                admin.contraseña = csEncryp.GetSHA256(txtContreseña.Text.Trim());
+                //MessageBox.Show(csEncryp.GetSHA256(txtContreseña.Text));
+                admin.telefono = txtTelefono.Text;
+                admin.correo = txtCorreo.Text;
+
+                if (login.modificar(admin))
+                {
+                    MessageBox.Show("Se a modificado un usuario", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Close();
+                }
+                else
+                {
+                    MessageBox.Show("Algo selio mal al modificar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

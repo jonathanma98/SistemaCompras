@@ -461,5 +461,38 @@ namespace CapaPresentacion.Forms
         {
 
         }
+
+        private void mskcodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    if (dataGridViewProductos.Rows.Count >= 1)
+                    {
+                        IEnumerable<tbProducto> listaAux = new List<tbProducto>();
+
+                        if (mskcodigo.Text != string.Empty)
+                        {
+                            listaAux = listaProducto.Where(x => x.tbObjeto.Codigo.Trim().ToUpper().Contains(mskcodigo.Text.Trim().ToUpper())).ToList();
+                        }
+                        if (listaAux.Count() == 0 && mskcodigo.Text == string.Empty)
+                        {
+                            listaAux = listaProducto;
+                        }
+                        cargarDatos((List<tbProducto>)listaAux);
+                    }
+                    else
+                    {
+                        refreData();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, vuelve a intar si el error persiste comuniquese con el creador del software ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

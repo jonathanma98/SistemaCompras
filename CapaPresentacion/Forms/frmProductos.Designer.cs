@@ -182,6 +182,7 @@ namespace CapaPresentacion.Forms
             this.mskcodigo.Name = "mskcodigo";
             this.mskcodigo.Size = new System.Drawing.Size(125, 20);
             this.mskcodigo.TabIndex = 149;
+            this.mskcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskcodigo_KeyPress);
             // 
             // textvalorcompra
             // 

@@ -12,7 +12,12 @@ namespace CapaDatos
     {
         public tbFactura consultarPorId(tbFactura entidad)
         {
-            throw new NotImplementedException();
+            using (var context = new dbSistemaCompraEntities())
+            {
+                return (from c in context.tbFactura.Include("tbControlDinero")
+                        where c.IdFactura == entidad.IdFactura && c.Estado == true
+                        select c).FirstOrDefault();
+            }
         }
 
         public bool eliminar(tbFactura entidad)
@@ -21,7 +26,8 @@ namespace CapaDatos
             {
                 using(dbSistemaCompraEntities context = new dbSistemaCompraEntities())
                 {
-                    context.Entry<tbFactura>(entidad).State = System.Data.Entity.EntityState.Deleted;
+                    context.Entry<tbFactura>(entidad).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
                 }
                 return true;
             }
@@ -75,7 +81,7 @@ namespace CapaDatos
             using (var context = new dbSistemaCompraEntities())
             {
                 return (from c in context.tbFactura
-                        where c.IdFactura == id
+                        where c.IdFactura == id && c.Estado == true
                         select c).ToList();
             }
         }

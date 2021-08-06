@@ -29,16 +29,19 @@ namespace CapaPresentacion.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSuperior = new System.Windows.Forms.Panel();
-            this.labelDate = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             this.panelInferior = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chartVentas = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -50,12 +53,35 @@ namespace CapaPresentacion.Forms
             this.labeldescripcion = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGVControlDinero = new System.Windows.Forms.DataGridView();
+            this.pictureFlecha2 = new System.Windows.Forms.PictureBox();
+            this.pictureFlecha1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonguardar = new System.Windows.Forms.Button();
+            this.btnActualizarData = new System.Windows.Forms.Button();
+            this.txtIdControlDinero = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DetallesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtFactura = new System.Windows.Forms.TextBox();
             this.panelSuperior.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControlDinero)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVControlDinero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperior
@@ -66,54 +92,56 @@ namespace CapaPresentacion.Forms
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(943, 75);
+            this.panelSuperior.Size = new System.Drawing.Size(1057, 75);
             this.panelSuperior.TabIndex = 0;
-            // 
-            // labelDate
-            // 
-            this.labelDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelDate.AutoSize = true;
-            this.labelDate.Font = new System.Drawing.Font("Copperplate Gothic Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(444, 0);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(33, 35);
-            this.labelDate.TabIndex = 2;
-            this.labelDate.Text = "l";
             // 
             // labelHora
             // 
             this.labelHora.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelHora.AutoSize = true;
             this.labelHora.Font = new System.Drawing.Font("Copperplate Gothic Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHora.Location = new System.Drawing.Point(445, 35);
+            this.labelHora.Location = new System.Drawing.Point(502, 42);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(28, 30);
             this.labelHora.TabIndex = 1;
             this.labelHora.Text = "l";
             // 
+            // labelDate
+            // 
+            this.labelDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelDate.AutoSize = true;
+            this.labelDate.Font = new System.Drawing.Font("Copperplate Gothic Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDate.Location = new System.Drawing.Point(501, 0);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(33, 35);
+            this.labelDate.TabIndex = 2;
+            this.labelDate.Text = "l";
+            // 
             // panelInferior
             // 
             this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInferior.Location = new System.Drawing.Point(0, 495);
+            this.panelInferior.Location = new System.Drawing.Point(0, 526);
             this.panelInferior.Name = "panelInferior";
-            this.panelInferior.Size = new System.Drawing.Size(943, 21);
+            this.panelInferior.Size = new System.Drawing.Size(1057, 21);
             this.panelInferior.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Fuchsia;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.chartVentas, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.chartControlDinero, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 75);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(943, 420);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1057, 451);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // chartVentas
@@ -124,20 +152,20 @@ namespace CapaPresentacion.Forms
             this.chartVentas.BorderlineColor = System.Drawing.Color.Black;
             this.chartVentas.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
             this.chartVentas.BorderSkin.PageColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea21.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea21.Name = "ChartArea1";
-            this.chartVentas.ChartAreas.Add(chartArea21);
+            chartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea3.Name = "ChartArea1";
+            this.chartVentas.ChartAreas.Add(chartArea3);
             this.chartVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend21.Name = "Legend1";
-            this.chartVentas.Legends.Add(legend21);
-            this.chartVentas.Location = new System.Drawing.Point(474, 3);
+            legend3.Name = "Legend1";
+            this.chartVentas.Legends.Add(legend3);
+            this.chartVentas.Location = new System.Drawing.Point(531, 3);
             this.chartVentas.Name = "chartVentas";
-            series31.ChartArea = "ChartArea1";
-            series31.IsValueShownAsLabel = true;
-            series31.Legend = "Legend1";
-            series31.Name = "Ventas";
-            this.chartVentas.Series.Add(series31);
-            this.chartVentas.Size = new System.Drawing.Size(466, 204);
+            series4.ChartArea = "ChartArea1";
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "Ventas";
+            this.chartVentas.Series.Add(series4);
+            this.chartVentas.Size = new System.Drawing.Size(523, 219);
             this.chartVentas.TabIndex = 0;
             this.chartVentas.Text = "chart1";
             // 
@@ -148,37 +176,44 @@ namespace CapaPresentacion.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartControlDinero.BackColor = System.Drawing.Color.Black;
             this.chartControlDinero.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
-            chartArea22.Name = "ChartArea1";
-            this.chartControlDinero.ChartAreas.Add(chartArea22);
-            legend22.Name = "Legend1";
-            this.chartControlDinero.Legends.Add(legend22);
-            this.chartControlDinero.Location = new System.Drawing.Point(474, 213);
+            chartArea4.Name = "ChartArea1";
+            this.chartControlDinero.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartControlDinero.Legends.Add(legend4);
+            this.chartControlDinero.Location = new System.Drawing.Point(531, 228);
             this.chartControlDinero.Name = "chartControlDinero";
-            series32.BorderWidth = 3;
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series32.Color = System.Drawing.Color.Lime;
-            series32.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series32.LabelBorderWidth = 5;
-            series32.Legend = "Legend1";
-            series32.Name = "Ingreso";
-            series33.BorderWidth = 3;
-            series33.ChartArea = "ChartArea1";
-            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series33.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            series33.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series33.LabelBorderWidth = 5;
-            series33.Legend = "Legend1";
-            series33.Name = "Gastos";
-            this.chartControlDinero.Series.Add(series32);
-            this.chartControlDinero.Series.Add(series33);
-            this.chartControlDinero.Size = new System.Drawing.Size(466, 204);
+            series5.BorderWidth = 3;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.Lime;
+            series5.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.LabelBorderWidth = 5;
+            series5.Legend = "Legend1";
+            series5.Name = "Ingreso";
+            series6.BorderWidth = 3;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series6.LabelBorderWidth = 5;
+            series6.Legend = "Legend1";
+            series6.Name = "Gastos";
+            this.chartControlDinero.Series.Add(series5);
+            this.chartControlDinero.Series.Add(series6);
+            this.chartControlDinero.Size = new System.Drawing.Size(523, 220);
             this.chartControlDinero.TabIndex = 2;
             this.chartControlDinero.Text = "chart1";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Fuchsia;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.txtFactura);
+            this.panel1.Controls.Add(this.txtFecha);
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.txtIdControlDinero);
+            this.panel1.Controls.Add(this.pictureFlecha2);
+            this.panel1.Controls.Add(this.pictureFlecha1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cbTipo);
             this.panel1.Controls.Add(this.txtDescripcion);
@@ -189,15 +224,16 @@ namespace CapaPresentacion.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(465, 204);
+            this.panel1.Size = new System.Drawing.Size(522, 219);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(272, 2);
+            this.label5.Location = new System.Drawing.Point(362, 2);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 20);
             this.label5.TabIndex = 5;
@@ -206,26 +242,26 @@ namespace CapaPresentacion.Forms
             // cbTipo
             // 
             this.cbTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipo.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.IntegralHeight = false;
-            this.cbTipo.Location = new System.Drawing.Point(257, 29);
+            this.cbTipo.Location = new System.Drawing.Point(347, 25);
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(172, 21);
+            this.cbTipo.Size = new System.Drawing.Size(172, 28);
             this.cbTipo.TabIndex = 4;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(26, 94);
+            this.txtDescripcion.Location = new System.Drawing.Point(26, 101);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(403, 73);
+            this.txtDescripcion.Size = new System.Drawing.Size(460, 73);
             this.txtDescripcion.TabIndex = 3;
             // 
             // labeldescripcion
@@ -233,7 +269,7 @@ namespace CapaPresentacion.Forms
             this.labeldescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labeldescripcion.AutoSize = true;
             this.labeldescripcion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeldescripcion.Location = new System.Drawing.Point(23, 71);
+            this.labeldescripcion.Location = new System.Drawing.Point(23, 78);
             this.labeldescripcion.Name = "labeldescripcion";
             this.labeldescripcion.Size = new System.Drawing.Size(145, 20);
             this.labeldescripcion.TabIndex = 2;
@@ -241,7 +277,6 @@ namespace CapaPresentacion.Forms
             // 
             // txtMonto
             // 
-            this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMonto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMonto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -263,6 +298,107 @@ namespace CapaPresentacion.Forms
             this.label2.TabIndex = 0;
             this.label2.Text = "Monto de dinero";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.dataGVControlDinero);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 228);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(522, 220);
+            this.panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnActualizarData);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(522, 43);
+            this.panel3.TabIndex = 0;
+            // 
+            // dataGVControlDinero
+            // 
+            this.dataGVControlDinero.AllowUserToAddRows = false;
+            this.dataGVControlDinero.AllowUserToDeleteRows = false;
+            this.dataGVControlDinero.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGVControlDinero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGVControlDinero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVControlDinero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Fecha,
+            this.Tipo,
+            this.Monto,
+            this.DetallesExtra,
+            this.Factura});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Fuchsia;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGVControlDinero.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGVControlDinero.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGVControlDinero.Location = new System.Drawing.Point(0, 43);
+            this.dataGVControlDinero.MultiSelect = false;
+            this.dataGVControlDinero.Name = "dataGVControlDinero";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Fuchsia;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGVControlDinero.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGVControlDinero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGVControlDinero.Size = new System.Drawing.Size(522, 177);
+            this.dataGVControlDinero.TabIndex = 1;
+            this.dataGVControlDinero.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGVControlDinero_CellDoubleClick);
+            // 
+            // pictureFlecha2
+            // 
+            this.pictureFlecha2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFlecha2.Image = global::CapaPresentacion.Properties.Resources.arrow_top_15599;
+            this.pictureFlecha2.Location = new System.Drawing.Point(494, 57);
+            this.pictureFlecha2.Name = "pictureFlecha2";
+            this.pictureFlecha2.Size = new System.Drawing.Size(28, 41);
+            this.pictureFlecha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFlecha2.TabIndex = 146;
+            this.pictureFlecha2.TabStop = false;
+            this.pictureFlecha2.Visible = false;
+            // 
+            // pictureFlecha1
+            // 
+            this.pictureFlecha1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFlecha1.Image = global::CapaPresentacion.Properties.Resources.Download_25378;
+            this.pictureFlecha1.Location = new System.Drawing.Point(494, 57);
+            this.pictureFlecha1.Name = "pictureFlecha1";
+            this.pictureFlecha1.Size = new System.Drawing.Size(28, 41);
+            this.pictureFlecha1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFlecha1.TabIndex = 145;
+            this.pictureFlecha1.TabStop = false;
+            this.pictureFlecha1.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.business_color_money_13_icon_icons_com_53448;
+            this.pictureBox1.Location = new System.Drawing.Point(437, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 144;
+            this.pictureBox1.TabStop = false;
+            // 
             // buttonguardar
             // 
             this.buttonguardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -273,7 +409,7 @@ namespace CapaPresentacion.Forms
             this.buttonguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonguardar.Image = global::CapaPresentacion.Properties.Resources.icons8_marcapáginas_16_2_;
             this.buttonguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonguardar.Location = new System.Drawing.Point(158, 170);
+            this.buttonguardar.Location = new System.Drawing.Point(133, 188);
             this.buttonguardar.Name = "buttonguardar";
             this.buttonguardar.Size = new System.Drawing.Size(88, 31);
             this.buttonguardar.TabIndex = 143;
@@ -282,11 +418,107 @@ namespace CapaPresentacion.Forms
             this.buttonguardar.UseVisualStyleBackColor = false;
             this.buttonguardar.Click += new System.EventHandler(this.buttonguardar_Click);
             // 
+            // btnActualizarData
+            // 
+            this.btnActualizarData.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnActualizarData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnActualizarData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarData.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.btnActualizarData.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnActualizarData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnActualizarData.Image = global::CapaPresentacion.Properties.Resources.icons8_actualizar_16_1_;
+            this.btnActualizarData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarData.Location = new System.Drawing.Point(211, 6);
+            this.btnActualizarData.Name = "btnActualizarData";
+            this.btnActualizarData.Size = new System.Drawing.Size(88, 34);
+            this.btnActualizarData.TabIndex = 144;
+            this.btnActualizarData.Text = "Actualizar";
+            this.btnActualizarData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarData.UseVisualStyleBackColor = false;
+            this.btnActualizarData.Click += new System.EventHandler(this.btnActualizarData_Click);
+            // 
+            // txtIdControlDinero
+            // 
+            this.txtIdControlDinero.Enabled = false;
+            this.txtIdControlDinero.Location = new System.Drawing.Point(9, 180);
+            this.txtIdControlDinero.Name = "txtIdControlDinero";
+            this.txtIdControlDinero.Size = new System.Drawing.Size(31, 20);
+            this.txtIdControlDinero.TabIndex = 147;
+            this.txtIdControlDinero.Visible = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.icons8_eliminar_16_1_;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(295, 188);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(88, 31);
+            this.btnEliminar.TabIndex = 148;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Enabled = false;
+            this.txtFecha.Location = new System.Drawing.Point(46, 180);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(31, 20);
+            this.txtFecha.TabIndex = 149;
+            this.txtFecha.Visible = false;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            // 
+            // DetallesExtra
+            // 
+            this.DetallesExtra.HeaderText = "Detalles ";
+            this.DetallesExtra.Name = "DetallesExtra";
+            // 
+            // Factura
+            // 
+            this.Factura.HeaderText = "Factura";
+            this.Factura.Name = "Factura";
+            // 
+            // txtFactura
+            // 
+            this.txtFactura.Enabled = false;
+            this.txtFactura.Location = new System.Drawing.Point(83, 180);
+            this.txtFactura.Name = "txtFactura";
+            this.txtFactura.Size = new System.Drawing.Size(31, 20);
+            this.txtFactura.TabIndex = 150;
+            this.txtFactura.Visible = false;
+            // 
             // frmControlDinero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 516);
+            this.ClientSize = new System.Drawing.Size(1057, 547);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelInferior);
             this.Controls.Add(this.panelSuperior);
@@ -299,6 +531,12 @@ namespace CapaPresentacion.Forms
             ((System.ComponentModel.ISupportInitialize)(this.chartControlDinero)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVControlDinero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +558,22 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Button buttonguardar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGVControlDinero;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnActualizarData;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureFlecha1;
+        private System.Windows.Forms.PictureBox pictureFlecha2;
+        private System.Windows.Forms.TextBox txtIdControlDinero;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DetallesExtra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Factura;
+        private System.Windows.Forms.TextBox txtFactura;
     }
 }

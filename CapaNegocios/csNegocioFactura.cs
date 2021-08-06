@@ -11,16 +11,39 @@ namespace CapaNegocios
 {
     public class csNegocioFactura : IGenerica<tbFactura>
     {
-       csDatosFactura datos = new csDatosFactura();
-
+        csDatosFactura datos = new csDatosFactura();
+        csDatosDetallesFactura dt = new csDatosDetallesFactura();
+        csDatosControlDinero controlDiner = new csDatosControlDinero();
+        List<tbControlDinero> listaControlDinero;
+        List<tbFactura> listaFacura;
+        List<tbDetalleFactura> listaDetaFac;
         public tbFactura consultarPorId(tbFactura entidad)
         {
-            throw new NotImplementedException();
+            return datos.consultarPorId(entidad);
         }
 
         public bool eliminar(tbFactura entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+               tbControlDinero cd = new tbControlDinero();
+                cd = entidad.tbControlDinero.First();
+                cd.Estado = false;
+                entidad.Estado = false;
+                if (controlDiner.eliminar(cd))
+                {
+                    return datos.eliminar(entidad);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public bool guarda(tbFactura entidad)
@@ -50,6 +73,22 @@ namespace CapaNegocios
 
         public bool ModificarFactura(tbFactura factura, List<tbDetalleFactura> listaDF, List<tbProducto> listaP)
         {
+            
+            listaDetaFac =dt.obtenerLista(1);
+            foreach(tbDetalleFactura d in listaDetaFac)
+            {
+                //tbDetalleFactura detalleFactura = null;
+                if (factura.IdFactura == d.IdFactura)
+                {
+                    tbDetalleFactura detalleFactura = (from c in listaDF
+                                                       where c.Id == d.Id
+                                                       select c).FirstOrDefault();
+                    if(detalleFactura == null)
+                    {
+                        dt.eliminar(d);
+                    }
+                }
+            }
             return datos.ModificarFactura(factura, listaDF, listaP);
         }
     }

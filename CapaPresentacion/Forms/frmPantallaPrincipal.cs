@@ -47,27 +47,35 @@ namespace CapaPresentacion.Forms
 
         private void cargaControldinero()
         {
-            DateTime date = DateTime.Now;//fecha actual
-            double ingreso = 0, gastos = 0;
-            listaControlDiner = NControlDiner.obtenerLista(1);
-
-            foreach(tbControlDinero cd in listaControlDiner)
+            try
             {
-                if((date.Year == cd.Fecha.Year) && (date.Month == cd.Fecha.Month))
+                DateTime date = DateTime.Now;//fecha actual
+                double ingreso = 0, gastos = 0;
+                listaControlDiner = NControlDiner.obtenerLista(1);
+
+                foreach (tbControlDinero cd in listaControlDiner)
                 {
-                    if (cd.Tipo == 1)
+                    if ((date.Year == cd.Fecha.Year) && (date.Month == cd.Fecha.Month))
                     {
-                        ingreso += (double)cd.Monto;
-                    }
-                    if (cd.Tipo == 2)
-                    {
-                        gastos += (double)cd.Monto;
+                        if (cd.Tipo == 1)
+                        {
+                            ingreso += (double)cd.Monto;
+                        }
+                        if (cd.Tipo == 2)
+                        {
+                            gastos += (double)cd.Monto;
+                        }
                     }
                 }
-            }
 
-            labelGastos.Text += " " + gastos.ToString();
-            labelIngresos.Text += " " + ingreso.ToString();
+                labelGastos.Text += " " + gastos.ToString();
+                labelIngresos.Text += " " + ingreso.ToString();
+            }
+            catch (Exception)
+            {
+                labelGastos.Text += " Error";
+                labelIngresos.Text += " Erorr";
+            }
         }
     }
 }

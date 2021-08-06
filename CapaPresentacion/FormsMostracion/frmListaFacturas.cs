@@ -120,6 +120,7 @@ namespace CapaPresentacion.FormsMostracion
             tbFactura selecFactura;
             selecFactura = listaFacturas.Where(x => x.IdFactura.Trim() == id.Trim()).SingleOrDefault();
             pasarFactura(selecFactura);
+            Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

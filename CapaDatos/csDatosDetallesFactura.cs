@@ -21,16 +21,8 @@ namespace CapaDatos
             {
                 using (dbSistemaCompraEntities context = new dbSistemaCompraEntities())
                 {
-                    var lista = context.tbDetalleFactura;
-
-                    foreach (var df in lista)
-                    {
-                        if (df.IdFactura == entidad.IdFactura)
-                        {
-                            context.tbDetalleFactura.Remove(df);
-                        }
-                        context.SaveChanges();
-                    }
+                    context.Entry<tbDetalleFactura>(entidad).State = System.Data.Entity.EntityState.Deleted;
+                    context.SaveChanges();
                 }
                 return true;
             }

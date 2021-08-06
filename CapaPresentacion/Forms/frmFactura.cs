@@ -51,8 +51,8 @@ namespace CapaPresentacion.Forms
 
         private void cargarTxts()
         {
-            panel1.Height = 0;
             panel2.Width = 7;
+            checkCodigoP.Checked = true;
             //Cagamos los datos al abrir la venta
             cbTipoFactura.DataSource = Enum.GetValues(typeof(csEnums.Tipo));
             labelIdFactura.Text = dateTimeFactura.Value.ToString().Trim();
@@ -119,14 +119,17 @@ namespace CapaPresentacion.Forms
 
         private void buttonconsultar_Click_1(object sender, EventArgs e)
         {
-            panel1.Height = 193;
             if (dataGridViewProductos.Rows.Count >= 1)
             {
                 IEnumerable<tbProducto> listaAux = new List<tbProducto>();
 
-                if (txtBusProducto.Text != string.Empty)
+                if (txtBusProducto.Text != string.Empty && checkNombreP.Checked == true)
                 {
                     listaAux = listaProducto.Where(x => x.tbObjeto.Nombre.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
+                }
+                else if (txtBusProducto.Text != string.Empty && checkCodigoP.Checked == true)
+                {
+                    listaAux = listaProducto.Where(x => x.tbObjeto.Codigo.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
                 }
                 if (listaAux.Count() == 0 && txtBusProducto.Text == string.Empty)
                 {
@@ -427,6 +430,12 @@ namespace CapaPresentacion.Forms
             labelIdFactura.Refresh();
             LabelPara.Refresh();
             refreData();
+            btnEliminar.Enabled = false;
+            dateTimeFactura.Enabled = true;
+            buttonguardar.Enabled = true;
+            btnVerCliente.Enabled = true;
+            btnVerProveedores.Enabled = true;
+            btnManual.Enabled = true;
         }
 
         private bool validarDatos()
@@ -534,13 +543,20 @@ namespace CapaPresentacion.Forms
             {
                 int nr = dataGVDetalleFactura.Rows.Add();
                 dataGVDetalleFactura.Rows[nr].Cells[0].Value = df.IdProductos.Trim();
-                dataGVDetalleFactura.Rows[nr].Cells[1].Value = df.tbProducto.tbObjeto.Nombre;
+                dataGVDetalleFactura.Rows[nr].Cells[1].Value = "p ";
                 dataGVDetalleFactura.Rows[nr].Cells[2].Value = df.Precio;
                 dataGVDetalleFactura.Rows[nr].Cells[3].Value = df.Cantiadad;
                 dataGVDetalleFactura.Rows[nr].Cells[4].Value = df.IVA;
                 dataGVDetalleFactura.Rows[nr].Cells[5].Value = df.Descuento;
             }
             SacarSubTotal();
+            btnEliminar.Enabled = true;
+            dateTimeFactura.Enabled = false;
+            buttonguardar.Enabled = false;
+            btnVerCliente.Enabled = false;
+            btnVerProveedores.Enabled = false;
+            btnManual.Enabled = false;
+            timer2.Start();
         }
 
         private void btnMostraPanel2_Click(object sender, EventArgs e)
@@ -700,6 +716,109 @@ namespace CapaPresentacion.Forms
             else
             {
                 MessageBox.Show("No se podo guardar la factura ", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(labelIdFactura.Text != string.Empty)
+            {
+                tbFactura factura = new tbFactura();
+                factura.IdFactura = LabelPara.Text.Trim() + labelIdFactura.Text.Trim();
+
+                factura = NFactura.consultarPorId(factura);
+                string idf = factura.IdFactura;
+
+                DialogResult opc = MessageBox.Show("Esta segura que desea eliminar la factura con la ID: " + idf, "Opción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(opc == DialogResult.Yes)
+                {
+                    if (NFactura.eliminar(factura))
+                    {
+                        MessageBox.Show("Se elimino la factura " + idf, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se a podido eliminar la factura " + idf, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    idf = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se indentifico la factura verifica que la factura tenga una id factua", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void cbTipoFactura_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTipoFactura.SelectedIndex == 0)
+            {
+                pictureFlecha2.Visible = false;
+                pictureFlecha1.Visible = true;
+            }
+            else
+            {
+                pictureFlecha1.Visible = false;
+                pictureFlecha2.Visible = true;
+            }
+        }
+
+        private void checkCodigoP_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkNombreP.Checked == true)
+            {
+                checkNombreP.Checked = false;
+            }
+        }
+
+        private void checkNombreP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCodigoP.Checked == true)
+            {
+                checkCodigoP.Checked = false;
+            }
+        }
+
+        private void txtBusProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {//evento para capturar codigos de barras
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    checkCodigoP.Checked = true;
+                    if (dataGridViewProductos.Rows.Count >= 1)
+                    {
+                        IEnumerable<tbProducto> listaAux = new List<tbProducto>();
+
+                        if (txtBusProducto.Text != string.Empty)
+                        {
+                            listaAux = listaProducto.Where(x => x.tbObjeto.Codigo.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
+                        }
+                        if (listaAux.Count() == 0 && txtBusProducto.Text == string.Empty)
+                        {
+                            listaAux = listaProducto;
+                        }
+                        cargarDatos((List<tbProducto>)listaAux);
+                    }
+                    else
+                    {
+                        refreData();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, vuelve a intar si el error persiste comuniquese con el creador del software ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

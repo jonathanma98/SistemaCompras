@@ -80,7 +80,7 @@ namespace CapaPresentacion.Forms
             chartControlDinero.Titles.Clear();
 
             DateTime date = DateTime.Now;
-            listaControlDinero = NControlDinero.obtenerLista(date.Month);
+            listaControlDinero = NControlDinero.obtenerLista(1);
             var listaOrdenadaControlGasto = listaControlDinero.OrderBy(x => x.Fecha);
 
             chartControlDinero.Titles.Add("Ingresos y engresos " + date.Month + "-" + date.Year);
@@ -160,6 +160,113 @@ namespace CapaPresentacion.Forms
                 MessageBox.Show("Solo puedes ingresar precios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void btnActualizarData_Click(object sender, EventArgs e)
+        {
+            cargarDataGVControlDinero();
+            
+        }
+
+        private void cargarDataGVControlDinero()
+        {
+            listaControlDinero = NControlDinero.obtenerLista(1);
+            dataGVControlDinero.Rows.Clear();
+            dataGVControlDinero.Refresh();
+
+            foreach(tbControlDinero cd in listaControlDinero)
+            {
+                int nr = dataGVControlDinero.Rows.Add();
+                dataGVControlDinero.Rows[nr].Cells[0].Value = cd.Id;
+                dataGVControlDinero.Rows[nr].Cells[1].Value = cd.Fecha;
+                dataGVControlDinero.Rows[nr].Cells[2].Value = Enum.GetName(typeof(csEnums.Tipo),cd.Tipo);
+                dataGVControlDinero.Rows[nr].Cells[3].Value = cd.Monto;
+                dataGVControlDinero.Rows[nr].Cells[4].Value = cd.DetalleExtra;
+                dataGVControlDinero.Rows[nr].Cells[5].Value = cd.Factura;
+            }
+        }
+
+        private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbTipo.SelectedIndex == 0)
+            {
+                pictureFlecha2.Visible = false;
+                pictureFlecha1.Visible = true;
+            }
+            else
+            {
+                pictureFlecha1.Visible = false;
+                pictureFlecha2.Visible = true;
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGVControlDinero_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //saber que producto selecciono 
+                int n = e.RowIndex;// index seleccionado 
+                if (n != -1)
+                {
+                    string id = dataGVControlDinero.Rows[n].Cells[0].Value.ToString();//sacamos el id se la seleccion
+
+                    tbControlDinero seleControlDinero;//creamos un objeto para poder almacenar el prducto
+
+                    seleControlDinero = listaControlDinero.Where(x => x.Id.Trim() == id.Trim()).SingleOrDefault();
+
+                    pasaDatos(seleControlDinero);
+                }
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Erro " + E.Message + " te recomendamos seleccionar una casilla que contenga datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void pasaDatos(tbControlDinero seleControlDinero)
+        {
+            txtMonto.Text = seleControlDinero.Monto.ToString();
+            txtDescripcion.Text = seleControlDinero.DetalleExtra;
+            cbTipo.SelectedIndex = (seleControlDinero.Tipo - 1);
+            txtIdControlDinero.Text = seleControlDinero.Id.Trim();
+            txtIdControlDinero.Text = seleControlDinero.Fecha.ToString();
+            txtFactura.Text = seleControlDinero.Factura;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult opcion = MessageBox.Show("Seguro que desea eliminar este registro", "Opción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (opcion == DialogResult.Yes)
+            {
+                try
+                {
+                    tbControlDinero controlDinero = new tbControlDinero();
+
+                    controlDinero = listaControlDinero.Where(x => x.Id.Trim() == txtIdControlDinero.Text.Trim()).FirstOrDefault();
+
+                    controlDinero.Estado = false;
+
+                    if (NControlDinero.eliminar(controlDinero))
+                    {
+                        MessageBox.Show("Se ingreso un monto", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un erro al ingresar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Ocurrio un erro al ingresar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

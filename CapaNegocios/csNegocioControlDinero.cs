@@ -19,7 +19,7 @@ namespace CapaNegocios
 
         public bool eliminar(tbControlDinero entidad)
         {
-            throw new NotImplementedException();
+            return DControlDinero.eliminar(entidad);
         }
 
         public bool guarda(tbControlDinero entidad)

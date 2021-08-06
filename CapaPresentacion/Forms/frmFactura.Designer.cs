@@ -64,27 +64,37 @@ namespace CapaPresentacion.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.labelANombreDe = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMostraPanel2 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnVerListaFacuta = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnManual = new System.Windows.Forms.Button();
             this.btnVerProveedores = new System.Windows.Forms.Button();
             this.btnVerCliente = new System.Windows.Forms.Button();
             this.buttonguardar = new System.Windows.Forms.Button();
             this.buttonconsultar = new System.Windows.Forms.Button();
-            this.btnVerListaFacuta = new System.Windows.Forms.Button();
-            this.btnMostraPanel2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.pictureFlecha2 = new System.Windows.Forms.PictureBox();
+            this.pictureFlecha1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.checkCodigoP = new System.Windows.Forms.CheckBox();
+            this.checkNombreP = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVDetalleFactura)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -160,6 +170,7 @@ namespace CapaPresentacion.Forms
             this.cbTipoFactura.Name = "cbTipoFactura";
             this.cbTipoFactura.Size = new System.Drawing.Size(121, 21);
             this.cbTipoFactura.TabIndex = 160;
+            this.cbTipoFactura.SelectedIndexChanged += new System.EventHandler(this.cbTipoFactura_SelectedIndexChanged);
             // 
             // labelCliente
             // 
@@ -352,11 +363,11 @@ namespace CapaPresentacion.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(902, 13);
+            this.label1.Location = new System.Drawing.Point(961, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 16);
+            this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Busca por nombre";
+            this.label1.Text = "Buscador";
             // 
             // txtBusProducto
             // 
@@ -364,11 +375,12 @@ namespace CapaPresentacion.Forms
             this.txtBusProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBusProducto.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusProducto.ForeColor = System.Drawing.Color.White;
-            this.txtBusProducto.Location = new System.Drawing.Point(905, 38);
+            this.txtBusProducto.Location = new System.Drawing.Point(905, 57);
             this.txtBusProducto.Multiline = true;
             this.txtBusProducto.Name = "txtBusProducto";
             this.txtBusProducto.Size = new System.Drawing.Size(191, 33);
             this.txtBusProducto.TabIndex = 0;
+            this.txtBusProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusProducto_KeyPress);
             // 
             // label3
             // 
@@ -404,6 +416,64 @@ namespace CapaPresentacion.Forms
             this.panel2.Size = new System.Drawing.Size(10, 747);
             this.panel2.TabIndex = 176;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnMostraPanel2
+            // 
+            this.btnMostraPanel2.Location = new System.Drawing.Point(-6, 334);
+            this.btnMostraPanel2.Name = "btnMostraPanel2";
+            this.btnMostraPanel2.Size = new System.Drawing.Size(16, 41);
+            this.btnMostraPanel2.TabIndex = 179;
+            this.btnMostraPanel2.Text = "|";
+            this.btnMostraPanel2.UseVisualStyleBackColor = true;
+            this.btnMostraPanel2.Click += new System.EventHandler(this.btnMostraPanel2_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.icons8_apoyo_16_1_;
+            this.pictureBox2.Location = new System.Drawing.Point(115, 165);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox2.TabIndex = 182;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.prueba_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(112, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 145);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 181;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(21, 209);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(384, 57);
+            this.label4.TabIndex = 180;
+            this.label4.Text = "Si tocas ingresa podras ver la lista de \r\nfactura que has ingresado, podras \r\nlla" +
+    "mar una factura para editar o eliminar.";
+            // 
+            // btnVerListaFacuta
+            // 
+            this.btnVerListaFacuta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVerListaFacuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerListaFacuta.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.btnVerListaFacuta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerListaFacuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerListaFacuta.Image = global::CapaPresentacion.Properties.Resources.icons8_prismáticos_30_1_;
+            this.btnVerListaFacuta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerListaFacuta.Location = new System.Drawing.Point(115, 341);
+            this.btnVerListaFacuta.Name = "btnVerListaFacuta";
+            this.btnVerListaFacuta.Size = new System.Drawing.Size(149, 41);
+            this.btnVerListaFacuta.TabIndex = 178;
+            this.btnVerListaFacuta.Text = "Ingresar";
+            this.btnVerListaFacuta.UseVisualStyleBackColor = false;
+            this.btnVerListaFacuta.Click += new System.EventHandler(this.btnVerListaFacuta_Click);
             // 
             // panel3
             // 
@@ -473,7 +543,7 @@ namespace CapaPresentacion.Forms
             this.buttonguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonguardar.Image = global::CapaPresentacion.Properties.Resources.credit_card_22167;
             this.buttonguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonguardar.Location = new System.Drawing.Point(499, 627);
+            this.buttonguardar.Location = new System.Drawing.Point(543, 626);
             this.buttonguardar.Name = "buttonguardar";
             this.buttonguardar.Size = new System.Drawing.Size(173, 53);
             this.buttonguardar.TabIndex = 154;
@@ -488,71 +558,13 @@ namespace CapaPresentacion.Forms
             this.buttonconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonconsultar.Image = global::CapaPresentacion.Properties.Resources.icons8_búsqueda_64_1_;
-            this.buttonconsultar.Location = new System.Drawing.Point(976, 77);
+            this.buttonconsultar.Location = new System.Drawing.Point(976, 96);
             this.buttonconsultar.Name = "buttonconsultar";
             this.buttonconsultar.Size = new System.Drawing.Size(65, 57);
             this.buttonconsultar.TabIndex = 169;
             this.buttonconsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonconsultar.UseVisualStyleBackColor = true;
             this.buttonconsultar.Click += new System.EventHandler(this.buttonconsultar_Click_1);
-            // 
-            // btnVerListaFacuta
-            // 
-            this.btnVerListaFacuta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnVerListaFacuta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerListaFacuta.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this.btnVerListaFacuta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVerListaFacuta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerListaFacuta.Image = global::CapaPresentacion.Properties.Resources.icons8_prismáticos_30_1_;
-            this.btnVerListaFacuta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerListaFacuta.Location = new System.Drawing.Point(115, 341);
-            this.btnVerListaFacuta.Name = "btnVerListaFacuta";
-            this.btnVerListaFacuta.Size = new System.Drawing.Size(149, 41);
-            this.btnVerListaFacuta.TabIndex = 178;
-            this.btnVerListaFacuta.Text = "Ingresar";
-            this.btnVerListaFacuta.UseVisualStyleBackColor = false;
-            this.btnVerListaFacuta.Click += new System.EventHandler(this.btnVerListaFacuta_Click);
-            // 
-            // btnMostraPanel2
-            // 
-            this.btnMostraPanel2.Location = new System.Drawing.Point(-6, 334);
-            this.btnMostraPanel2.Name = "btnMostraPanel2";
-            this.btnMostraPanel2.Size = new System.Drawing.Size(16, 41);
-            this.btnMostraPanel2.TabIndex = 179;
-            this.btnMostraPanel2.Text = "|";
-            this.btnMostraPanel2.UseVisualStyleBackColor = true;
-            this.btnMostraPanel2.Click += new System.EventHandler(this.btnMostraPanel2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 209);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(384, 57);
-            this.label4.TabIndex = 180;
-            this.label4.Text = "Si tocas ingresa podras ver la lista de \r\nfactura que has ingresado, podras \r\nlla" +
-    "mar una factura para editar o eliminar.";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.prueba_1_;
-            this.pictureBox1.Location = new System.Drawing.Point(112, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 181;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.icons8_apoyo_16_1_;
-            this.pictureBox2.Location = new System.Drawing.Point(115, 165);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 19);
-            this.pictureBox2.TabIndex = 182;
-            this.pictureBox2.TabStop = false;
             // 
             // timer1
             // 
@@ -566,7 +578,7 @@ namespace CapaPresentacion.Forms
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Lime;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnModificar.CausesValidation = false;
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
@@ -574,13 +586,104 @@ namespace CapaPresentacion.Forms
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.Image = global::CapaPresentacion.Properties.Resources.credit_card_22167;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(294, 626);
+            this.btnModificar.Location = new System.Drawing.Point(351, 627);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(173, 53);
             this.btnModificar.TabIndex = 178;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.CausesValidation = false;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.credit_card_22167;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(172, 627);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(173, 53);
+            this.btnEliminar.TabIndex = 179;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Image = global::CapaPresentacion.Properties.Resources.icons8_actualizar_16_1_;
+            this.btnLimpiar.Location = new System.Drawing.Point(12, 235);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(83, 49);
+            this.btnLimpiar.TabIndex = 180;
+            this.btnLimpiar.Text = "Limpiar área";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // pictureFlecha2
+            // 
+            this.pictureFlecha2.Image = global::CapaPresentacion.Properties.Resources.arrow_top_15599;
+            this.pictureFlecha2.Location = new System.Drawing.Point(809, 217);
+            this.pictureFlecha2.Name = "pictureFlecha2";
+            this.pictureFlecha2.Size = new System.Drawing.Size(28, 41);
+            this.pictureFlecha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFlecha2.TabIndex = 183;
+            this.pictureFlecha2.TabStop = false;
+            this.pictureFlecha2.Visible = false;
+            // 
+            // pictureFlecha1
+            // 
+            this.pictureFlecha1.Image = global::CapaPresentacion.Properties.Resources.Download_25378;
+            this.pictureFlecha1.Location = new System.Drawing.Point(809, 217);
+            this.pictureFlecha1.Name = "pictureFlecha1";
+            this.pictureFlecha1.Size = new System.Drawing.Size(28, 41);
+            this.pictureFlecha1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFlecha1.TabIndex = 182;
+            this.pictureFlecha1.TabStop = false;
+            this.pictureFlecha1.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.business_color_money_13_icon_icons_com_53448;
+            this.pictureBox3.Location = new System.Drawing.Point(752, 217);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(54, 41);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 181;
+            this.pictureBox3.TabStop = false;
+            // 
+            // checkCodigoP
+            // 
+            this.checkCodigoP.AutoSize = true;
+            this.checkCodigoP.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkCodigoP.Location = new System.Drawing.Point(905, 19);
+            this.checkCodigoP.Name = "checkCodigoP";
+            this.checkCodigoP.Size = new System.Drawing.Size(73, 21);
+            this.checkCodigoP.TabIndex = 184;
+            this.checkCodigoP.Text = "Codigo";
+            this.checkCodigoP.UseVisualStyleBackColor = true;
+            this.checkCodigoP.CheckedChanged += new System.EventHandler(this.checkCodigoP_CheckedChanged);
+            // 
+            // checkNombreP
+            // 
+            this.checkNombreP.AutoSize = true;
+            this.checkNombreP.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkNombreP.Location = new System.Drawing.Point(1016, 19);
+            this.checkNombreP.Name = "checkNombreP";
+            this.checkNombreP.Size = new System.Drawing.Size(79, 21);
+            this.checkNombreP.TabIndex = 185;
+            this.checkNombreP.Text = "Nombre";
+            this.checkNombreP.UseVisualStyleBackColor = true;
+            this.checkNombreP.CheckedChanged += new System.EventHandler(this.checkNombreP_CheckedChanged);
             // 
             // frmFactura
             // 
@@ -589,6 +692,13 @@ namespace CapaPresentacion.Forms
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1125, 747);
+            this.Controls.Add(this.checkNombreP);
+            this.Controls.Add(this.checkCodigoP);
+            this.Controls.Add(this.pictureFlecha2);
+            this.Controls.Add(this.pictureFlecha1);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnManual);
@@ -624,9 +734,12 @@ namespace CapaPresentacion.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFlecha1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,5 +792,12 @@ namespace CapaPresentacion.Forms
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.PictureBox pictureFlecha2;
+        private System.Windows.Forms.PictureBox pictureFlecha1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.CheckBox checkCodigoP;
+        private System.Windows.Forms.CheckBox checkNombreP;
     }
 }
