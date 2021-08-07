@@ -178,7 +178,7 @@ namespace CapaPresentacion.Forms
             // 
             this.mskcodigo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.mskcodigo.Location = new System.Drawing.Point(161, 93);
-            this.mskcodigo.Mask = "#-####-####";
+            this.mskcodigo.Mask = "##############";
             this.mskcodigo.Name = "mskcodigo";
             this.mskcodigo.Size = new System.Drawing.Size(125, 20);
             this.mskcodigo.TabIndex = 149;

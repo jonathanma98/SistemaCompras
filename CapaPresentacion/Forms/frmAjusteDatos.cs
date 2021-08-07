@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using CapaEntidades;
 using CapaNegocios;
 using CapaUtilidades;
+using CapaPresentacion.FormsMostracion;
 
 namespace CapaPresentacion.Forms
 {
@@ -191,5 +192,10 @@ namespace CapaPresentacion.Forms
             }
         }
 
+        private void btnPapelera_Click(object sender, EventArgs e)
+        {
+            frmPapelera frm = new frmPapelera();
+            frm.Show();
+        }
     }
 }

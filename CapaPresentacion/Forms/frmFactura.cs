@@ -27,6 +27,7 @@ namespace CapaPresentacion.Forms
         {
             InitializeComponent();
             cargarTxts();
+            refreData();
         }
 
         private void frmFactura_Load(object sender, EventArgs e)
@@ -184,6 +185,7 @@ namespace CapaPresentacion.Forms
 
         private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+
             switch (e.ClickedItem.Name.ToString())//deacuerdo al la opcion de ejecuta la accion
             {
                 case "EliLis":
@@ -794,31 +796,54 @@ namespace CapaPresentacion.Forms
             {
                 if (e.KeyChar == (char)Keys.Enter)
                 {
-                    checkCodigoP.Checked = true;
-                    if (dataGridViewProductos.Rows.Count >= 1)
-                    {
-                        IEnumerable<tbProducto> listaAux = new List<tbProducto>();
+                    tbProducto seleProducto = new tbProducto();
 
-                        if (txtBusProducto.Text != string.Empty)
-                        {
-                            listaAux = listaProducto.Where(x => x.tbObjeto.Codigo.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).ToList();
-                        }
-                        if (listaAux.Count() == 0 && txtBusProducto.Text == string.Empty)
-                        {
-                            listaAux = listaProducto;
-                        }
-                        cargarDatos((List<tbProducto>)listaAux);
-                    }
-                    else
+                    if (txtBusProducto.Text != string.Empty)
                     {
-                        refreData();
+                        seleProducto = listaProducto.Where(x => x.tbObjeto.Codigo.Trim().ToUpper().Contains(txtBusProducto.Text.Trim().ToUpper())).FirstOrDefault();
+                        if (seleProducto == null)
+                        {
+                            seleProducto.Codigo = txtBusProducto.Text.Trim();
+                            seleProducto = listaProducto.Where(x => x.Codigo.Trim() == seleProducto.Codigo.Trim()).SingleOrDefault();
+                        }
+                        pasarDatosPorKeyPress(seleProducto);
+                        txtBusProducto.ResetText();
                     }
                 }
             }
             catch (Exception)
             {
 
+                txtBusProducto.ResetText();
                 MessageBox.Show("Error, vuelve a intar si el error persiste comuniquese con el creador del software ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void pasarDatosPorKeyPress(tbProducto seleProducto)
+        {
+
+            if (seleProducto.Codigo != "")
+            {
+                if (!sabersiProductoEstaIngresadoParaAumentarcantidad(seleProducto))
+                {
+                    int nr = dataGVDetalleFactura.Rows.Add();
+                    dataGVDetalleFactura.Rows[nr].Cells[0].Value = seleProducto.Codigo;
+                    dataGVDetalleFactura.Rows[nr].Cells[1].Value = seleProducto.tbObjeto.Nombre;
+                    dataGVDetalleFactura.Rows[nr].Cells[2].Value = seleProducto.PrecioVenta;
+                    dataGVDetalleFactura.Rows[nr].Cells[3].Value = 1;
+                    int cantida = (int)dataGVDetalleFactura.Rows[nr].Cells[3].Value;
+                    dataGVDetalleFactura.Rows[nr].Cells[4].Value = 0;
+                    int imp = (int)dataGVDetalleFactura.Rows[nr].Cells[4].Value;//sacamos el total 
+                    dataGVDetalleFactura.Rows[nr].Cells[5].Value = 0;
+                    dataGVDetalleFactura.Rows[nr].Cells[6].Value = (((seleProducto.PrecioVenta + (seleProducto.PrecioVenta * imp) / 100)) * cantida);
+                }
+                SacarSubTotal();
+
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el producto ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

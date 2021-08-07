@@ -30,11 +30,6 @@ namespace CapaPresentacion.FormsMostracion
             llamarListaFacura();
         }
 
-        private void inicializar()
-        {
-            llamarListaFacura();
-        }
-
         private void llamarListaFacura()
         {
             listaFacturas = NFactura.obtenerLista(1);
@@ -47,7 +42,7 @@ namespace CapaPresentacion.FormsMostracion
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
-            var listaFacturasOR = listaFacturas.OrderBy(x => x.FechaCompra);
+            var listaFacturasOR = listaFacturas.OrderByDescending(x => x.FechaCompra);
             foreach(tbFactura f in listaFacturasOR)
             {
                 int nr = dataGridView1.Rows.Add();

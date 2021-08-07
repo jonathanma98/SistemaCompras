@@ -95,6 +95,12 @@
     <Compile Include="FormsMostracion\frmMostrarVentaProveedor.Designer.cs">
       <DependentUpon>frmMostrarVentaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsMostracion\frmPapelera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMostracion\frmPapelera.Designer.cs">
+      <DependentUpon>frmPapelera.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsMostracion\frmVerFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMostracion\frmMostrarVentaProveedor.resx">
       <DependentUpon>frmMostrarVentaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsMostracion\frmPapelera.resx">
+      <DependentUpon>frmPapelera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMostracion\frmVerFactura.resx">
       <DependentUpon>frmVerFactura.cs</DependentUpon>
@@ -518,6 +527,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_top_15599.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office_-28_icon-icons.com_73959.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -465,6 +465,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Office__28_icon_icons_com_73959 {
+            get {
+                object obj = ResourceManager.GetObject("Office_-28_icon-icons.com_73959", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Office__34_icon_icons_com_73983__1__1_ {
             get {
                 object obj = ResourceManager.GetObject("Office_-34_icon-icons.com_73983_(1)[1]", resourceCulture);
