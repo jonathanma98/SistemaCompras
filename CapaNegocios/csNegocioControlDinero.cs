@@ -29,7 +29,7 @@ namespace CapaNegocios
 
         public bool modificar(tbControlDinero entidad)
         {
-            throw new NotImplementedException();
+            return DControlDinero.modificar(entidad);
         }
 
         public List<tbControlDinero> obtenerLista(int estado)

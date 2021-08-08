@@ -53,7 +53,7 @@ namespace CapaPresentacion.FormsMostracion
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(611, 80);
+            this.panel1.Size = new System.Drawing.Size(633, 80);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox2
@@ -83,24 +83,27 @@ namespace CapaPresentacion.FormsMostracion
             // panelImage
             // 
             this.panelImage.Image = global::CapaPresentacion.Properties.Resources.PicsArt_07_13_02_52_25_1_;
-            this.panelImage.Location = new System.Drawing.Point(0, 82);
+            this.panelImage.Location = new System.Drawing.Point(0, 75);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(225, 368);
+            this.panelImage.Size = new System.Drawing.Size(225, 392);
             this.panelImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.panelImage.TabIndex = 3;
             this.panelImage.TabStop = false;
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cedula,
             this.Nombre,
             this.Apellido,
             this.Telefono});
-            this.dataGridView.Location = new System.Drawing.Point(224, 82);
+            this.dataGridView.Location = new System.Drawing.Point(224, 75);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(387, 368);
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(409, 392);
             this.dataGridView.TabIndex = 4;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
@@ -128,7 +131,7 @@ namespace CapaPresentacion.FormsMostracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 450);
+            this.ClientSize = new System.Drawing.Size(633, 466);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panelImage);
             this.Controls.Add(this.panel1);

@@ -85,40 +85,45 @@ namespace CapaPresentacion
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             csNegocioLogin login = new csNegocioLogin();
+            try
+            {
+                id = txtId.Text;
+                listaAdmin = login.obtenerListaId(id);//enviamos el usuario id
+                if (listaAdmin.Count != 0)
+                {//evaluamos que el usario no venga vacio
+                    foreach (tbAdmin dato in listaAdmin)
+                    {
+                        contra = dato.contraseña.Trim();
+                    }
 
-            id = txtId.Text;
+                    string passport = csEncryp.GetSHA256(txtContra.Text);
+                    //evaluamos los datos para poder ingresar a los formulacios
+                    if (id == txtId.Text && passport == contra)
+                    {
+                        //frmWelcome frm = new frmWelcome();
+                        //frm.ShowDialog();
+                        frmMenuPrincipal frm = new frmMenuPrincipal();
+                        frm.Show();
+                        this.Opacity = 0;
+                        timer2.Start();
 
-            listaAdmin = login.obtenerListaId(id);//enviamos el usuario id
-
-            if (listaAdmin.Count != 0)
-            {//evaluamos que el usario no venga vacio
-                foreach (tbAdmin dato in listaAdmin)
-                {
-                    contra = dato.contraseña.Trim();
+                    }
+                    else if (contra != txtContra.Text)
+                    {
+                        labelContra.Visible = true;
+                        timer1.Start();
+                    }
                 }
-
-                string passport = csEncryp.GetSHA256(txtContra.Text);
-                //evaluamos los datos para poder ingresar a los formulacios
-                if (id == txtId.Text && passport == contra)
+                else
                 {
-                    frmWelcome frm = new frmWelcome();
-                    frm.ShowDialog();
-                    frmInicio inicio = new frmInicio();
-
-                    this.Opacity = 0;
-                    timer2.Start();
-
-                }
-                else if (contra != txtContra.Text)
-                {
-                    labelContra.Visible = true;
+                    labelId.Visible = true;
                     timer1.Start();
                 }
             }
-            else
+            catch (Exception)
             {
-               labelId.Visible = true;
-                timer1.Start();
+
+                throw;
             }
         }
     }

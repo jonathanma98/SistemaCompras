@@ -35,27 +35,36 @@ namespace CapaPresentacion
         {
             if (this.Opacity < 1) this.Opacity += 0.5;
             cont += 1;
-
-
-            if (imgLogo.Visible == false)
+            if(cont < 2)
             {
-                imgLogo.Visible = true;
+                openLogo();
             }
+            //if (imgLogo.Visible == false)
+            //{
+            //    imgLogo.Visible = true;
+            //}
 
-            if (imgLogo.Height <= 212)
-            {
-                //imgLogo.Width += 10;
-                imgLogo.Height += 12;
-            }
+            //if (imgLogo.Height <= 212)
+            //{
+            //    //imgLogo.Width += 10;
+            //    imgLogo.Height += 12;
+            //}
 
             if (cont == 50)
             {
                 timer2.Start();
+
             }
             else if (cont == 100)
             {
                 timer1.Stop();
             }
+        }
+
+        private void openLogo()
+        {
+            pictureBox2.Image = Image.FromFile(@"C:\Users\Est_Lab01\Desktop\Proyecto\SistemaCompras\SistemaCompras\CapaPresentacion\20210807_210248.gif");
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void timer2_Tick_1(object sender, EventArgs e)
@@ -77,12 +86,12 @@ namespace CapaPresentacion
             }
             if (i == 105)
             {
-                this.Hide();
+                //this.Hide();
                 frmMenuPrincipal menu = new frmMenuPrincipal();
                 timer2.Stop();
                 menu.Show();
 
-                Close();
+               // Close();
             }
         }
     }

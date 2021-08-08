@@ -38,16 +38,24 @@ namespace CapaPresentacion.FormsMostracion
 
         private void cargarDatos(List<tbCliente> listaCliente)
         {
-            foreach (tbCliente c in listaCliente)
+            try
+            {
+                foreach (tbCliente c in listaCliente)
+                {
+
+                    int nr = dataGridView.Rows.Add();
+                    dataGridView.Rows[nr].Cells[0].Value = c.Id;
+                    dataGridView.Rows[nr].Cells[1].Value = c.tbPersona.Nombre;
+                    dataGridView.Rows[nr].Cells[2].Value = c.tbPersona.Apellidos;
+                    dataGridView.Rows[nr].Cells[3].Value = c.tbPersona.Telefeno;
+
+                }
+            }
+            catch(Exception ex)
             {
 
-                int nr = dataGridView.Rows.Add();
-                dataGridView.Rows[nr].Cells[0].Value = c.Id;
-                dataGridView.Rows[nr].Cells[1].Value = c.tbPersona.Nombre;
-                dataGridView.Rows[nr].Cells[2].Value = c.tbPersona.Apellidos;
-                dataGridView.Rows[nr].Cells[3].Value = c.tbPersona.Telefeno;
-
             }
+            
         }
 
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

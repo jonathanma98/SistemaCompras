@@ -136,7 +136,7 @@ namespace CapaPresentacion.Forms
             }
             if (txtCodigo == string.Empty)
             {
-                MessageBox.Show("Ingrese una codigo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese un codigo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mskcodigo.Focus();
                 return false;
             }
@@ -193,25 +193,25 @@ namespace CapaPresentacion.Forms
             switch (p)
             {
                 case 1:
-                    mskTamaño.Mask = "###ml";
+                    mskTamaño.Mask = "####ml";
                     break;
                 case 2:
-                    mskTamaño.Mask = "###.g";
+                    mskTamaño.Mask = "####.g";
                     break;
                 case 3:
-                    mskTamaño.Mask = "###Kg";
+                    mskTamaño.Mask = "####Kg";
                     break;
                 case 4:
-                    mskTamaño.Mask = "###lb";
+                    mskTamaño.Mask = "####lb";
                     break;
                 case 5:
-                    mskTamaño.Mask = "###ml";
+                    mskTamaño.Mask = "####ml";
                     break;
                 case 6:
-                    mskTamaño.Mask = "###.l";
+                    mskTamaño.Mask = "####.l";
                     break;
                 case 7:
-                    mskTamaño.Mask = "###oz";
+                    mskTamaño.Mask = "####oz";
                     break;
                 default:
                     break;
@@ -371,22 +371,29 @@ namespace CapaPresentacion.Forms
         {
             DialogResult result = MessageBox.Show("¿Esta seguro que desea eliminar el producto? " + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if ((validarDatos()) && (result == DialogResult.Yes))//se validan los datos para no enviar datos null a la db
-            {// para eliminar logico se almacena todos los datos y se cambia unicamente el estado a false
-                string Codigo = mskcodigo.Text.Trim();
-                tbProducto seleProducto;
-                seleProducto = listaProducto.Where(x => x.Codigo.Trim() == Codigo.Trim()).SingleOrDefault();
-
-                seleProducto.Estado = false;
-                if (NProducto.eliminar(seleProducto))
+            {
+                try
                 {
-                    MessageBox.Show("Se modifico un producto", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiarText();
-                }
-                else
-                {
-                    MessageBox.Show("Algo salió mal al modificar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    // para eliminar logico se almacena todos los datos y se cambia unicamente el estado a false
+                    string Codigo = mskcodigo.Text.Trim();
+                    tbProducto seleProducto;
+                    seleProducto = listaProducto.Where(x => x.Codigo.Trim() == Codigo.Trim()).SingleOrDefault();
 
+                    seleProducto.Estado = false;
+                    if (NProducto.eliminar(seleProducto))
+                    {
+                        MessageBox.Show("Se elimino un producto", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiarText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo salió mal al eliminar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch(Exception E)
+                {
+                    MessageBox.Show("Algo salió mal al eliminar el producto "+ E.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

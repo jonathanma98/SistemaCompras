@@ -32,6 +32,7 @@ namespace CapaPresentacion.FormsMostracion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaFacturas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelTitulo = new System.Windows.Forms.Label();
@@ -129,6 +130,8 @@ namespace CapaPresentacion.FormsMostracion
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -143,6 +146,7 @@ namespace CapaPresentacion.FormsMostracion
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(337, 396);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -210,6 +214,9 @@ namespace CapaPresentacion.FormsMostracion
             // 
             // dataGVDetalleFactura
             // 
+            this.dataGVDetalleFactura.AllowUserToAddRows = false;
+            this.dataGVDetalleFactura.AllowUserToDeleteRows = false;
+            this.dataGVDetalleFactura.AllowUserToOrderColumns = true;
             this.dataGVDetalleFactura.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGVDetalleFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGVDetalleFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -242,7 +249,8 @@ namespace CapaPresentacion.FormsMostracion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGVDetalleFactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGVDetalleFactura.Size = new System.Drawing.Size(728, 258);
+            this.dataGVDetalleFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGVDetalleFactura.Size = new System.Drawing.Size(691, 258);
             this.dataGVDetalleFactura.TabIndex = 163;
             // 
             // Id
@@ -387,6 +395,7 @@ namespace CapaPresentacion.FormsMostracion
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListaFacturas";
             this.Text = "frmListaFacturas";
             this.panel1.ResumeLayout(false);

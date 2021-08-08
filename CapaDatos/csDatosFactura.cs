@@ -69,9 +69,16 @@ namespace CapaDatos
             }
             using (var context = new dbSistemaCompraEntities())
             {
-                return (from c in context.tbFactura.Include("tbDetalleFactura")
-                        where c.Estado == evaluar
-                        select c).ToList();
+                try
+                {
+                    return (from c in context.tbFactura.Include("tbDetalleFactura")
+                            where c.Estado == evaluar
+                            select c).ToList();
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
             }
         }
 

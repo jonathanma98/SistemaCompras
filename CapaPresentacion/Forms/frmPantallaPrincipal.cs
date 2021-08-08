@@ -68,8 +68,8 @@ namespace CapaPresentacion.Forms
                     }
                 }
 
-                labelGastos.Text += " " + gastos.ToString();
-                labelIngresos.Text += " " + ingreso.ToString();
+                labelGastos.Text += "\n" + gastos.ToString();
+                labelIngresos.Text += "\n" + ingreso.ToString();
             }
             catch (Exception)
             {

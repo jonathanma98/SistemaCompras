@@ -29,12 +29,17 @@ namespace CapaPresentacion.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAjusteDatos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPapelera = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -44,10 +49,6 @@ namespace CapaPresentacion.Forms
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.btnPapelera = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,6 +62,20 @@ namespace CapaPresentacion.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1019, 63);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPapelera
+            // 
+            this.btnPapelera.BackColor = System.Drawing.Color.Transparent;
+            this.btnPapelera.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btnPapelera.FlatAppearance.BorderSize = 0;
+            this.btnPapelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPapelera.Image = global::CapaPresentacion.Properties.Resources.Office__28_icon_icons_com_73959;
+            this.btnPapelera.Location = new System.Drawing.Point(936, 3);
+            this.btnPapelera.Name = "btnPapelera";
+            this.btnPapelera.Size = new System.Drawing.Size(59, 57);
+            this.btnPapelera.TabIndex = 26;
+            this.btnPapelera.UseVisualStyleBackColor = false;
+            this.btnPapelera.Click += new System.EventHandler(this.btnPapelera_Click);
             // 
             // panel4
             // 
@@ -105,6 +120,17 @@ namespace CapaPresentacion.Forms
             this.txtId.TabIndex = 182;
             this.txtId.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Office__34_icon_icons_com_73983__1__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(485, 283);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 181;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,6 +149,36 @@ namespace CapaPresentacion.Forms
             this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 179;
             this.label1.Text = "Contraseña";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Image = global::CapaPresentacion.Properties.Resources.icons8_editar_16_1_;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(373, 349);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(106, 33);
+            this.btnModificar.TabIndex = 25;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Lime;
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.icons8_marcapáginas_16_1_;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.Location = new System.Drawing.Point(194, 349);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(106, 33);
+            this.btnRegistrar.TabIndex = 23;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtDireccion
             // 
@@ -206,61 +262,6 @@ namespace CapaPresentacion.Forms
             this.panel2.Size = new System.Drawing.Size(357, 452);
             this.panel2.TabIndex = 178;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Office__34_icon_icons_com_73983__1__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(485, 283);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 181;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.Image = global::CapaPresentacion.Properties.Resources.icons8_editar_16_1_;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(373, 349);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(106, 33);
-            this.btnModificar.TabIndex = 25;
-            this.btnModificar.Text = "Editar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Lime;
-            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.icons8_marcapáginas_16_1_;
-            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(194, 349);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(106, 33);
-            this.btnRegistrar.TabIndex = 23;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnPapelera
-            // 
-            this.btnPapelera.BackColor = System.Drawing.Color.Transparent;
-            this.btnPapelera.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
-            this.btnPapelera.FlatAppearance.BorderSize = 0;
-            this.btnPapelera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPapelera.Image = global::CapaPresentacion.Properties.Resources.Office__28_icon_icons_com_73959;
-            this.btnPapelera.Location = new System.Drawing.Point(936, 3);
-            this.btnPapelera.Name = "btnPapelera";
-            this.btnPapelera.Size = new System.Drawing.Size(59, 57);
-            this.btnPapelera.TabIndex = 26;
-            this.btnPapelera.UseVisualStyleBackColor = false;
-            this.btnPapelera.Click += new System.EventHandler(this.btnPapelera_Click);
-            // 
             // frmAjusteDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +271,7 @@ namespace CapaPresentacion.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAjusteDatos";
             this.Text = "frmAjusteDatos";
             this.Load += new System.EventHandler(this.frmAjusteDatos_Load);

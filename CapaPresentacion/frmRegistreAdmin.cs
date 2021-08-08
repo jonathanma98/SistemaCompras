@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaEntidades;
 using CapaUtilidades;
 using CapaNegocios;
+using CapaPresentacion.Forms;
 
 namespace CapaPresentacion
 {
@@ -55,7 +56,7 @@ namespace CapaPresentacion
             List<tbEmpresa> listaEmpresa = new List<tbEmpresa>();
 
             listaEmpresa = NEmpresa.obtenerLista(1);
-            if (listaEmpresa.Count != 0)
+            if (listaEmpresa != null)
             {
                 string contra = "";
                 string contraEmpre = Microsoft.VisualBasic.Interaction.InputBox("Ingresa la contraseña de la empresa", "verificación");
@@ -100,6 +101,8 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Ingrese una contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtContreseña.Focus();
+                frmAjusteDatos frm = new frmAjusteDatos();
+                frm.Show();
                 return false;
             }
             else

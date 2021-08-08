@@ -119,12 +119,23 @@ namespace CapaPresentacion.Forms
                 if (NControlDinero.guarda(controlDinero))
                 {
                     MessageBox.Show("Se ingreso un monto", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limiarDatos();
                 }
                 else
                 {
                     MessageBox.Show("Ocurrio un erro al ingresar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void limiarDatos()
+        {
+            cbTipo.Refresh();
+            txtMonto.ResetText();
+            txtDescripcion.ResetText();
+            txtIdControlDinero.ResetText();
+            txtFactura.ResetText();
+            txtFecha.ResetText();
         }
 
         private bool validarDatos()
@@ -171,19 +182,27 @@ namespace CapaPresentacion.Forms
 
         private void cargarDataGVControlDinero()
         {
-            listaControlDinero = NControlDinero.obtenerLista(1);
-            dataGVControlDinero.Rows.Clear();
-            dataGVControlDinero.Refresh();
-
-            foreach(tbControlDinero cd in listaControlDinero)
+            try
             {
-                int nr = dataGVControlDinero.Rows.Add();
-                dataGVControlDinero.Rows[nr].Cells[0].Value = cd.Id;
-                dataGVControlDinero.Rows[nr].Cells[1].Value = cd.Fecha;
-                dataGVControlDinero.Rows[nr].Cells[2].Value = Enum.GetName(typeof(csEnums.Tipo),cd.Tipo);
-                dataGVControlDinero.Rows[nr].Cells[3].Value = cd.Monto;
-                dataGVControlDinero.Rows[nr].Cells[4].Value = cd.DetalleExtra;
-                dataGVControlDinero.Rows[nr].Cells[5].Value = cd.Factura;
+                listaControlDinero = NControlDinero.obtenerLista(1);
+                dataGVControlDinero.Rows.Clear();
+                dataGVControlDinero.Refresh();
+
+                foreach (tbControlDinero cd in listaControlDinero)
+                {
+                    int nr = dataGVControlDinero.Rows.Add();
+                    dataGVControlDinero.Rows[nr].Cells[0].Value = cd.Id;
+                    dataGVControlDinero.Rows[nr].Cells[1].Value = cd.Fecha;
+                    dataGVControlDinero.Rows[nr].Cells[2].Value = Enum.GetName(typeof(csEnums.Tipo), cd.Tipo);
+                    dataGVControlDinero.Rows[nr].Cells[3].Value = cd.Monto;
+                    dataGVControlDinero.Rows[nr].Cells[4].Value = cd.DetalleExtra;
+                    dataGVControlDinero.Rows[nr].Cells[5].Value = cd.Factura;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -232,12 +251,19 @@ namespace CapaPresentacion.Forms
 
         private void pasaDatos(tbControlDinero seleControlDinero)
         {
-            txtMonto.Text = seleControlDinero.Monto.ToString();
-            txtDescripcion.Text = seleControlDinero.DetalleExtra;
-            cbTipo.SelectedIndex = (seleControlDinero.Tipo - 1);
-            txtIdControlDinero.Text = seleControlDinero.Id.Trim();
-            txtIdControlDinero.Text = seleControlDinero.Fecha.ToString();
-            txtFactura.Text = seleControlDinero.Factura;
+            if(seleControlDinero.Factura == null)
+            {
+                txtMonto.Text = seleControlDinero.Monto.ToString();
+                txtDescripcion.Text = seleControlDinero.DetalleExtra;
+                cbTipo.SelectedIndex = (seleControlDinero.Tipo - 1);
+                txtIdControlDinero.Text = seleControlDinero.Id.Trim();
+                txtFactura.Text = seleControlDinero.Factura;
+            }
+            else
+            {
+                MessageBox.Show("No puedes moficar o eliminar si tinene una factura asociada " +
+                    "para ello deberas ir a la sección de facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -255,17 +281,51 @@ namespace CapaPresentacion.Forms
 
                     if (NControlDinero.eliminar(controlDinero))
                     {
-                        MessageBox.Show("Se ingreso un monto", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se elimino un monto", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limiarDatos();
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un erro al ingresar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ocurrio un erro al eliminar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception)
                 {
 
-                    MessageBox.Show("Ocurrio un erro al ingresar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrio un erro al eliminar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (validarDatos() && (txtIdControlDinero.Text != string.Empty ))
+            {
+                try
+                {
+                    tbControlDinero controlDinero = new tbControlDinero();
+
+                    controlDinero = listaControlDinero.Where(x => x.Id.Trim() == txtIdControlDinero.Text.Trim()).FirstOrDefault();
+
+                    controlDinero.Tipo = cbTipo.SelectedIndex + 1;
+                    controlDinero.Monto = decimal.Parse(txtMonto.Text);
+                    controlDinero.DetalleExtra = txtDescripcion.Text.Trim();
+                    controlDinero.Estado = true;
+
+                    if (NControlDinero.modificar(controlDinero))
+                    {
+                        MessageBox.Show("Se modifico un monto", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limiarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un erro al modificar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Ocurrio un erro al modficar el monto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

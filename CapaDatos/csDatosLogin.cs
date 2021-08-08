@@ -82,10 +82,16 @@ namespace CapaDatos
         {
             using (var context = new dbSistemaCompraEntities())
             {
-
-                return (from c in context.tbAdmin
-                        where c.id == id
-                        select c).ToList();
+                try
+                {
+                    return (from c in context.tbAdmin
+                            where c.id == id
+                            select c).ToList();
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
     }

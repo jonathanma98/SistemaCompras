@@ -29,8 +29,8 @@ namespace CapaPresentacion.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelnav = new System.Windows.Forms.Label();
             this.comboBoxcalificacion = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -202,9 +202,9 @@ namespace CapaPresentacion.Forms
             this.buttonconsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.buttonconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonconsultar.Location = new System.Drawing.Point(216, 476);
+            this.buttonconsultar.Location = new System.Drawing.Point(341, 466);
             this.buttonconsultar.Name = "buttonconsultar";
-            this.buttonconsultar.Size = new System.Drawing.Size(75, 23);
+            this.buttonconsultar.Size = new System.Drawing.Size(75, 33);
             this.buttonconsultar.TabIndex = 143;
             this.buttonconsultar.Text = "Consultar";
             this.buttonconsultar.UseVisualStyleBackColor = false;
@@ -216,9 +216,9 @@ namespace CapaPresentacion.Forms
             this.buttoneliminar.BackColor = System.Drawing.Color.Red;
             this.buttoneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttoneliminar.Location = new System.Drawing.Point(54, 476);
+            this.buttoneliminar.Location = new System.Drawing.Point(39, 466);
             this.buttoneliminar.Name = "buttoneliminar";
-            this.buttoneliminar.Size = new System.Drawing.Size(75, 23);
+            this.buttoneliminar.Size = new System.Drawing.Size(75, 33);
             this.buttoneliminar.TabIndex = 142;
             this.buttoneliminar.Text = "Eliminar";
             this.buttoneliminar.UseVisualStyleBackColor = false;
@@ -230,9 +230,9 @@ namespace CapaPresentacion.Forms
             this.buttonmodificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.buttonmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonmodificar.Location = new System.Drawing.Point(134, 476);
+            this.buttonmodificar.Location = new System.Drawing.Point(135, 466);
             this.buttonmodificar.Name = "buttonmodificar";
-            this.buttonmodificar.Size = new System.Drawing.Size(75, 23);
+            this.buttonmodificar.Size = new System.Drawing.Size(75, 33);
             this.buttonmodificar.TabIndex = 141;
             this.buttonmodificar.Text = "Modificar";
             this.buttonmodificar.UseVisualStyleBackColor = false;
@@ -244,9 +244,9 @@ namespace CapaPresentacion.Forms
             this.buttonguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.buttonguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonguardar.Location = new System.Drawing.Point(297, 476);
+            this.buttonguardar.Location = new System.Drawing.Point(216, 466);
             this.buttonguardar.Name = "buttonguardar";
-            this.buttonguardar.Size = new System.Drawing.Size(75, 23);
+            this.buttonguardar.Size = new System.Drawing.Size(75, 33);
             this.buttonguardar.TabIndex = 140;
             this.buttonguardar.Text = "Guardar";
             this.buttonguardar.UseVisualStyleBackColor = false;
@@ -336,14 +336,14 @@ namespace CapaPresentacion.Forms
             this.dataGridViewProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProveedor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dataGridViewProveedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -354,19 +354,19 @@ namespace CapaPresentacion.Forms
             this.Email,
             this.Descripcion,
             this.Calificacion});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProveedor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProveedor.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewProveedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.dataGridViewProveedor.Location = new System.Drawing.Point(0, 34);
+            this.dataGridViewProveedor.Location = new System.Drawing.Point(2, 34);
             this.dataGridViewProveedor.MultiSelect = false;
             this.dataGridViewProveedor.Name = "dataGridViewProveedor";
-            this.dataGridViewProveedor.Size = new System.Drawing.Size(525, 484);
+            this.dataGridViewProveedor.Size = new System.Drawing.Size(473, 484);
             this.dataGridViewProveedor.TabIndex = 159;
             this.dataGridViewProveedor.Visible = false;
             this.dataGridViewProveedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProveedor_CellDoubleClick);
@@ -416,9 +416,9 @@ namespace CapaPresentacion.Forms
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dataGridViewProveedor);
             this.panel1.Controls.Add(this.labeltitulo1);
-            this.panel1.Location = new System.Drawing.Point(413, 0);
+            this.panel1.Location = new System.Drawing.Point(463, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 518);
+            this.panel1.Size = new System.Drawing.Size(475, 518);
             this.panel1.TabIndex = 160;
             // 
             // frmProveedores

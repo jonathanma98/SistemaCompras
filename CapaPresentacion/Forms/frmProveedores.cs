@@ -85,7 +85,7 @@ namespace CapaPresentacion.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Algo salio mal al ingresar el proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Algo salió mal al ingresar el proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -100,7 +100,7 @@ namespace CapaPresentacion.Forms
             }
             if (comboBoxtipocedula.Text == string.Empty)
             {
-                MessageBox.Show("Verifique el tipo de cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Verifique el tipo de cédula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBoxtipocedula.Focus();
                 return false;
             }
@@ -244,7 +244,7 @@ namespace CapaPresentacion.Forms
         {
             if (validarDatos())//se validan los datos para no enviar datos null a la db
             {
-                DialogResult result = MessageBox.Show("Esta seguro que desea modificar el proveedor" + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Esta seguro qué desea modificar el proveedor" + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     tbPersona persona = new tbPersona();
@@ -272,7 +272,7 @@ namespace CapaPresentacion.Forms
                     }
                     else
                     {
-                        MessageBox.Show("Algo salio mal al modificar el proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Algo salió mal al modificar el proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
@@ -281,21 +281,32 @@ namespace CapaPresentacion.Forms
 
         private void buttoneliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Esta seguro que desea modificar el proveedor" + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Esta seguro qué desea modificar el proveedor" + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
+                try
+                {
 
-                tbProveedor proveedor = new tbProveedor();
-                proveedor.Id = maskedTextBoxcedula.Text.Trim();
-                proveedor.Estado = false;
-                if (NProveedor.eliminar(proveedor))
-                {
-                    MessageBox.Show("Se modifico un proveedor", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiarText();
+                    tbProveedor proveedor = new tbProveedor();
+                    string id = maskedTextBoxcedula.Text.Trim();
+                    listaProveedor = NProveedor.obtenerLista(1);
+
+                    proveedor = listaProveedor.Where(x => x.Id.Trim() == id.Trim()).FirstOrDefault();
+                    proveedor.Estado = false;
+                    if (NProveedor.eliminar(proveedor))
+                    {
+                        MessageBox.Show("Se modifico un proveedor", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiarText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo salió mal al modificar el proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch(Exception E)
                 {
-                    MessageBox.Show("Algo salio mal al modificar el proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Algo salió mal al modificar el proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
         }

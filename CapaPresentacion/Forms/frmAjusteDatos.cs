@@ -37,25 +37,32 @@ namespace CapaPresentacion.Forms
 
         private void cargarDatos(List<tbEmpresa> listaEmpresa)
         {   //cargamos los datos en los textbox
-            if (listaEmpresa.Count != 0)
+            try
             {
-                btnRegistrar.Enabled = false;
-                int cont = 0;
-                foreach (tbEmpresa em in listaEmpresa)
+                if (listaEmpresa != null)
                 {
-                    cont++;
-                    txtId.Text = em.id.ToString().Trim();
-                    txtNombre.Text = em.Nombre;
-                    txtCorreo.Text = em.Correo;
-                    txtTelefono.Text = em.Telefono;
-                    txtDireccion.Text = em.Ubicacion;
+                    btnRegistrar.Enabled = false;
+                    int cont = 0;
+                    foreach (tbEmpresa em in listaEmpresa)
+                    {
+                        cont++;
+                        txtId.Text = em.id.ToString().Trim();
+                        txtNombre.Text = em.Nombre;
+                        txtCorreo.Text = em.Correo;
+                        txtTelefono.Text = em.Telefono;
+                        txtDireccion.Text = em.Ubicacion;
+                    }
+                    if (cont > 1)
+                    {
+                        MessageBox.Show("Al parecer tienes más de un dato de empresas esto podria afectar el software", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                if (cont > 1)
+                else
                 {
-                    MessageBox.Show("Al parecer tienes más de un dato de empresas esto podria afectar el software", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnRegistrar.Enabled = true;
                 }
             }
-            else
+            catch (Exception)
             {
                 btnRegistrar.Enabled = true;
             }

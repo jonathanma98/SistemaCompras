@@ -88,22 +88,29 @@ namespace CapaDatos
             * enviados x el usuario y los devuelve si existen dentro de ella*/
 
             bool est = true;
-            if (estado == 1)
-            {
-                est = true;
-            }
-            else if (estado == 2)
+            if (estado == 2)
             {
                 est = false;
             }
-
-            using (var context = new dbSistemaCompraEntities())
+            try
             {
-                //lenguaje linq para realizar querys a nuestra BD
-                return (from c in context.tbCliente.Include("tbPersona")
-                        where c.Estado == est
-                        select c).ToList();
+                using (var context = new dbSistemaCompraEntities())
+                {
+                    //lenguaje linq para realizar querys a nuestra BD
+                    return (from c in context.tbCliente.Include("tbPersona")
+                            where c.Estado == est
+                            select c).ToList();
+                }
             }
+            catch (Exception e)
+            {
+                List<tbCliente> lista = new List<tbCliente>();
+                tbCliente cliente = new tbCliente();
+                cliente.Id = "null";
+                lista.Add(cliente);
+                return lista;
+            }
+           
         }
 
         public List<tbCliente> obtenerListaId(string id)

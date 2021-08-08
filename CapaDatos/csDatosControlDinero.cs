@@ -57,7 +57,19 @@ namespace CapaDatos
 
         public bool modificar(tbControlDinero entidad)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (dbSistemaCompraEntities context = new dbSistemaCompraEntities())
+                {
+                    context.Entry<tbControlDinero>(entidad).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public List<tbControlDinero> obtenerLista(int estado)
@@ -79,7 +91,7 @@ namespace CapaDatos
                     using (var context = new dbSistemaCompraEntities())
                     {
                         return (from f in context.tbControlDinero
-                                where  f.Fecha.Year == año.Year && f.Estado == true
+                                where  (f.Fecha.Year) >= (año.Year-1)
                                 select f).ToList();
                     }
                 }

@@ -173,21 +173,29 @@ namespace CapaPresentacion.Forms
 
         private void cargarDatos(List<tbCliente> listaClientes)
         {
-            foreach (tbCliente cliente in listaClientes)
+            try
             {
-                if (cliente.Estado == true)
+                foreach (tbCliente cliente in listaClientes)
                 {
-                    int nr = dataGridViewClientes.Rows.Add();
-                    dataGridViewClientes.Rows[nr].Cells[0].Value = cliente.Id;
-                    dataGridViewClientes.Rows[nr].Cells[1].Value = Enum.GetName(typeof(csEnums.TipoID), cliente.TipoId);
-                    dataGridViewClientes.Rows[nr].Cells[2].Value = cliente.tbPersona.Nombre;
-                    dataGridViewClientes.Rows[nr].Cells[3].Value = cliente.tbPersona.Apellidos;
-                    dataGridViewClientes.Rows[nr].Cells[4].Value = cliente.tbPersona.Telefeno;
-                    dataGridViewClientes.Rows[nr].Cells[5].Value = cliente.tbPersona.Correo;
-                    dataGridViewClientes.Rows[nr].Cells[6].Value = cliente.Direccion;
+                    if (cliente.Estado == true)
+                    {
+                        int nr = dataGridViewClientes.Rows.Add();
+                        dataGridViewClientes.Rows[nr].Cells[0].Value = cliente.Id;
+                        dataGridViewClientes.Rows[nr].Cells[1].Value = Enum.GetName(typeof(csEnums.TipoID), cliente.TipoId);
+                        dataGridViewClientes.Rows[nr].Cells[2].Value = cliente.tbPersona.Nombre;
+                        dataGridViewClientes.Rows[nr].Cells[3].Value = cliente.tbPersona.Apellidos;
+                        dataGridViewClientes.Rows[nr].Cells[4].Value = cliente.tbPersona.Telefeno;
+                        dataGridViewClientes.Rows[nr].Cells[5].Value = cliente.tbPersona.Correo;
+                        dataGridViewClientes.Rows[nr].Cells[6].Value = cliente.Direccion;
+                    }
                 }
             }
+            catch (Exception e)
+            {
 
+                MessageBox.Show("Error se debe aque " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         private void pasarDatos(tbCliente seleCliente)
         {
@@ -257,18 +265,26 @@ namespace CapaPresentacion.Forms
             DialogResult result = MessageBox.Show("Esta seguro que desea modificar el Cliente" + textnombre.Text, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
+                try
+                {
+                    tbCliente cliente = new tbCliente();
+                    string id = maskedTextBoxcedula.Text.Trim();
 
-                tbCliente cliente = new tbCliente();
-                cliente.Id = maskedTextBoxcedula.Text.Trim();
-                cliente.Estado = false;
-                if (ClienteNegocio.eliminar(cliente))
-                {
-                    MessageBox.Show("Se elimino un cliente", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiarText();
+                    cliente = listaClientes.Where(x => x.Id.Trim() == id.Trim()).FirstOrDefault();
+                    cliente.Estado = false;
+                    if (ClienteNegocio.eliminar(cliente))
+                    {
+                        MessageBox.Show("Se elimino un cliente", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiarText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo salio mal al eliminar el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch(Exception E)
                 {
-                    MessageBox.Show("Algo salio mal al eliminar el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Algo salio mal al eliminar el cliente " + E.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

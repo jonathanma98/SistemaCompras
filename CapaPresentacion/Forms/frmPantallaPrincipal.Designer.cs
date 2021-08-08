@@ -69,7 +69,7 @@ namespace CapaPresentacion.Forms
             // 
             this.labelProveedores.AutoSize = true;
             this.labelProveedores.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProveedores.Location = new System.Drawing.Point(3, 84);
+            this.labelProveedores.Location = new System.Drawing.Point(3, 75);
             this.labelProveedores.Name = "labelProveedores";
             this.labelProveedores.Size = new System.Drawing.Size(107, 18);
             this.labelProveedores.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace CapaPresentacion.Forms
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_1_240;
             this.pictureBox2.Location = new System.Drawing.Point(15, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(109, 78);
+            this.pictureBox2.Size = new System.Drawing.Size(109, 69);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -99,7 +99,7 @@ namespace CapaPresentacion.Forms
             // 
             this.labelProductos.AutoSize = true;
             this.labelProductos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductos.Location = new System.Drawing.Point(3, 84);
+            this.labelProductos.Location = new System.Drawing.Point(12, 72);
             this.labelProductos.Name = "labelProductos";
             this.labelProductos.Size = new System.Drawing.Size(86, 18);
             this.labelProductos.TabIndex = 2;
@@ -110,7 +110,7 @@ namespace CapaPresentacion.Forms
             this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_delivery_11_2401;
             this.pictureBox3.Location = new System.Drawing.Point(15, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 78);
+            this.pictureBox3.Size = new System.Drawing.Size(109, 66);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
@@ -122,14 +122,14 @@ namespace CapaPresentacion.Forms
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(421, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 107);
+            this.panel1.Size = new System.Drawing.Size(138, 110);
             this.panel1.TabIndex = 4;
             // 
             // labelGastos
             // 
             this.labelGastos.AutoSize = true;
             this.labelGastos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGastos.Location = new System.Drawing.Point(3, 84);
+            this.labelGastos.Location = new System.Drawing.Point(3, 75);
             this.labelGastos.Name = "labelGastos";
             this.labelGastos.Size = new System.Drawing.Size(67, 18);
             this.labelGastos.TabIndex = 2;
@@ -140,7 +140,7 @@ namespace CapaPresentacion.Forms
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.iconmonstr_fax_3_240;
             this.pictureBox1.Location = new System.Drawing.Point(15, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 78);
+            this.pictureBox1.Size = new System.Drawing.Size(109, 69);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -152,14 +152,14 @@ namespace CapaPresentacion.Forms
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Location = new System.Drawing.Point(605, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(138, 107);
+            this.panel2.Size = new System.Drawing.Size(138, 110);
             this.panel2.TabIndex = 5;
             // 
             // labelIngresos
             // 
             this.labelIngresos.AutoSize = true;
             this.labelIngresos.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIngresos.Location = new System.Drawing.Point(3, 84);
+            this.labelIngresos.Location = new System.Drawing.Point(3, 75);
             this.labelIngresos.Name = "labelIngresos";
             this.labelIngresos.Size = new System.Drawing.Size(79, 18);
             this.labelIngresos.TabIndex = 2;
@@ -170,7 +170,7 @@ namespace CapaPresentacion.Forms
             this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.noun_Hairstylist_3925549;
             this.pictureBox4.Location = new System.Drawing.Point(15, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(109, 78);
+            this.pictureBox4.Size = new System.Drawing.Size(109, 69);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
@@ -185,7 +185,7 @@ namespace CapaPresentacion.Forms
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(901, 116);
+            this.panel3.Size = new System.Drawing.Size(901, 126);
             this.panel3.TabIndex = 6;
             // 
             // pictureBoxPincipal

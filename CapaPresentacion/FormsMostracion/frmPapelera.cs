@@ -72,7 +72,21 @@ namespace CapaPresentacion.FormsMostracion
 
         private void cargarDatosProveedor()
         {
-
+            listaProveedor = NegocioProveedor.obtenerLista(2);
+            foreach (tbProveedor p in listaProveedor)
+            {
+                if (p.Estado == false)
+                {
+                    int nr = dataGVPapelera.Rows.Add();
+                    dataGVPapelera.Rows[nr].Cells[0].Value = "Proveedor";
+                    dataGVPapelera.Rows[nr].Cells[1].Value = p.Id;
+                    dataGVPapelera.Rows[nr].Cells[2].Value = p.tbPersona.Nombre;
+                    dataGVPapelera.Rows[nr].Cells[3].Value = p.tbPersona.Apellidos;
+                    dataGVPapelera.Rows[nr].Cells[4].Value = "No contiene";
+                    dataGVPapelera.Rows[nr].Cells[5].Value = "No contiene";
+                    dataGVPapelera.Rows[nr].Cells[6].Value = "Tel " + p.tbPersona.Telefeno + "Dirección" + p.Descripcion;
+                }
+            }
         }
 
         private void cargarDatosFactura()
@@ -97,7 +111,22 @@ namespace CapaPresentacion.FormsMostracion
 
         private void cargarDatosControlDinero()
         {
-
+            listaCD = NContolDinero.obtenerLista(2);
+            var listaCDOrdenada = listaCD.OrderByDescending(x => x.Fecha);
+            foreach (tbControlDinero c in listaCDOrdenada)
+            {
+                if (c.Estado == false && c.Factura == null)
+                {
+                    int nr = dataGVPapelera.Rows.Add();
+                    dataGVPapelera.Rows[nr].Cells[0].Value = "Control Dinero";
+                    dataGVPapelera.Rows[nr].Cells[1].Value = c.Id;
+                    dataGVPapelera.Rows[nr].Cells[2].Value = c.Tipo;
+                    dataGVPapelera.Rows[nr].Cells[3].Value = c.DetalleExtra;
+                    dataGVPapelera.Rows[nr].Cells[4].Value = c.Monto;
+                    dataGVPapelera.Rows[nr].Cells[5].Value = c.Fecha;
+                    dataGVPapelera.Rows[nr].Cells[6].Value = "No contiene";
+                }
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -124,6 +153,105 @@ namespace CapaPresentacion.FormsMostracion
             if (checkControlD.Checked == true)
             {
                 cargarDatosControlDinero();
+            }
+        }
+
+        private void dataGVPapelera_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //saber que producto selecciono 
+                int n = e.RowIndex;// index seleccionado 
+                if (n != -1)
+                {
+                    string tipo = dataGVPapelera.Rows[n].Cells[0].Value.ToString();
+                    string Codigo = dataGVPapelera.Rows[n].Cells[1].Value.ToString();
+                    string Nombre = dataGVPapelera.Rows[n].Cells[2].Value.ToString();
+                    string Ap = dataGVPapelera.Rows[n].Cells[3].Value.ToString();
+
+                    DialogResult Opc = MessageBox.Show("Desea recuperar los datos de \n Id " + Codigo +
+                        "\n nombre: " + Nombre + "\n Apellido / detalle " + Ap, "Dato tipo "+tipo, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if((Opc == DialogResult.Yes) && (tipo.Trim() == "Producto"))
+                    {
+                        tbProducto seleProducto;//creamos un objeto para poder almacenar el prducto
+                        seleProducto = listaProducto.Where(x => x.Codigo.Trim() == Codigo.Trim()).SingleOrDefault();
+                        seleProducto.Estado = true;
+                        if (NProductos.modificar(seleProducto))
+                        {
+                            MessageBox.Show("Se restablecio los datos", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido restablecio los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    if ((Opc == DialogResult.Yes) && (tipo.Trim() == "Cliente"))
+                    {
+                        tbCliente seleCliente;//creamos un objeto para poder almacenar el prducto
+                        seleCliente = listaCliente.Where(x => x.Id.Trim() == Codigo.Trim()).SingleOrDefault();
+                        seleCliente.Estado = true;
+                        if (NCliente.modificar(seleCliente))
+                        {
+                            MessageBox.Show("Se restablecio los datos", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido restablecio los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    if ((Opc == DialogResult.Yes) && (tipo.Trim() == "Proveedor"))
+                    {
+                        tbProveedor seleProveedor;
+                        seleProveedor = listaProveedor.Where(x => x.Id.Trim() == Codigo.Trim()).SingleOrDefault();
+                        seleProveedor.Estado = true;
+                        if (NegocioProveedor.modificar(seleProveedor))
+                        {
+                            MessageBox.Show("Se restablecio los datos", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido restablecio los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    if ((Opc == DialogResult.Yes) && (tipo.Trim() == "Factura"))
+                    {
+                        tbFactura seleFactura;//creamos un objeto para poder almacenar el prducto
+                        seleFactura = listaFactura.Where(x => x.IdFactura.Trim() == Codigo.Trim()).SingleOrDefault();
+                        seleFactura.Estado = true;
+                        if (NFactura.modificar(seleFactura))
+                        {
+                            MessageBox.Show("Se restablecio los datos", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido restablecio los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    if ((Opc == DialogResult.Yes) && (tipo.Trim() == "Control Dinero"))
+                    {
+                        tbControlDinero selecCD;
+                        selecCD = listaCD.Where(x => x.Id.Trim() == Codigo.Trim()).SingleOrDefault();
+                        selecCD.Estado = true;
+                        if (NContolDinero.modificar(selecCD))
+                        {
+                            MessageBox.Show("Se restablecio los datos", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido restablecio los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Erro " + E.Message + " te recomendamos seleccionar una casilla que contenga datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }
