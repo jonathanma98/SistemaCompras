@@ -33,6 +33,7 @@ namespace CapaPresentacion.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPapelera = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,6 @@ namespace CapaPresentacion.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +80,7 @@ namespace CapaPresentacion.Forms
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.txtId);
             this.panel4.Controls.Add(this.pictureBox1);
@@ -95,17 +96,28 @@ namespace CapaPresentacion.Forms
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.txtNombre);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 63);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(662, 452);
+            this.panel4.Size = new System.Drawing.Size(1019, 452);
             this.panel4.TabIndex = 1;
+            this.panel4.SizeChanged += new System.EventHandler(this.panel4_SizeChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 382);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1002, 538);
+            this.panel2.TabIndex = 178;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(197, 3);
+            this.label6.Location = new System.Drawing.Point(456, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(315, 25);
             this.label6.TabIndex = 183;
@@ -113,7 +125,7 @@ namespace CapaPresentacion.Forms
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(171, 58);
+            this.txtId.Location = new System.Drawing.Point(430, 58);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(23, 20);
@@ -123,7 +135,7 @@ namespace CapaPresentacion.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Office__34_icon_icons_com_73983__1__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(485, 283);
+            this.pictureBox1.Location = new System.Drawing.Point(744, 283);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -134,7 +146,7 @@ namespace CapaPresentacion.Forms
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(227, 283);
+            this.txtContraseña.Location = new System.Drawing.Point(486, 283);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(252, 26);
@@ -144,7 +156,7 @@ namespace CapaPresentacion.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 249);
+            this.label1.Location = new System.Drawing.Point(562, 249);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 179;
@@ -157,7 +169,7 @@ namespace CapaPresentacion.Forms
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Image = global::CapaPresentacion.Properties.Resources.icons8_editar_16_1_;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(373, 349);
+            this.btnModificar.Location = new System.Drawing.Point(632, 349);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(106, 33);
             this.btnModificar.TabIndex = 25;
@@ -172,7 +184,7 @@ namespace CapaPresentacion.Forms
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.icons8_marcapáginas_16_1_;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(194, 349);
+            this.btnRegistrar.Location = new System.Drawing.Point(453, 349);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(106, 33);
             this.btnRegistrar.TabIndex = 23;
@@ -183,7 +195,7 @@ namespace CapaPresentacion.Forms
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(404, 207);
+            this.txtDireccion.Location = new System.Drawing.Point(663, 207);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(252, 26);
             this.txtDireccion.TabIndex = 12;
@@ -192,7 +204,7 @@ namespace CapaPresentacion.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(401, 181);
+            this.label5.Location = new System.Drawing.Point(660, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 20);
             this.label5.TabIndex = 11;
@@ -201,7 +213,7 @@ namespace CapaPresentacion.Forms
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(19, 207);
+            this.txtTelefono.Location = new System.Drawing.Point(278, 207);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(263, 26);
             this.txtTelefono.TabIndex = 10;
@@ -210,7 +222,7 @@ namespace CapaPresentacion.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 181);
+            this.label4.Location = new System.Drawing.Point(274, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 9;
@@ -219,7 +231,7 @@ namespace CapaPresentacion.Forms
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(404, 84);
+            this.txtCorreo.Location = new System.Drawing.Point(663, 84);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(252, 26);
             this.txtCorreo.TabIndex = 8;
@@ -228,7 +240,7 @@ namespace CapaPresentacion.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(401, 54);
+            this.label3.Location = new System.Drawing.Point(660, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 7;
@@ -237,7 +249,7 @@ namespace CapaPresentacion.Forms
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(19, 84);
+            this.txtNombre.Location = new System.Drawing.Point(278, 84);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(263, 26);
             this.txtNombre.TabIndex = 6;
@@ -246,21 +258,11 @@ namespace CapaPresentacion.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 58);
+            this.label2.Location = new System.Drawing.Point(275, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Nombre de la empresa";
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(662, 63);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(357, 452);
-            this.panel2.TabIndex = 178;
             // 
             // frmAjusteDatos
             // 
@@ -268,13 +270,12 @@ namespace CapaPresentacion.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1019, 515);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAjusteDatos";
             this.Text = "frmAjusteDatos";
-            this.Load += new System.EventHandler(this.frmAjusteDatos_Load);
+            this.SizeChanged += new System.EventHandler(this.frmAjusteDatos_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

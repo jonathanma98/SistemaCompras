@@ -39,7 +39,8 @@ namespace CapaPresentacion.Forms
             }
             catch (Exception ex)
             {
-
+                labelProductos.Text += "Error" ;
+                labelProveedores.Text += "Error";
             }
 
             cargaControldinero();

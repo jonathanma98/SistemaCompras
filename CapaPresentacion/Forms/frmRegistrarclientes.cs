@@ -42,7 +42,6 @@ namespace CapaPresentacion.Forms
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-            labeltitulo1.ForeColor = ThemeColor.SecondaryColor;
             labelnav.ForeColor = ThemeColor.PrimaryColor;
         }
 
@@ -125,6 +124,14 @@ namespace CapaPresentacion.Forms
 
         private void limpiarText()//limpear los textos
         {
+            maskedTextBoxcedula.ResetText();
+            comboBoxtipocedula.ResetText();
+            textnombre.ResetText();
+            textapellido1.ResetText();
+            maskedTextBoxtelefono.ResetText();
+            textemail.ResetText();
+            textdireccion.ResetText();
+
             maskedTextBoxcedula.Refresh();
             comboBoxtipocedula.Refresh();
             textnombre.Refresh();

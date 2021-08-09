@@ -47,6 +47,8 @@ namespace CapaPresentacion.Forms
             this.chartVentas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartControlDinero = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTime = new System.Windows.Forms.DateTimePicker();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.txtFactura = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -71,8 +73,6 @@ namespace CapaPresentacion.Forms
             this.Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnActualizarData = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.panelSuperior.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).BeginInit();
@@ -233,6 +233,33 @@ namespace CapaPresentacion.Forms
             this.panel1.Size = new System.Drawing.Size(522, 219);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dateTime
+            // 
+            this.dateTime.Enabled = false;
+            this.dateTime.Location = new System.Drawing.Point(30, 62);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(170, 20);
+            this.dateTime.TabIndex = 152;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Image = global::CapaPresentacion.Properties.Resources.icons8_editar_16_1_1;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(242, 188);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(88, 31);
+            this.btnModificar.TabIndex = 151;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtFactura
             // 
@@ -520,37 +547,11 @@ namespace CapaPresentacion.Forms
             this.btnActualizarData.UseVisualStyleBackColor = false;
             this.btnActualizarData.Click += new System.EventHandler(this.btnActualizarData_Click);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Image = global::CapaPresentacion.Properties.Resources.icons8_editar_16_1_1;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(242, 188);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(88, 31);
-            this.btnModificar.TabIndex = 151;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // dateTime
-            // 
-            this.dateTime.Enabled = false;
-            this.dateTime.Location = new System.Drawing.Point(30, 62);
-            this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(170, 20);
-            this.dateTime.TabIndex = 152;
-            // 
             // frmControlDinero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1057, 547);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelInferior);

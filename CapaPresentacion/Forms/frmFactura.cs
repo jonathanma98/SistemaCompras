@@ -285,7 +285,7 @@ namespace CapaPresentacion.Forms
                     decimal imp = decimal.Parse(row.Cells[4].Value.ToString().Trim());
                     decimal desc = decimal.Parse(row.Cells[5].Value.ToString().Trim());
 
-                    decimal valorImpu = (precio * Convert.ToInt32(imp) / 1000);
+                    decimal valorImpu = (precio * Convert.ToInt32(imp) / 100);
 
                     row.Cells[6].Value = ( ((precio + valorImpu) - Convert.ToInt32(desc)) * cantidad);
                 }
@@ -522,43 +522,51 @@ namespace CapaPresentacion.Forms
 
         private void LisFac_pasarFactura(tbFactura InfFactura)
         {
-            string idF = InfFactura.IdFactura.Trim();
-            int caracteres = idF.Length;
-            labelIdFactura.Text = idF.Remove(0, 1);
-            labelANombreDe.Text = InfFactura.NombreAsocie;
-            dateTimeFactura.Value = InfFactura.FechaCompra;
-            cbTipoFactura.SelectedIndex = InfFactura.Tipo-1;
+            try
+            {
+                string idF = InfFactura.IdFactura.Trim();
+                int caracteres = idF.Length;
+                labelIdFactura.Text = idF.Remove(0, 1);
+                labelANombreDe.Text = InfFactura.NombreAsocie;
+                dateTimeFactura.Value = InfFactura.FechaCompra;
+                cbTipoFactura.SelectedIndex = InfFactura.Tipo - 1;
 
-            if (InfFactura.IdCliente != null)
-            {
-                LabelPara.Text = Enum.GetName(typeof(csEnums.FacturaPara), 1);
-                labelIdAsociado.Text = InfFactura.IdCliente.Trim();
+                if (InfFactura.IdCliente != null)
+                {
+                    LabelPara.Text = Enum.GetName(typeof(csEnums.FacturaPara), 1);
+                    labelIdAsociado.Text = InfFactura.IdCliente.Trim();
+                }
+                if (InfFactura.IdProveedor != null)
+                {
+                    LabelPara.Text = Enum.GetName(typeof(csEnums.FacturaPara), 2);
+                    labelIdAsociado.Text = InfFactura.IdProveedor.Trim();
+                }
+                dataGVDetalleFactura.Rows.Clear();
+                dataGVDetalleFactura.Refresh();
+                foreach (tbDetalleFactura df in InfFactura.tbDetalleFactura)
+                {
+                    int nr = dataGVDetalleFactura.Rows.Add();
+                    dataGVDetalleFactura.Rows[nr].Cells[0].Value = df.IdProductos.Trim();
+                    dataGVDetalleFactura.Rows[nr].Cells[1].Value = "p ";
+                    dataGVDetalleFactura.Rows[nr].Cells[2].Value = df.Precio;
+                    dataGVDetalleFactura.Rows[nr].Cells[3].Value = df.Cantiadad;
+                    dataGVDetalleFactura.Rows[nr].Cells[4].Value = df.IVA;
+                    dataGVDetalleFactura.Rows[nr].Cells[5].Value = df.Descuento;
+                }
+                SacarSubTotal();
+                btnEliminar.Enabled = true;
+                dateTimeFactura.Enabled = false;
+                buttonguardar.Enabled = false;
+                btnVerCliente.Enabled = false;
+                btnVerProveedores.Enabled = false;
+                btnManual.Enabled = false;
+                timer2.Start();
             }
-            if(InfFactura.IdProveedor != null)
+            catch (Exception)
             {
-                LabelPara.Text = Enum.GetName(typeof(csEnums.FacturaPara), 2);
-                labelIdAsociado.Text = InfFactura.IdProveedor.Trim();
+                MessageBox.Show("Selecciona una factura con un doble click ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            dataGVDetalleFactura.Rows.Clear();
-            dataGVDetalleFactura.Refresh();
-            foreach(tbDetalleFactura df in InfFactura.tbDetalleFactura)
-            {
-                int nr = dataGVDetalleFactura.Rows.Add();
-                dataGVDetalleFactura.Rows[nr].Cells[0].Value = df.IdProductos.Trim();
-                dataGVDetalleFactura.Rows[nr].Cells[1].Value = "p ";
-                dataGVDetalleFactura.Rows[nr].Cells[2].Value = df.Precio;
-                dataGVDetalleFactura.Rows[nr].Cells[3].Value = df.Cantiadad;
-                dataGVDetalleFactura.Rows[nr].Cells[4].Value = df.IVA;
-                dataGVDetalleFactura.Rows[nr].Cells[5].Value = df.Descuento;
-            }
-            SacarSubTotal();
-            btnEliminar.Enabled = true;
-            dateTimeFactura.Enabled = false;
-            buttonguardar.Enabled = false;
-            btnVerCliente.Enabled = false;
-            btnVerProveedores.Enabled = false;
-            btnManual.Enabled = false;
-            timer2.Start();
+            
         }
 
         private void btnMostraPanel2_Click(object sender, EventArgs e)

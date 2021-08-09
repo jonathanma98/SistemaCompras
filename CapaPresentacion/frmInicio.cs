@@ -82,6 +82,11 @@ namespace CapaPresentacion
             }
         }
 
+        private void frmInicio_MaximumSizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             csNegocioLogin login = new csNegocioLogin();
@@ -100,12 +105,14 @@ namespace CapaPresentacion
                     //evaluamos los datos para poder ingresar a los formulacios
                     if (id == txtId.Text && passport == contra)
                     {
-                        //frmWelcome frm = new frmWelcome();
-                        //frm.ShowDialog();
-                        frmMenuPrincipal frm = new frmMenuPrincipal();
-                        frm.Show();
+                        frmWelcome frm = new frmWelcome();
+                        frm.ShowDialog();
+                        //frmMenuPrincipal frm = new frmMenuPrincipal();
+                        //frm.Show();
                         this.Opacity = 0;
+                        this.Enabled = false;
                         timer2.Start();
+
 
                     }
                     else if (contra != txtContra.Text)
@@ -122,8 +129,7 @@ namespace CapaPresentacion
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Ocurrio un error en el proceso ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

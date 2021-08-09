@@ -30,7 +30,6 @@ namespace CapaPresentacion.Forms
         private void InitializeComponent()
         {
             this.labelnav = new System.Windows.Forms.Label();
-            this.labeltitulo1 = new System.Windows.Forms.Label();
             this.comboBoxtipocedula = new System.Windows.Forms.ComboBox();
             this.dateTimePickerfechanacimiento = new System.Windows.Forms.DateTimePicker();
             this.maskedTextBoxtelefono = new System.Windows.Forms.MaskedTextBox();
@@ -73,17 +72,6 @@ namespace CapaPresentacion.Forms
             this.labelnav.Size = new System.Drawing.Size(258, 24);
             this.labelnav.TabIndex = 127;
             this.labelnav.Text = "Mantenimiento de Clientes";
-            // 
-            // labeltitulo1
-            // 
-            this.labeltitulo1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labeltitulo1.AutoSize = true;
-            this.labeltitulo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitulo1.Location = new System.Drawing.Point(155, 19);
-            this.labeltitulo1.Name = "labeltitulo1";
-            this.labeltitulo1.Size = new System.Drawing.Size(166, 24);
-            this.labeltitulo1.TabIndex = 126;
-            this.labeltitulo1.Text = "Salon de belleza";
             // 
             // comboBoxtipocedula
             // 
@@ -296,12 +284,13 @@ namespace CapaPresentacion.Forms
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dataGridViewClientes);
-            this.panel1.Controls.Add(this.labeltitulo1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(397, 0);
+            this.panel1.Location = new System.Drawing.Point(441, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 479);
+            this.panel1.Size = new System.Drawing.Size(481, 479);
             this.panel1.TabIndex = 128;
             // 
             // dataGridViewClientes
@@ -316,10 +305,11 @@ namespace CapaPresentacion.Forms
             this.Telefono,
             this.Email,
             this.Direcion});
+            this.dataGridViewClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.dataGridViewClientes.Location = new System.Drawing.Point(0, 46);
+            this.dataGridViewClientes.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.Size = new System.Drawing.Size(525, 433);
+            this.dataGridViewClientes.Size = new System.Drawing.Size(481, 479);
             this.dataGridViewClientes.TabIndex = 127;
             this.dataGridViewClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellDoubleClick);
             // 
@@ -362,6 +352,7 @@ namespace CapaPresentacion.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(922, 479);
             this.Controls.Add(this.panel1);
@@ -391,7 +382,6 @@ namespace CapaPresentacion.Forms
             this.Text = "Registrar Clientes";
             this.Load += new System.EventHandler(this.frmRegistrarclientes_Load_1);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -401,7 +391,6 @@ namespace CapaPresentacion.Forms
         #endregion
 
         private System.Windows.Forms.Label labelnav;
-        private System.Windows.Forms.Label labeltitulo1;
         private System.Windows.Forms.ComboBox comboBoxtipocedula;
         private System.Windows.Forms.DateTimePicker dateTimePickerfechanacimiento;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxtelefono;

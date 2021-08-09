@@ -52,31 +52,45 @@ namespace CapaPresentacion
 
         private bool validarContraEmpresa()
         {
-            csNegocioEmpresa NEmpresa = new csNegocioEmpresa();
-            List<tbEmpresa> listaEmpresa = new List<tbEmpresa>();
-
-            listaEmpresa = NEmpresa.obtenerLista(1);
-            if (listaEmpresa != null)
+            try
             {
+                csNegocioEmpresa NEmpresa = new csNegocioEmpresa();
+                List<tbEmpresa> listaEmpresa = new List<tbEmpresa>();
                 string contra = "";
-                string contraEmpre = Microsoft.VisualBasic.Interaction.InputBox("Ingresa la contraseña de la empresa", "verificación");
+                listaEmpresa = NEmpresa.obtenerLista(1);
                 foreach (tbEmpresa em in listaEmpresa)
                 {
                     contra = em.contraseña;
                 }
-                if (contra == csEncryp.GetSHA256(contraEmpre.Trim()))
+                if (contra.Trim() != "")
                 {
-                    return true;
+                    string contraEmpre = Microsoft.VisualBasic.Interaction.InputBox("Ingresa la contraseña de la empresa", "verificación");
+
+                    if (contra == csEncryp.GetSHA256(contraEmpre.Trim()))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrectar", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña incorrectar", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se encontraron datos de la empresa", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    frmAjusteDatos frm = new frmAjusteDatos();
+                    frm.Show();
+                    frm.activarbtnRegistrar();
                     return false;
                 }
             }
-            else
+            catch (Exception)
             {
                 MessageBox.Show("No se encontraron datos de la empresa", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmAjusteDatos frm = new frmAjusteDatos();
+                frm.Show();
+                frm.activarbtnRegistrar();
                 return false;
             }
 
@@ -118,27 +132,36 @@ namespace CapaPresentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (verificarDatos())
+            try
             {
-                tbAdmin admin = new tbAdmin();
-
-                admin.id = txtId.Text;
-                admin.Nombre = txtNombre.Text;
-                admin.contraseña = csEncryp.GetSHA256(txtContreseña.Text.Trim());
-                //MessageBox.Show(csEncryp.GetSHA256(txtContreseña.Text));
-                admin.telefono = txtTelefono.Text;
-                admin.correo = txtCorreo.Text;
-
-                if (login.modificar(admin))
+                if (verificarDatos())
                 {
-                    MessageBox.Show("Se a modificado un usuario", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Close();
-                }
-                else
-                {
-                    MessageBox.Show("Algo selio mal al modificar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbAdmin admin = new tbAdmin();
+
+                    admin.id = txtId.Text;
+                    admin.Nombre = txtNombre.Text;
+                    admin.contraseña = csEncryp.GetSHA256(txtContreseña.Text.Trim());
+                    //MessageBox.Show(csEncryp.GetSHA256(txtContreseña.Text));
+                    admin.telefono = txtTelefono.Text;
+                    admin.correo = txtCorreo.Text;
+
+                    if (login.modificar(admin))
+                    {
+                        MessageBox.Show("Se a modificado un usuario", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo selio mal al modificar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -148,25 +171,33 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if ((validarContraEmpresa()))
+            try
             {
-                tbAdmin admin = new tbAdmin();
-
-                admin.id = txtId.Text;
-                admin.Nombre = txtNombre.Text;
-                admin.contraseña = csEncryp.GetSHA256(txtContreseña.Text.Trim());
-                admin.telefono = txtTelefono.Text;
-                admin.correo = txtCorreo.Text;
-
-                if (login.eliminar(admin))
+                if ((validarContraEmpresa()))
                 {
-                    MessageBox.Show("Se a eliminado un usuario", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //Close();
+                    tbAdmin admin = new tbAdmin();
+
+                    admin.id = txtId.Text;
+                    admin.Nombre = txtNombre.Text;
+                    admin.contraseña = csEncryp.GetSHA256(txtContreseña.Text.Trim());
+                    admin.telefono = txtTelefono.Text;
+                    admin.correo = txtCorreo.Text;
+
+                    if (login.eliminar(admin))
+                    {
+                        MessageBox.Show("Se a eliminado un usuario", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo selio mal al eliminar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Algo selio mal al eliminar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -223,17 +254,26 @@ namespace CapaPresentacion
 
         private void llenarLista()
         {
-            listaAdmin = login.obtenerLista(1);
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            foreach (tbAdmin ad in listaAdmin)
+            try
             {
-                int nr = dataGridView1.Rows.Add();
-                dataGridView1.Rows[nr].Cells[0].Value = ad.id.Trim();
-                dataGridView1.Rows[nr].Cells[1].Value = ad.Nombre;
-                dataGridView1.Rows[nr].Cells[2].Value = ad.correo;
-                dataGridView1.Rows[nr].Cells[3].Value = ad.correo;
+                listaAdmin = login.obtenerLista(1);
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
+                foreach (tbAdmin ad in listaAdmin)
+                {
+                    int nr = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[nr].Cells[0].Value = ad.id.Trim();
+                    dataGridView1.Rows[nr].Cells[1].Value = ad.Nombre;
+                    dataGridView1.Rows[nr].Cells[2].Value = ad.correo;
+                    dataGridView1.Rows[nr].Cells[3].Value = ad.correo;
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

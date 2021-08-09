@@ -32,9 +32,6 @@ namespace CapaPresentacion.Reportes
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.QueryControDineroPorFechaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SistemaCompraDataSet = new CapaPresentacion.Reportes.SistemaCompraDataSet();
-            this.tbEmpresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.comboBoxTIpo = new System.Windows.Forms.ComboBox();
@@ -44,28 +41,16 @@ namespace CapaPresentacion.Reportes
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.QueryControDineroPorFechaTableAdapter = new CapaPresentacion.Reportes.SistemaCompraDataSetTableAdapters.QueryControDineroPorFechaTableAdapter();
             this.tbEmpresaTableAdapter = new CapaPresentacion.Reportes.SistemaCompraDataSetTableAdapters.tbEmpresaTableAdapter();
+            this.tbEmpresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QueryControDineroPorFechaTableAdapter = new CapaPresentacion.Reportes.SistemaCompraDataSetTableAdapters.QueryControDineroPorFechaTableAdapter();
+            this.QueryControDineroPorFechaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SistemaCompraDataSet = new CapaPresentacion.Reportes.SistemaCompraDataSet();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmpresaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QueryControDineroPorFechaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SistemaCompraDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEmpresaBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // QueryControDineroPorFechaBindingSource
-            // 
-            this.QueryControDineroPorFechaBindingSource.DataMember = "QueryControDineroPorFecha";
-            this.QueryControDineroPorFechaBindingSource.DataSource = this.SistemaCompraDataSet;
-            // 
-            // SistemaCompraDataSet
-            // 
-            this.SistemaCompraDataSet.DataSetName = "SistemaCompraDataSet";
-            this.SistemaCompraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbEmpresaBindingSource
-            // 
-            this.tbEmpresaBindingSource.DataMember = "tbEmpresa";
-            this.tbEmpresaBindingSource.DataSource = this.SistemaCompraDataSet;
             // 
             // monthCalendar1
             // 
@@ -164,13 +149,26 @@ namespace CapaPresentacion.Reportes
             this.reportViewer1.Size = new System.Drawing.Size(800, 360);
             this.reportViewer1.TabIndex = 3;
             // 
+            // tbEmpresaTableAdapter
+            // 
+            this.tbEmpresaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbEmpresaBindingSource
+            // 
+            this.tbEmpresaBindingSource.DataMember = "tbEmpresa";
+            // 
             // QueryControDineroPorFechaTableAdapter
             // 
             this.QueryControDineroPorFechaTableAdapter.ClearBeforeFill = true;
             // 
-            // tbEmpresaTableAdapter
+            // QueryControDineroPorFechaBindingSource
             // 
-            this.tbEmpresaTableAdapter.ClearBeforeFill = true;
+            this.QueryControDineroPorFechaBindingSource.DataMember = "QueryControDineroPorFecha";
+            // 
+            // SistemaCompraDataSet
+            // 
+            this.SistemaCompraDataSet.DataSetName = "SistemaCompraDataSet";
+            this.SistemaCompraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rptControlDineroPorFecha
             // 
@@ -183,11 +181,11 @@ namespace CapaPresentacion.Reportes
             this.Name = "rptControlDineroPorFecha";
             this.Text = "rptControlDineroPorFecha";
             this.Load += new System.EventHandler(this.rptControlDineroPorFecha_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.QueryControDineroPorFechaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SistemaCompraDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEmpresaBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbEmpresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QueryControDineroPorFechaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SistemaCompraDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,16 +195,16 @@ namespace CapaPresentacion.Reportes
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.BindingSource QueryControDineroPorFechaBindingSource;
-        private SistemaCompraDataSet SistemaCompraDataSet;
-        private SistemaCompraDataSetTableAdapters.QueryControDineroPorFechaTableAdapter QueryControDineroPorFechaTableAdapter;
         private System.Windows.Forms.ComboBox comboBoxTIpo;
         private System.Windows.Forms.Panel panel1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource QueryControDineroPorFechaBindingSource;
         private System.Windows.Forms.BindingSource tbEmpresaBindingSource;
         private SistemaCompraDataSetTableAdapters.tbEmpresaTableAdapter tbEmpresaTableAdapter;
+        private SistemaCompraDataSetTableAdapters.QueryControDineroPorFechaTableAdapter QueryControDineroPorFechaTableAdapter;
+        private SistemaCompraDataSet SistemaCompraDataSet;
     }
 }

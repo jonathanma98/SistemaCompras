@@ -21,13 +21,6 @@ namespace CapaPresentacion.Forms
         }
 
 
-        private void frmAjusteDatos_Load(object sender, EventArgs e)
-        {   //en el formulario se utiliza dos frm por ello dividimos la pantalla
-            Size = new Size();
-            panel4.Width = Size.Width/2;
-            panel2.Width = Size.Width/2;
-        }
-
         private void llamarLista()
         { //ya que solo se puede ingresar los datos de una empresa
             limpiar();
@@ -39,24 +32,22 @@ namespace CapaPresentacion.Forms
         {   //cargamos los datos en los textbox
             try
             {
-                if (listaEmpresa != null)
+                btnRegistrar.Enabled = false;
+                int cont = 0;
+                foreach (tbEmpresa em in listaEmpresa)
                 {
-                    btnRegistrar.Enabled = false;
-                    int cont = 0;
-                    foreach (tbEmpresa em in listaEmpresa)
-                    {
-                        cont++;
-                        txtId.Text = em.id.ToString().Trim();
-                        txtNombre.Text = em.Nombre;
-                        txtCorreo.Text = em.Correo;
-                        txtTelefono.Text = em.Telefono;
-                        txtDireccion.Text = em.Ubicacion;
-                    }
-                    if (cont > 1)
-                    {
-                        MessageBox.Show("Al parecer tienes más de un dato de empresas esto podria afectar el software", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    cont++;
+                    txtId.Text = em.id.ToString().Trim();
+                    txtNombre.Text = em.Nombre;
+                    txtCorreo.Text = em.Correo;
+                    txtTelefono.Text = em.Telefono;
+                    txtDireccion.Text = em.Ubicacion;
                 }
+                if (cont > 1)
+                {
+                    MessageBox.Show("Al parecer tienes más de un dato de empresas esto podria afectar el software", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
                 else
                 {
                     btnRegistrar.Enabled = true;
@@ -96,7 +87,7 @@ namespace CapaPresentacion.Forms
         private void btnRegistrar_Click(object sender, EventArgs e)
         { // ya que los datos de la empresa se cargan al abrir el frm siempre se mantendra la id;
             bool validar = true;
-            if (txtId.Text == string.Empty)
+            if (txtId.Text != string.Empty)
             {
                 validar = false;
                 MessageBox.Show("Al parecer ya tienes datos de la empresa.\n El software solo da soporte a una empresa por " +
@@ -114,11 +105,18 @@ namespace CapaPresentacion.Forms
                 empresa.Ubicacion = txtDireccion.Text.Trim();
                 string contra = csEncryp.GetSHA256(txtContraseña.Text.Trim());
                 empresa.contraseña = contra.Trim();
-                empresa.id = int.Parse(txtId.Text.Trim());
+                if(txtId.Text != string.Empty)
+                {
+                    empresa.id = int.Parse(txtId.Text.Trim());
+                }
+                else
+                {
+                    empresa.id = 1;
+                }
 
                 if (NEmpresa.guarda(empresa))
                 {
-                    MessageBox.Show("Datos de la empresa capturados con éxito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Datos de la empresa capturados con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -164,26 +162,33 @@ namespace CapaPresentacion.Forms
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (validacion())
+            try
             {
-                tbEmpresa empresa = new tbEmpresa();
-
-                empresa.Nombre = txtNombre.Text.Trim();
-                empresa.Correo = txtCorreo.Text.Trim();
-                empresa.Telefono = txtTelefono.Text.Trim();
-                empresa.Ubicacion = txtDireccion.Text.Trim();
-                string contra = csEncryp.GetSHA256(txtContraseña.Text.Trim());
-                empresa.contraseña = contra.Trim();
-                empresa.id = int.Parse(txtId.Text.Trim());
-
-                if (NEmpresa.modificar(empresa))
+                if (validacion())
                 {
-                    MessageBox.Show("Datos de la empresa capturados con éxito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbEmpresa empresa = new tbEmpresa();
+
+                    empresa.Nombre = txtNombre.Text.Trim();
+                    empresa.Correo = txtCorreo.Text.Trim();
+                    empresa.Telefono = txtTelefono.Text.Trim();
+                    empresa.Ubicacion = txtDireccion.Text.Trim();
+                    string contra = csEncryp.GetSHA256(txtContraseña.Text.Trim());
+                    empresa.contraseña = contra.Trim();
+                    empresa.id = int.Parse(txtId.Text.Trim());
+
+                    if (NEmpresa.modificar(empresa))
+                    {
+                        MessageBox.Show("Datos de la empresa capturados con éxito", "Editación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo salio mal al editar los datos de la empresa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Algo salio mal al editar los datos de la empresa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception)
+            {
+
             }
         }
 
@@ -203,6 +208,24 @@ namespace CapaPresentacion.Forms
         {
             frmPapelera frm = new frmPapelera();
             frm.Show();
+        }
+
+        public void activarbtnRegistrar()
+        {
+            btnModificar.Enabled = true;
+        }
+
+        private void frmAjusteDatos_SizeChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel4_SizeChanged(object sender, EventArgs e)
+        {
+            ////en el formulario se utiliza dos frm por ello dividimos la pantalla
+            //Size = new Size();
+            //panel4.Width = Size.Width / 2;
+            //panel2.Width = Size.Width / 2;
         }
     }
 }
